@@ -2,10 +2,11 @@
   <div class="login">
     <h1>Petty<b>Cash</b></h1>
     <div class="plogin">
-      <p><img style="width:50px;" src="../assets/profile.png"></p>
+      <!-- <span class="glyphicon glyphicon-user"></span> -->
+      <p><img  style="width:50px;" src="../assets/profile.png"></p>
       <p>LOGIN</p>
     </div>
-    <button><img style="width:20px;" src="../assets/google logo.jpg">Sign in with Google</button>
+    <button class="btn btn-default"  @click="onLogin"><img style="width:20px;" src="../assets/google logo.jpg">Sign in with Google</button>
 
   </div>
        
@@ -19,6 +20,11 @@ export default {
     return {
      
     }
+  },
+  methods:{
+    onLogin() {
+      this.$router.push({name: 'Userdashboard'}); 
+}
   }
 }
 </script>
@@ -32,24 +38,22 @@ export default {
   box-shadow: 3px 3px 3px 3px grey;
   width:50%;
   height:400px;
-  
-  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family: 'Gotham' 'Times New Roman', Times, serif;
 }
 h1{
   padding-top:50px;
 }
 button{
   margin-top:50px;
-  /* border: 1px solid black;
-  border-radius: 10px; */
-  box-shadow: 2px 2px grey;
+  border: 1px solid black;
   background: transparent;
   outline: none;
 }
-/* button:hover{
+button:hover{
   background:#1875D2;
   color: white;
-} */
+  border: none;
+}
 
 
 .plogin{
