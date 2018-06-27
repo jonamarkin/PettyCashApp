@@ -39,6 +39,7 @@ export default {
   width:50%;
   height:400px;
   font-family: 'Gotham' 'Times New Roman', Times, serif;
+  background: #f6f6f6;
 }
 h1{
   padding-top:50px;
@@ -54,7 +55,6 @@ button:hover{
   color: white;
   border: none;
 }
-
 
 .plogin{
   margin-top: 70px;
