@@ -13,6 +13,6 @@ export default {
 
 <style>
 #app {
-  
+  vertical-align: middle;
 }
 </style>

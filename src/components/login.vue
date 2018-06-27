@@ -1,11 +1,15 @@
 <template>
   <div class="login">
-    <h3>Petty<b>Cash</b></h3>
+    <h1>Petty<b>Cash</b></h1>
+    <div class="plogin">
+      <p><img style="width:50px;" src="../assets/profile.png"></p>
+      <p>LOGIN</p>
+    </div>
+    <button><img style="width:20px;" src="../assets/google logo.jpg">Sign in with Google</button>
 
   </div>
        
         
- 
 </template>
 
 <script>
@@ -22,11 +26,35 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .login{
+  text-align: center;
   vertical-align: middle;
-  margin-top: 300px;
-  margin-left:300px;
-  border: 1px solid black;
+  margin: 150px 0 800px 300px;
+  box-shadow: 3px 3px 3px 3px grey;
   width:50%;
-  height:300px;
+  height:400px;
+  
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
+h1{
+  padding-top:50px;
+}
+button{
+  margin-top:50px;
+  /* border: 1px solid black;
+  border-radius: 10px; */
+  box-shadow: 2px 2px grey;
+  background: transparent;
+  outline: none;
+}
+/* button:hover{
+  background:#1875D2;
+  color: white;
+} */
+
+
+.plogin{
+  margin-top: 70px;
+  font-weight: bold;
+}
+
 </style>
