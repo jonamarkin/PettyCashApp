@@ -1,17 +1,17 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="PettyForm col-md-10">
+            <div class="PettyForm col-md-10 col-sm-10 col-xs-10">
                 <p class="petty">Petty<b>Cash</b></p>
                 <p><b>DETAILS</b></p>
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                         <label for="Date"><b>Date:</b></label>
-                        <input type="date" class="form-control" id="Date" placeholder="DD/MM/YY">
+                        <input type="date" class="form-control" id="Date" >
                         </div>
                         <div class="form-group col-md-4 amount">
-                        <label for="Amount">Amount</label>
+                        <label for="Amount"><b>Amount:</b></label>
                         <input type="number" class="form-control" id="Amount" placeholder="GHS">
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                         <textarea class="form-control" id="Description" rows="5"></textarea>
                         </div>
                         <div class="form-group col-md-4 amount">
-                        <label for="Payment">Select Payment Method:</label>
+                        <label for="Payment"><b>Select Payment Method:</b></label>
                         <select class="form-control" id="Payment">
                             <option>Cash</option>
                             <option>MTN Mobile Money</option>
@@ -68,14 +68,16 @@ export default {
     
 }
 .petty{
-    font-size:1.8em;
+    font-size:2em;
 }
 
 .container{
     background:#f6f6f6;
     font-family:Gotham;
-    margin:auto;
-    margin-top:50px;
+    margin: auto;
+    margin-top:100px;
+    box-shadow:3px 3px 3px 3px gray;
+
 
 }
 
