@@ -1,6 +1,11 @@
 <template>
-
-    
+  <div class="conatiner">
+    <div class="row">
+      <div col-md-10>
+        <div class="navabr"></div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
