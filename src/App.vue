@@ -15,6 +15,6 @@ export default {
 <style>
 #app {
  
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 </style>

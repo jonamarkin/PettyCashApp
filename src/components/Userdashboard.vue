@@ -1,13 +1,17 @@
 <template>
-
 <div class="container">
-   <div class="flex-container">
-  <div>PettyCash</div>
-  <div class="buttons">
-  <div><button class="btn btn-default">New</button></div>
-  <div><img style="width:40px;" src="../assets/profile.png"></div>
+<div class="row">
+  <div class="col-md-12">
+      <div class="topnav">
+        <div class="left-side">
+          <span style="float:left;">Petty<b>Cash</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+  
+
 
 </template>
 
@@ -17,36 +21,10 @@ export default {
 }
 </script>
 <style scoped>
-
-.flex-container {
-  display: flex;
-  background-color:  #f1f1f1;
-  border: 2px solid grey;
-   height: 50px;
+.topnav{
+ 
  
 }
 
-.flex-container > div {
-   /* margin: 10px;
-  padding: 20px; */
-  font-size: 25px;
- 
-}
-.container{
-    width: 90%;
-     margin: auto;
-     margin-top: 30px;
-}
-
-
-button{
-    margin-left: 700px;
-    font:30px; 
-    color: white;
-    background: orange;
-}
-img{
-    margin-left: 20px;
-}
     
 </style>
