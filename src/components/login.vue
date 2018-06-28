@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <div class="login">
     <h1>Petty<b>Cash</b></h1>
     <div class="plogin">
@@ -6,10 +7,10 @@
       <p><img  style="width:50px;" src="../assets/profile.png"></p>
       <p>LOGIN</p>
     </div>
-    <button class="btn btn-default"  @click="onLogin"><img style="width:20px;" src="../assets/google logo.jpg">Sign in with Google</button>
+    <button class="btn btn-default"  @click="onLogin"><img style="width:20px;" src="../assets/google.jpg" >Sign in with Google</button>
 
   </div>
-       
+</div>       
         
 </template>
 
@@ -39,8 +40,7 @@ export default {
   width:50%;
   height:400px;
   font-family: 'Gotham' 'Times New Roman', Times, serif;
-  background: #f6f6f6;
-}
+ }
 h1{
   padding-top:50px;
 }
@@ -60,5 +60,9 @@ button:hover{
   margin-top: 70px;
   font-weight: bold;
 }
+/* .container{
+   background-image:url('../assets/google.jpg');
+  opacity: 5%;
+} */
 
 </style>
