@@ -36,16 +36,16 @@
                         
                     </div>
                     <div class="form-row buttons">              
-                       
+                    
                         
                     </div>
-                     
+                    
                 </form>
             </div>
         </div>
     </div>
 
- 
+
 </template>
 
 <script>
@@ -96,6 +96,7 @@ export default {
 .send{
     background: #30b479;
 }
+
 
 
 </style>

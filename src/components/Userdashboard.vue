@@ -14,6 +14,7 @@ export default {
 }
 </script>
 <style scoped>
+<<<<<<< HEAD
 .flex-container {
   display: flex;
   background-color:  #f1f1f1;
@@ -33,6 +34,8 @@ export default {
      margin: auto;
      margin-top: 30px;
 }
+=======
+>>>>>>> 287f8a4d54b9bdf107dfdb90c613c0f6d73c67c3
 
 button{
     margin-left: 700px;
