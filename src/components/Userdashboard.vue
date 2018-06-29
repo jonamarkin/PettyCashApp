@@ -2,9 +2,10 @@
 <div class="container">
    <div class="flex-container">
   <div>PettyCash</div>
-  <div class="buttons"
-  <div><button class="btn btn-default">New</button></div>
-  <div><img style="width:40px;" src="../assets/profile.png"></div>
+  <div class="buttons">
+    <div><button class="btn btn-default">New</button></div>
+    <img style="width:40px;" src="../assets/profile.png">
+  </div>
 </div>
 </div>
 </template>
@@ -14,7 +15,6 @@ export default {
 }
 </script>
 <style scoped>
-<<<<<<< HEAD
 .flex-container {
   display: flex;
   background-color:  #f1f1f1;
@@ -34,8 +34,6 @@ export default {
      margin: auto;
      margin-top: 30px;
 }
-=======
->>>>>>> 287f8a4d54b9bdf107dfdb90c613c0f6d73c67c3
 
 button{
     margin-left: 700px;
