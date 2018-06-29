@@ -1,22 +1,19 @@
 <template>
 <div class="container">
   <div class="login">
-    <h1>Petty<b>Cash</b></h1>
-    <div class="plogin">
-      <!-- <span class="glyphicon glyphicon-user"></span> -->
-      <p><img  style="width:50px;" src="../assets/profile.png"></p>
-      <p>LOGIN</p>
-    </div>
-    <button class="btn btn-default"  @click="onLogin"><img style="width:20px;" src="../assets/google.jpg" >Sign in with Google</button>
-
+    <h3 style="margin-top:10px;"><b>Petty</b>Cash</h3>
+     <p><img class="profile" src="../assets/loginprof.png"></p>
+           <div class="sublogin">
+             <p style="color:white; padding-top:40px;">Welcome</p>
+            <button class="btn btn-default" @click="onLogin"><img style="width:20px;" src="../assets/google.jpg"><small>LOGIN WITH GOOGLE</small></button>
+        </div>
   </div>
-</div>       
-        
+</div>
+  
 </template>
-
 <script>
 export default {
-  name: 'login',
+   name: 'login',
   data () {
     return {
      
@@ -30,39 +27,44 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container{
+  width: 80%;
+  height: 800px;
+  margin-top: 100px;
+}
 .login{
+  width:600px;
+  border: 1px solid #67AEE6;
+  margin-left: 20%;
+  height: 400px;
   text-align: center;
-  vertical-align: middle;
-  margin: 150px 0 800px 300px;
-  box-shadow: 3px 3px 3px 3px grey;
-  width:50%;
-  height:400px;
-  font-family: 'Gotham' 'Times New Roman', Times, serif;
- }
-h1{
-  padding-top:50px;
+  color: #67AEE6;
+  border-radius: 20px;
 }
 button{
-  margin-top:50px;
-  border: 1px solid black;
-  background: transparent;
-  outline: none;
-}
-button:hover{
-  background:#1875D2;
-  color: white;
-  border: none;
+  background:white; 
+  color: #67AEE6;
+  margin-top: 50px;
+  border-radius: 20px;
+  width:50%;
 }
 
-.plogin{
-  margin-top: 70px;
-  font-weight: bold;
+.sublogin{
+  height: 220px;
+  width:70%;
+  background: #67AEE6;
+  margin-left: 15%;
+  border-radius: 5px;
 }
-/* .container{
-   background-image:url('../assets/google.jpg');
-  opacity: 5%;
+/* img{
+  border-radius: px;
+  border: 2px solid #67AEE6;
 } */
-
+.profile{
+  background: white;
+  padding-bottom: 0;
+   /* padding-top: -25px; */
+  }
 </style>
+
