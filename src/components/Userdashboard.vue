@@ -6,7 +6,7 @@
         <div class="nav-items">
           <span class="petty">Petty<b>Cash</b></span>
           <div class="right-stuff">
-            <button class="btn new">New</button>
+            <button class="btn new" @click="NewRequest">New</button>
             <img class="usericon" src="../assets/profile.png" width="40"/>
             Welcome.
             <a href="#"><button class="logoutbtn"><img class="logout" src="../assets/logout.png" width="40"/></button></a>
@@ -40,6 +40,11 @@
 <script>
 export default {
     
+    methods:{
+    NewRequest() {
+      this.$router.push({name: 'PettyForm'}); 
+}
+  }
 }
 </script>
 <style scoped>

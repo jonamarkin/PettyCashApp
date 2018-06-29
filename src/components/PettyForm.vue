@@ -30,7 +30,7 @@
                         </select>
                         <div class="buttons">
                         <button type="reset" class="btn  reset" >RESET</button>
-                        <button type="submit" class="btn  send">SEND</button>
+                        <button type="submit" class="btn  send" @click="sendRequest">SEND</button>
                         </div>
                         </div>
                         
@@ -56,9 +56,11 @@ export default {
      
     }
   },
-  methods:{
-       
+methods:{
+    sendRequest() {
+      this.$router.push({name: 'Userdashboard'}); 
 }
+  }
 }
 </script>
 
