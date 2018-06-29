@@ -2,20 +2,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <nav class="topnav">
-        <div class="nav-items">
           <span class="petty">Petty<b>Cash</b></span>
-          <div class="right-stuff">
-            <button class="btn new" @click="NewRequest">New</button>
-            <img class="usericon" src="../assets/profile.png" width="40"/>
-            Welcome.
-            <a href="#"><button class="logoutbtn"><img class="logout" src="../assets/logout.png" width="40"/></button></a>
+      <form>
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
           </div>
+          <input type="text" class="form-control" placeholder="Search"> 
         </div>
-      </nav>
-      <div class="dashboard">
-        <span class="dash">Dashboard</span>
-      </div>
+      </form>
       <nav class="topash col-md-12">
         <span class="history">REQUESTS</span>
       </nav>
@@ -116,7 +113,7 @@ export default {
 }
 
 .sidenav{
-  background:#434446;
+  background:#67aee6;
   height:450px;
   margin:0;
   width:70px;
@@ -127,7 +124,7 @@ ul li{
 }
 
 .topash{
-  background:#434446;
+  background:#f2f2f2;
   height:50px;
   margin-top:5px;
 }
@@ -140,5 +137,6 @@ ul li{
   margin-top:5px;
   padding-top:5px;
 }
+
 
 </style>
