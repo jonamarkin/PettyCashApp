@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import PettyForm from '@/components/PettyForm'
 import login from '@/components/login'
 import Userdashboard from '@/components/Userdashboard'
+import Admin from '@/components/Admin'
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +23,11 @@ export default new Router({
       path: '/Userdashboard',
       name: 'Userdashboard',
       component: Userdashboard
+    },
+    {
+      path: '/Admin',
+      name: 'Admin',
+      component: Admin
     }
   ]
 })
