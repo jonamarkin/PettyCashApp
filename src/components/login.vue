@@ -48,7 +48,9 @@ button{
   margin-top: 50px;
   border-radius: 20px;
   width:50%;
+  cursor: pointer;
 }
+
 
 .sublogin{
   height: 220px;

@@ -1,14 +1,15 @@
 <template>
+<body>
     <div class="container">
         <div class="row">
-            <div class="PettyForm col-md-10 col-sm-10 col-xs-10">
+            <div class="PettyForm col-md-12 col-sm-12 col-xs-12">
                 <p class="petty">Petty<b>Cash</b></p>
-                <p><b>DETAILS</b></p>
-                <form>
+                <p><b>DETAILS</b></p><hr>
+               <form>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                         <label for="Date"><b>Date:</b></label>
-                        <input type="date" class="form-control" id="Date" >
+                        <input type="date" class="form-control" id="Date" placeholder="MM/DD/YYYY" >
                         </div>
                         <div class="form-group col-md-4 amount">
                         <label for="Amount"><b>Amount:</b></label>
@@ -27,12 +28,14 @@
                             <option>MTN Mobile Money</option>
                             <option>Airtel Money</option>
                             <option>tiGO Cash</option>
+                            <option>Vodafone Cash</option>
                         </select>
                         <div class="buttons">
                         <button type="reset" class="btn  reset" >RESET</button>
                         <button type="submit" class="btn  send" @click="sendRequest">SEND</button>
                         </div>
                         </div>
+                        
                         
                     </div>
                     <div class="form-row buttons">              
@@ -45,7 +48,7 @@
         </div>
     </div>
 
-
+</body>
 </template>
 
 <script>
@@ -73,14 +76,16 @@ methods:{
     font-size:2em;
 }
 
+
 .container{
-    background:#f6f6f6;
+    /* background:#f6f6f6; */
     font-family:Gotham;
     margin: auto;
     margin-top:100px;
-    box-shadow:3px 3px 3px 3px gray;
-
-
+    box-shadow: 2px 2px 2px 2px grey;
+    }
+.header{
+    background: #59B2D7
 }
 
 .amount{
@@ -89,14 +94,35 @@ methods:{
 
 .buttons{
     margin-top:50px;
+   float: right;
+    
 }
 
 .reset{
-    background: #e52b32;
+  background: white;
+    color: #59B2D7;
+    border:1px solid #59B2D7;
+    border-radius: 0;
 }
 
 .send{
-    background: #30b479;
+    background: #59B2D7;
+    color: white;
+    border-radius: 0;
+}
+input{
+    border-radius:0;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+ }
+p{
+    text-align: center;
+   
+}
+hr{
+    background-color: black;
 }
 
 

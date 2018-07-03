@@ -2,25 +2,133 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-          <span class="petty">Petty<b>Cash</b></span>
-      <form>
-        <div class="input-group">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
-          <input type="text" class="form-control" placeholder="Search"> 
+      <span class="petty">Petty<b>Cash</b></span>
+       <nav class="topnav">
+       </nav>
+       <nav class="request">
+        Requests
+        <div class="scrollable">
+        <table class="table">
+         <thead>
+            <tr>
+              <th>Date&Time</th>
+              <th>Approved/Decline</th>
+              <th>Payment Mode</th>
+              <th>Amount Requested</th>
+              <th>Amount Given</th>
+            </tr>
+         </thead>
+         <tbody>
+         <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td>09/23/2018 10:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>30.00</td>
+            </tr>
+             <tr>
+              <td>02/27/2018 13:00</td>
+              <td>Approved</td>
+              <td>Cash</td>
+              <td>50.00</td>
+              <td>50.00</td>
+            </tr>
+           </tbody>  
+        </table>
         </div>
-      </form>
-      <nav class="topash col-md-12">
-        <span class="history">REQUESTS</span>
       </nav>
-      <nav class="sidenav col-md-1">
-        
-      </nav>
-      
-
+                    <nav class="sidenav col-md-2">
+                      <img class="user" src="../assets/usericon.png">
+                      <p>USER</p>
+                      <p style="font-size:12px;">GEORGE OSEA</p>
+                      <small><p>Offline<img class="red" src="../assets/red.png"></p></small>
+                      <button class="btn btn-default">Requests</button>
+                      <button class="btn btn-default" @click="newRequest">New Request</button>
+                   </nav>
     </div>
   </div>
 
@@ -38,105 +146,69 @@
 export default {
     
     methods:{
-    NewRequest() {
-      this.$router.push({name: 'PettyForm'}); 
+     newRequest() {
+    this.$router.push({name: 'PettyForm'}); 
 }
   }
 }
+
 </script>
 <style scoped>
 .topnav{
- width:100%;
+ width:80%;
  height:50px;
  margin-top:10px;
- border:1px solid #d5d5d5;
- 
+ float: right;
+ background:  #6CC5EB;
 }
-
-
-
-.container{
-
+.request{
+ width:80%;
+ height:30px;
+ float: right;
+ border: 2px solid #F6F6F6;
+ color: #979797;
 }
 
 .petty{
   margin-left:3px;
   font-size:1.8em;
-  
 }
-
-
-.btn{
-  margin-bottom: 5px;
-  
-  margin-left:5px;
-}
-
-.right-stuff{
-  white-space:normal;
-  float:right;
-}
-
-.usericon{
-  margin-bottom: 5px;
-}
-
-.logoutbtn{
-  margin:0;
-  padding:0;
-  border:none;
-}
-
-.logoutbtn:hover{
-  border:1px solid #cccccc;
-}
-
-.new{
-  margin-top:5px;
-  background:#ff921e;
-  color:#ffffff;
-  font-weight:bold;
-}
-
-.dashboard{
-   width:100%;
-    height:30px;
-    margin-top:5px;
-    border:1px solid #d5d5d5;
-}
-
-.dash{
-  padding-left:5px;
-  font-weight:bold;
-  font-size:1.2em;
-  color:#7157b1;
-}
-
 .sidenav{
-  background:#67aee6;
-  height:450px;
-  margin:0;
-  width:70px;
+  background:#FCFCFC;
+  border: 2px solid #F6F6F6;
+  height:550px;
+  margin-top:20px;
 }
-
-ul li{
-  
+button{
+  width: 100%;
+  margin-top: 10px;
+  background: #6CC5EB;
+  border-radius: 0;
 }
-
-.topash{
-  background:#f2f2f2;
-  height:50px;
-  margin-top:5px;
-}
-
-.history{
-  color:#fbfbfb;
-  font-weight:bold;
-  font-size:2em;
-  margin-left:80px;
-  margin-top:5px;
-  padding-top:5px;
-}
-
-
-</style>
+button:hover{
+  color: white;
+  border: 10px solid #C2C2C2;
+  cursor: pointer;
+ }
+ table{
+   border: 1px solid black;
+ }
+ .user{
+   width:80%;
+   margin: 60% 10% 10% 10%;
+       }
+    .red{
+      width: 30px;
+    }
+ p{
+   font-weight: bold;
+ }
+ .red{
+   width: 30px;
+   padding-top: 20px;
+ }
+ .scrollable{
+   overflow-y: scroll;
+   height: 500px;
+ }
+ </style>
