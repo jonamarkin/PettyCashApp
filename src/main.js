@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Requests from '@/components/Requests'
+Vue.component('Requests', Requests)
 
 Vue.config.productionTip = false
 
