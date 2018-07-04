@@ -29,10 +29,7 @@
          <span style="margin-right:5px; cursor:pointer;"><b>Help</b></span></a>
       </nav>
    </div>
-   <!-- <div class="col-md-11"
-    <component is="currentView"></component>
-   </div> -->
-
+  <component :is="currentView"></component>
    
   </div>
 
@@ -48,8 +45,10 @@
 
 <script>
 export default {
-    data: {
-        currentView: Requests
+    data () {
+        return {
+          currentView: 'Requests'
+        }
     },
     methods:{
     // NewRequest() {
@@ -79,4 +78,49 @@ export default {
 .side-nav a{
     text-decoration: none;
 }
+
+
+.side{
+    width:70px;
+    margin: 0;
+}
+
+.right-stuff{
+   background:#f4f4f4;
+   height:500px;
+   text-align: justify;
+}
+
+.trans-draw{
+    margin-left:10px;
+    text-align: center;
+}
+
+.trans-items{
+    margin-top:10px;
+    overflow-y: scroll;
+}
+
+hr{
+    color:black;
+    
+}
+.main-content{
+  padding: 0;
+}
+.main-content > *{
+  padding: 0;
+}
+.request-table{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.adminshow{
+    text-align: center;
+    background: #f5f5f5;
+ 
+}
+
+
 </style>
