@@ -87,12 +87,6 @@ export default {
     // NewRequest() {
     //   this.$router.push({name: 'PettyForm'}); 
     // },
-    openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    },
-    closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
     }
 }
 </script>
