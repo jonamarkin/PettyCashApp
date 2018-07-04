@@ -2,25 +2,36 @@
     <div class="container">
         <div class="row">
             <div class="PettyForm col-md-10 col-sm-10 col-xs-10">
-                <p class="petty">Petty<b>Cash</b></p>
+                <p class="petty"><b>Petty</b>Cash</p>
                 <p><b>DETAILS</b></p>
                 <form>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                        <label for="Date"><b>Date:</b></label>
-                        <input type="date" class="form-control" id="Date" >
+                        <div class="form-group col-md-6">
+                        <textarea class="form-control" id="Description" rows="16" placeholder="Description"></textarea>
                         </div>
-                        <div class="form-group col-md-4 amount">
-                        <label for="Amount"><b>Amount:</b></label>
-                        <input type="number" class="form-control" id="Amount" placeholder="GHS">
+                        <div class="form-group col-md-4 amount right">
+                            <div class="form-group item">
+                                <input type="date" class="form-control" id="Date" placeholder="Date" style="height:50px; background:#f9f9f9f9; border:1px solid #f6f6f6f6">
+                            </div>
+                             <div class="form-group item">
+                                <input type="number" class="form-control" id="Amount" placeholder="Amount" style="height:50px; background:#f9f9f9f9; border:1px solid #f6f6f6f6">
+                            </div>
+                             <div class="form-group item">
+                                <input type="number" class="form-control" id="Payment" placeholder="Select Payment Method" style="height:50px; background:#f9f9f9f9; border:1px solid #f6f6f6f6">
+                            </div>
+                             <div class="form-group item">
+                                <input type="number" class="form-control" id="PayNumber" placeholder="Payment Number" style="height:50px; background:#f9f9f9f9; border:1px solid #f6f6f6f6">
+                            </div>
+                            <div class="buttons form-group">
+                                <button type="reset" class="btn  reset" style="width: 100px;">RESET</button>
+                                <button type="submit" class="btn  send" @click="sendRequest" style="width: 100px;">SEND</button>
+                            </div>    
                         </div>
+                         
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                        <label for="Description"><b>Description:</b></label>
-                        <textarea class="form-control" id="Description" rows="5"></textarea>
-                        </div>
-                        <div class="form-group col-md-4 amount">
+
+                        <!-- <div class="form-group col-md-4 amount">
                         <label for="Payment"><b>Select Payment Method:</b></label>
                         <select class="form-control" id="Payment">
                             <option>Cash</option>
@@ -32,13 +43,13 @@
                         <button type="reset" class="btn  reset" >RESET</button>
                         <button type="submit" class="btn  send" @click="sendRequest">SEND</button>
                         </div>
-                        </div>
+                        </div> -->
                         
                     </div>
                     <div class="form-row buttons">              
                     
                         
-                    </div>
+                    </div> -->
                     
                 </form>
             </div>
@@ -71,20 +82,23 @@ methods:{
 }
 .petty{
     font-size:2em;
+    color:#4dbded;
+    text-align:center;
+    margin: 0 auto;
 }
 
 .container{
-    background:#f6f6f6;
+    background:#fcfcfc;
     font-family:Gotham;
     margin: auto;
-    margin-top:100px;
-    box-shadow:3px 3px 3px 3px gray;
-
+    margin-top:50px;
+    border: 1px solid #f6f6f6;
+    margin-bottom:50px;
 
 }
 
-.amount{
-    margin-left:300px;
+.right{
+    margin-left:150px;
 }
 
 .buttons{
@@ -99,6 +113,13 @@ methods:{
     background: #30b479;
 }
 
+#Description{
+    background:#f9f9f9;
+    border:1px solid #f6f6f6;
+}
 
+.item{
+    margin-bottom:30px;
+}
 
 </style>
