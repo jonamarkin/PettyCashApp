@@ -1,5 +1,5 @@
 <template>
-<section class="col-md-12">
+<section class="col-md-11">
    <div class="col-md-2 adminshow">
         <img src="../assets/adminnew.png">
         <span style="margin:auto;"><b>ADMIN</b></span><br/>
@@ -151,28 +151,7 @@ export default {
 </script>
 <style scoped>
 
-.petty{
-  margin-left:3px;
-  font-size:1.8em;
-  
-}
 
-.side-nav{
-  background:#67aee6;
-  height:500px;
-  margin:0;
-  text-align: justify;
-  font-family:Gotham;
-  font-size: 0.7em;
-  width:70px;
-}
-
-
-.topash{
-  background:#f2f2f2;
-  height:30px;
-  margin-top:5px;
-}
 
 .side{
     width:70px;
