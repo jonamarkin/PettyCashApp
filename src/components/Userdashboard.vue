@@ -5,7 +5,7 @@
       <span class="petty">Petty<b>Cash</b></span>
        <nav class="topnav">
        </nav>
-       <nav class="request">
+       <div class="request">
         Requests
         <div class="scrollable">
         <table class="table">
@@ -68,40 +68,12 @@
               <td>50.00</td>
               <td>30.00</td>
             </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
-            </tr>
             <tr>
               <td>09/23/2018 10:00</td>
               <td>Approved</td>
               <td>Cash</td>
               <td>50.00</td>
               <td>30.00</td>
-            </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
-            </tr>
-            <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
             </tr>
             <tr>
               <td>09/23/2018 10:00</td>
@@ -120,7 +92,7 @@
            </tbody>  
         </table>
         </div>
-      </nav>
+      </div>
                     <nav class="sidenav col-md-2">
                       <img class="user" src="../assets/usericon.png">
                       <p>USER</p>
@@ -144,13 +116,22 @@
 
 <script>
 export default {
+      data() {
+    return {
+      name: this.$faker().name.findName(),
+      email: this.$faker().internet.email(),
+      company: this.$faker().company.companyName(),
+    }
+},
     
+  
     methods:{
      newRequest() {
     this.$router.push({name: 'PettyForm'}); 
 }
   }
 }
+
 
 </script>
 <style scoped>
@@ -163,14 +144,13 @@ export default {
 }
 .request{
  width:80%;
- height:30px;
  float: right;
- border: 2px solid #F6F6F6;
  color: #979797;
+ padding: 10px 10px 30px 10px;
 }
 
 .petty{
-  margin-left:3px;
+  margin-left:70px;
   font-size:1.8em;
 }
 .sidenav{
@@ -178,6 +158,7 @@ export default {
   border: 2px solid #F6F6F6;
   height:550px;
   margin-top:20px;
+  margin-left:30px;
 }
 button{
   width: 100%;
@@ -197,8 +178,9 @@ button:hover{
    width:80%;
    margin: 60% 10% 10% 10%;
        }
-    .red{
-      width: 30px;
+ .red{
+   width: 30px;
+   
     }
  p{
    font-weight: bold;
@@ -209,6 +191,6 @@ button:hover{
  }
  .scrollable{
    overflow-y: scroll;
-   height: 500px;
- }
+   height: 530px;
+}
  </style>

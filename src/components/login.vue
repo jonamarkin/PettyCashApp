@@ -3,6 +3,7 @@
   <div class="login">
     <h3 style="margin-top:10px;"><b>Petty</b>Cash</h3>
      <p><img class="profile" src="../assets/loginprof.png"></p>
+     <p><b>LOGIN</b></p>
            <div class="sublogin">
              <p style="color:white; padding-top:40px;">Welcome</p>
             <button class="btn btn-default" @click="onLogin"><img style="width:20px;" src="../assets/google.jpg"><small>LOGIN WITH GOOGLE</small></button>
@@ -65,8 +66,7 @@ button{
 } */
 .profile{
   background: white;
-  padding-bottom: 0;
-   /* padding-top: -25px; */
-  }
+  margin-top: 15px;
+}
 </style>
 
