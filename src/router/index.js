@@ -4,8 +4,8 @@ import PettyForm from '@/components/PettyForm'
 import login from '@/components/login'
 import Userdashboard from '@/components/Userdashboard'
 import Admin from '@/components/Admin'
-import transactions from '@/components/transactions'
-import payments from '@/components/payments'
+import UserPage from '@/components/UserPage'
+import AdminInbox from '@/components/AdminInbox'
 Vue.use(Router)
 
 export default new Router({
@@ -32,14 +32,14 @@ export default new Router({
       component: Admin
     },
     {
-      path: '/transactions',
-      name: 'transactions',
-      component:transactions
+      path: '/UserPage',
+      name: 'UserPage',
+      component: UserPage
     },
     {
-      path: '/payments',
-      name: 'payments',
-      component:payments
+      path: '/AdminInbox',
+      name: 'AdminInbox',
+      component: AdminInbox
     }
     
   ]
