@@ -5,6 +5,7 @@ import login from '@/components/login'
 import Userdashboard from '@/components/Userdashboard'
 import Admin from '@/components/Admin'
 import UserPage from '@/components/UserPage'
+import AdminInbox from '@/components/AdminInbox'
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +35,11 @@ export default new Router({
       path: '/UserPage',
       name: 'UserPage',
       component: UserPage
+    },
+    {
+      path: '/AdminInbox',
+      name: 'AdminInbox',
+      component: AdminInbox
     }
   ]
 })
