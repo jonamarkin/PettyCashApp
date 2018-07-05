@@ -4,10 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Requests from '@/components/Requests'
+import Admin from '@/components/Admin'
 Vue.component('Requests', Requests)
-
+Vue.component('Admin', Admin)
 Vue.config.productionTip = false
-
+Vue.use(require('vue-faker'))
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

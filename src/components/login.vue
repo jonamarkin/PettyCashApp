@@ -1,12 +1,12 @@
 <template>
 <div class="container">
   <div class="login">
-    <h3 style="margin-top:10px;"><b>Petty</b>Cash</h3>
-     <p><img class="profile" src="../assets/loginprof.png"></p>
-     <p><b>LOGIN</b></p>
+    <h3 style="margin-top:30px;"><b>Petty</b>Cash</h3>
+     
            <div class="sublogin">
-             <p style="color:white; padding-top:40px;">Welcome</p>
-            <button class="btn btn-default" @click="onLogin"><img style="width:20px;" src="../assets/google.jpg"><small>LOGIN WITH GOOGLE</small></button>
+             <div><img class="profile" src="../assets/login.png"></div>
+             <p style="color:white; font-weight:bold;">Welcome</p>
+            <button class="btn btn-default" @click="onLogin"><img style="width:20px; margin-right:5px;" src="../assets/google.jpg"><small>LOGIN WITH GOOGLE</small></button>
         </div>
   </div>
 </div>
@@ -35,14 +35,13 @@ export default {
   margin-top: 100px;
 }
 .login{
-  width:600px;
-  border: 1px solid #67AEE6;
-  margin-left: 20%;
-  height: 400px;
+  width:800px;
+  border: 2px solid #A9D1F0;
+  margin-left: 10%;
+  height: 500px;
   text-align: center;
   color: #67AEE6;
-  border-radius: 20px;
-}
+  }
 button{
   background:white; 
   color: #67AEE6;
@@ -54,19 +53,22 @@ button{
 
 
 .sublogin{
-  height: 220px;
+  height: 250px;
   width:70%;
   background: #67AEE6;
   margin-left: 15%;
-  border-radius: 5px;
+  margin-top: 100px;
 }
 /* img{
   border-radius: px;
   border: 2px solid #67AEE6;
 } */
 .profile{
-  background: white;
-  margin-top: 15px;
+  position:relative; 
+  top:-40px; 
+  z-index:2;
+  width:80px;
+  /* border-radius: 100%; */
 }
 </style>
 

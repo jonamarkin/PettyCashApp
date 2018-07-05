@@ -31,4 +31,8 @@ export default {
     background: #FCFCFC;
 }
 </style>
+<style lang="stylus" scoped>
+
+</style>
+
 

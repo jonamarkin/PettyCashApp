@@ -5,95 +5,7 @@
       <span class="petty">Petty<b>Cash</b></span>
        <nav class="topnav">
        </nav>
-       <div class="request">
-        Requests
-        <div class="scrollable">
-        <table class="table">
-         <thead>
-            <tr>
-              <th>Date&Time</th>
-              <th>Approved/Decline</th>
-              <th>Payment Mode</th>
-              <th>Amount Requested</th>
-              <th>Amount Given</th>
-            </tr>
-         </thead>
-         <tbody>
-         <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
-            </tr>
-            <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
-            </tr>
-            <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
-            </tr>
-            <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-            <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-            <tr>
-              <td>09/23/2018 10:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>30.00</td>
-            </tr>
-             <tr>
-              <td>02/27/2018 13:00</td>
-              <td>Approved</td>
-              <td>Cash</td>
-              <td>50.00</td>
-              <td>50.00</td>
-            </tr>
-           </tbody>  
-        </table>
-        </div>
-      </div>
-                    <nav class="sidenav col-md-2">
+        <nav class="sidenav col-md-2">
                       <img class="user" src="../assets/usericon.png">
                       <p>USER</p>
                       <p style="font-size:12px;">GEORGE OSEA</p>
@@ -101,12 +13,44 @@
                       <button class="btn btn-default">Requests</button>
                       <button class="btn btn-default" @click="newRequest">New Request</button>
                    </nav>
+       <div class="request">
+        Requests
+        <div class="scrollable">
+       <div class="col-md-10 table">
+        <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                      <th scope="col">Date&Time</th>
+                      <th scope="col">Approved/Decline</th>
+                      <th scope="col">Payment Mode</th>
+                      <th scope="col">Amount Requested</th>
+                      <th scope="col">Amount Given</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                      <th scope="row"></th>
+                      <td>{{date}}</td>
+                      <td>{{approve}}</td>
+                      <td>{{payment}}</td>
+                      <td>{{request}}</td>
+                      <td>{{given}}</td>
+                      </tr>
+                      
+                  </tbody>
+              </table>
+          </div>
     </div>
+    
+                   
+    
   </div>
 
   </div> 
-
-
+    </div>
+  </div>
+</div>
 
 
   
@@ -118,9 +62,12 @@
 export default {
       data() {
     return {
-      name: this.$faker().name.findName(),
-      email: this.$faker().internet.email(),
-      company: this.$faker().company.companyName(),
+      date: this.$faker().date.findName(),
+      approve: this.$faker().internet.email(),
+      payment: this.$faker().company.companyName(),
+      request: this.$faker().company.companyName(),
+      given: this.$faker().company.companyName(),
+
     }
 },
     
@@ -135,18 +82,22 @@ export default {
 
 </script>
 <style scoped>
+table{
+  margin: 0;
+  padding: 0;
+}
 .topnav{
  width:80%;
  height:50px;
  margin-top:10px;
  float: right;
  background:  #6CC5EB;
+
 }
 .request{
- width:80%;
  float: right;
  color: #979797;
- padding: 10px 10px 30px 10px;
+ 
 }
 
 .petty{

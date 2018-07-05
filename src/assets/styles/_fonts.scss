@@ -1,0 +1,110 @@
+ //-----------------------------FONT-FACES-----------------
+ @font-face {
+    font-family: "GothamLight";
+    src: url("/static/fonts/GothamLight.eot");
+    src: url("/static/fonts/GothamLight.woff")format("woff"),
+        url("/static/fonts/GothamLight.otf")format("opentype"),
+        url("/static/fonts/GothamLight.ttf")format("truetype"),
+        url("/static/fonts/GothamLight.svg")format("svg");
+    font-weight: normal;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: "GothamMedium";
+    src: url("/static/fonts/GothamMedium.eot");
+    src: url("/static/fonts/GothamMedium.woff")format("woff"),
+        url("/static/fonts/GothamMedium.otf")format("opentype"),
+        url("/static/fonts/GothamMedium.ttf")format("truetype"),
+        url("/static/fonts/GothamMedium.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamBold";
+    src: url("/static/fonts/GothamBold.eot");
+    src: url("/static/fonts/GothamBold.woff")format("woff"),
+        url("/static/fonts/GothamBold.otf")format("opentype"),
+        url("/static/fonts/GothamBold.ttf")format("truetype"),
+        url("/static/fonts/GothamBold.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamUltra";
+    src: url("/static/fonts/GothamUltra.eot");
+    src: url("/static/fonts/GothamUltra.woff")format("woff"),
+        url("/static/fonts/GothamUltra.otf")format("opentype"),
+        url("/static/fonts/GothamUltra.ttf")format("truetype"),
+        url("/static/fonts/GothamUltra.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamBlack";
+    src: url("/static/fonts/GothamBlack.eot");
+    src: url("/static/fonts/GothamBlack.woff")format("woff"),
+        url("/static/fonts/GothamBlack.otf")format("opentype"),
+        url("/static/fonts/GothamBlack.ttf")format("truetype"),
+        url("/static/fonts/GothamBlack.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamRounded";
+    src: url("/static/fonts/GothamRounded.eot");
+    src: url("/static/fonts/GothamRounded.woff")format("woff"),
+        url("/static/fonts/GothamRounded.otf")format("opentype"),
+        url("/static/fonts/GothamRounded.ttf")format("truetype"),
+        url("/static/fonts/GothamRounded.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamRoundedBold";
+    src: url("/static/fonts/GothamRounded-Bold.eot");
+    src: url("/static/fonts/GothamRounded-Bold.woff")format("woff"),
+        url("/static/fonts/GothamRounded-Bold.otf")format("opentype"),
+        url("/static/fonts/GothamRounded-Bold.ttf")format("truetype"),
+        url("/static/fonts/GothamRounded-Bold.svg")format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamRoundedBook";
+    src: url("/static/fonts/GothamRounded-Book.eot");
+    src: url("/static/fonts/GothamRounded-Book.woff")format("woff"),
+        url("/static/fonts/GothamRounded-Book.otf")format("opentype"),
+        url("/static/fonts/GothamRounded-Book.ttf")format("truetype"),
+        url("/static/fonts/GothamRounded-Book.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamRoundedLight";
+    src: url("/static/fonts/GothamRounded-Light.eot");
+    src: url("/static/fonts/GothamRounded-Light.woff")format("woff"),
+        url("/static/fonts/GothamRounded-Light.otf")format("opentype"),
+        url("/static/fonts/GothamRounded-Light.ttf")format("truetype"),
+        url("/static/fonts/GothamRounded-Light.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamBook";
+    src: url("/static/fonts/GothamBook.eot");
+    src: url("/static/fonts/GothamBook.woff")format("woff"),
+        url("/static/fonts/GothamBook.otf")format("opentype"),
+        url("/static/fonts/GothamBook.ttf")format("truetype"),
+        url("/static/fonts/GothamBook.svg")format("svg");
+        font-weight: normal;
+        font-style: normal;
+}
