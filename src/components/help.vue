@@ -67,7 +67,7 @@ inbox(){
 },contact(){
   this.$router.push({name: 'contact'})
 },settings(){
-  this.$router.push({name: 'contact'})
+  this.$router.push({name: 'Settings'})
 },help(){
   this.$router.push({name: 'help'})
 }
