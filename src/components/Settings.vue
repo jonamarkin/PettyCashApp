@@ -79,7 +79,6 @@ computed:{
     background:#6CC5EB;
     margin-top :15px; 
     font-family  :Gotham
-    
    
 .logo{
   font-size:1.2em;
