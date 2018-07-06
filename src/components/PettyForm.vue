@@ -7,7 +7,7 @@
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <textarea class="form-control" id="Description" rows="16" placeholder="Description" ></textarea>
+                        <textarea class="form-control" id="Description" rows="17" placeholder="Description" ></textarea>
                         </div>
                         <div class="form-group col-md-4 amount right">
                             <div class="form-group item">

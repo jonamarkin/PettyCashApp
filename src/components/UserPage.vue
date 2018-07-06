@@ -1,108 +1,89 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <div class="headerbar">
-              <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span class="logout">Logout</span></div>
+            <div class="col-md-12">
+                <div class="header col-md-12">
+                    <div class="logo"><a href="#"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span></a><span class="logout">Logout</span></div>
+                </div>
+                <div class="main-content">
+                  <div class="header2 col-md-12">
+                      <img src="../assets/login.png" >
+                      <span>Racheal Mensah</span>
+                      <span><small>Offline</small></span>
+                      <span class="newReq">
+                        <button class="btn" @click="openForm">NEW REQUEST</button>
+                      </span>
+                  </div>
+                  <div class="reqHis"><p>Request History</p></div>           
+                  <div class="transaction-table">
+                      <table class="table table-fixed">
+                          <thead class="thead">
+                              <tr>
+                              <th scope="col">PAYMENT MODE</th>
+                              <th scope="col">REQUESTED</th>
+                              <th scope="col">RECEIVED</th>
+                              <th scope="col">APPROVED/DECLINED</th>
+                              <th scope="col">DATE</th>
+                              <th scope="col">TIME</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr v-for="post in posts" :key="post.title" class="post-item">
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                              </tr>
+                              
+                          </tbody>
+                      </table>
+                  </div>
+                </div>
             </div>
-            <div class="main-content">
-              <div class="topbar">
-                <span class="profile">
-                  <img src="../assets/profilepic1.png" width="50px" height="50" style="border-radius:35px;">
-                  <span class="username" style="color:#393333;"><b>George Osae</b></span><span class="online" style="color:#9aa6aa;" ><small><b> OFFLINE</b></small></span>
-                </span>
-                <span class="newReq">
-                  <button class="btn">NEW REQUEST</button>
-                </span>
-              </div>
-              <div class="reqHis"><p>Request History</p></div>
-              <div class="requestTable">
-                <table class="table">
-                  <thead class="thead">
-                    <tr>
-                      <th scope="col">PAYMENT MODE</th>
-                      <th scope="col">REQUESTED</th>
-                      <th scope="col">RECEIVED</th>
-                      <th scope="col">APPROVED/DECLINED</th>
-                      <th scope="col">DATE</th>
-                      <th scope="col">TIME</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
         </div>
+            
     </div>
-        
-</template>
 
+</template>
 <script>
 export default {
-  name: 'UserPage',
-  data () {
+    data() {
     return {
-     
+      name: this.$faker().name.findName(),
+      email: this.$faker().internet.email(),
+      company: this.$faker().company.companyName(),
+    //   date: this.$faker().date.date(),
     }
-  }
+},
+
+methods:{
+    openForm(){
+        this.$router.push({name: 'PettyForm'}); 
+    }
+},
+
+computed:{
+    posts(){
+        return this.$store.state.posts
+    }
+}
+    
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="stylus" >
-
-.container-fluid{
-  font-family:Gotham;
-}
-
-.headerbar{
-  background:#6bc4ea;
-  height:60px;
-  margin-top:10px;
+<style lang="stylus" scoped>
+.header{
+    height:50px;
+    background:#6CC5EB;
+    margin-top :15px; 
+    font-family  :Gotham
+    
+   
+.logo{
+  font-size:1.2em;
+  margin-left:40px;
+  padding-top:15px;
 
 
   .petty{
@@ -122,69 +103,91 @@ export default {
   padding-right:10px;
 
 }
-
-.logo{
-  font-size:1.2em;
-  margin-left:40px;
-  padding-top:15px;
   
 }
+
 }
+.header2{
+    height :50px;
+    background :#FCFCFC;
+    border-bottom:2px solid #F1F1F1; 
+
+    img{
+        width :40px;
+        border :2px solid #F5F5F5;
+        border-radius:100%;
+        margin-top:2px; 
+        margin-left :50px
+    }
+    span {
+        font-size :10px;
+        font-weight :bold
+    }
+   
+    .details{
+        height:30px;
+        width:40%
+        border :2px solid #F0F0F0;
+        float right
+        margin-top 10px
+        margin-right 50px
+
+        span{
+            font-size 8px
+            color #DADADA
+            font-weight normal
+            padding-left 30%
+        }
+    }
+   
+}
+
+
+.transaction-table{
+
+    th{
+        color #89CCE9
+        font-size 12px
+        font-weight normal
+        background #F2F2F2
+        margin-top:0;
+    }
+    td{
+        color #CECECE
+        font-size 12px
+    }
+}
+
 
 .main-content{
   border: 2px solid #f7f7f7;
   height:500px;
   margin-top:10px;
-
-  .reqHis{
-    color:#cecece;
-    font-weight:bold;
-    margin-left:40px;
-    padding-top:15px;
-  }
-
-  .requestTable{
-      margin-left:5px;
-       margin-right:5px;
-    .table{
-      .thead{
-         background:#f1f1f1;
-          color:#6bc4ea;
-      }
-      .tbody{
-        overflow-y:scroll;
-        max-height:300px;
-      }
-    }
-  }
 }
 
-.topbar{
-  height:60px;
-  border-bottom:2px solid #fbfbfb;
-  background:#fcfcfc;
-}
-
-.profile{
-  margin-left:60px;
-  margin-top:5px;
-  margin-bottom:5px;
-}
 
 .btn{
-  background: #f9f9f9;
-  color:#69c3e8;
-  width:150px;
-  height:40px;
+  background: #6CC5EB;
+  color:#faf3f5;
+  width:130px;
+  height:35px;
   float:right;
   margin-right:10px;
-  margin-top:10px;
+  margin-top:5px;
   border-radius:0;
   font-weight: bold;
+  font-size:1.2em;
 }
 
+.reqHis{
+    color:#cecece;
+    font-weight:bold;
+    margin-left:13px;
+    padding-top:15px;
+    font-size:0.8em;
+  }
 
-
-
+  a{
+      text-decoration none
+  }
 </style>
-
