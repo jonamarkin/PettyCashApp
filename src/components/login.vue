@@ -22,7 +22,7 @@ export default {
   },
   methods:{
     onLogin() {
-      this.$router.push({name: 'Userdashboard'}); 
+      this.$router.push({name: 'UserPage'}); 
 }
   }
 }

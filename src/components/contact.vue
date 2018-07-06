@@ -5,14 +5,23 @@
             <div class="header col-md-12">
                 <div class="petty">
                 <span ><b>Petty</b>Cash</span>
-                <span @click="logout" id="logout" style="float:right; ">Logout<img style=" margin-left:5px;" src="../assets/logout.png"></span>
+                <span id="logout" @click="logout" style="float:right;">Logout<img style=" margin-left:5px;" src="../assets/logout.png"></span>
                 </div>
             </div>
-             <div class="header2 col-md-12">
+            <div class="header2 col-md-12">
                 <div class="info col-md-12">
                     <img style="width:50px;" src="../assets/login.png">
                     <span>Racheal Mensah</span>
                     <span><img style="width:20px;" src="../assets/green.png"><small>Online</small></span>
+                    <div class="add col-md-2 ">
+                        <button class="btn btn-primary">Add Contact<img style="width:15px; margin-left:5px;" src="../assets/add.png"></button>
+                    </div>
+                    <div class="conatctinfo col-md-6" >
+                        <span>ESTHER ABURABURA CONTACT(+233)558365033</span>
+                        <p><small>EDIT</small></p>
+                        <p><small>DELETE</small></p>
+
+                    </div>
                 </div>
             </div>
          
@@ -24,21 +33,15 @@
                   <thead>
                       <tr>
                       <th scope="col">USER</th>
-                      <th scope="col">TRANSACTION NO.</th>
-                      <th scope="col">AMOUNT</th>
-                      <th scope="col">REFERENCE</th>
-                      <th scope="col">DATE</th>
-                      <th scope="col"></th>
+                      <th scope="col">PHONE NUMBER</th>
+                      <th scope="col">EMAIL</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                       <td>{{name}}</td>
-                      <td>{{name}}</td>
-                      <td>{{random}}</td>
-                      <td>{{random}}</td>
                       <td>{{date}}</td>
-                      <td style="width:5px" ><img style="width:25px" src="../assets/check.png"></td>
+                      <td>{{email}}</td>
                       </tr>
                   </tbody>
               </table>
@@ -47,8 +50,8 @@
    </div>  
             <div class="sidenav col-md-1">
                 <p @click="inbox"><img src="../assets/inbox.png">INBOX</p>
-                <p @click="payment" id="page"><img src="../assets/blueicons/payments.png">PAYMENT</p>
-                <p @click="contact"><img src="../assets/contact.png">CONTACTS</p>
+                <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
+                <p id="page" @click="contact"><img src="../assets/blueicons/contacts.png">CONTACTS</p>
                 <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
                 <p @click="help"><img src="../assets/help.png">HELP</p>
             </div>
@@ -63,28 +66,12 @@ export default {
     data() {
     return {
       name: this.$faker().name.findName(),
-      random: this.$faker().name.findName(),
-      date: this.$faker().date.between(),
+      name: this.$faker().name.findName(),
+      date: this.$faker().date.future(),
+      email:this.$faker().internet.email()
     }
 },
 methods:{
-//      myFunction() {
-//   var input, filter, table, tr, td, i;
-//   input = document.getElementById("date");
-//   filter = input.value.toUpperCase();
-//   table = document.getElementById("myTable");
-//   tr = table.getElementsByTagName("tr");
-//   for (i = 0; i < tr.length; i++) {
-//     td = tr[i].getElementsByTagName("td")[0];
-//     if (td) {
-//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-//         tr[i].style.display = "";
-//       } else {
-//         tr[i].style.display = "none";
-//       }
-//     }       
-//   }
-// },
 inbox(){
     this.$router.push({name: 'AdminInbox'})
 },payment(){
@@ -122,8 +109,8 @@ inbox(){
                   cursor pointer
          }
          }
-        
-    }
+     } 
+
 }
 .header2{
     margin-top:10px;
@@ -133,8 +120,42 @@ inbox(){
   .info{
      font-size 12px
      font-weight bold
-    } 
+   
+  .conatctinfo{
+    height 60px
+    border-right 3px solid #CCCCCC
+    border-left 3px solid #CCCCCC 
+    float right
+    text-align center
+    color #6CC5EB
+    font-weight normal
+    font-size 14px
+    margin-top 2px
+    p{
+        margin -10px
+        font-size 10px
+        margin-top 5px
+        margin-left 350px
+        color #CCCCCC
+    }
+   
+  }
+  .add{
+    float right
+    button{
+        border-radius 0
+        height 30px
+        width 100px
+        font-size 10px
+        margin 10px 20px 10px 20px
+        background  #6CC5EB
+        border 0
+        
+    }
+  }
+} 
 }
+
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
@@ -149,7 +170,7 @@ inbox(){
     img{
         width 30px
         &:hover{
-        // background #81CCEC
+        //background #81CCEC
         cursor pointer
         
     }

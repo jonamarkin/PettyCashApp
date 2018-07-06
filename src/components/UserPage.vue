@@ -12,7 +12,7 @@
                   <span class="username" style="color:#393333;"><b>George Osae</b></span><span class="online" style="color:#9aa6aa;" ><small><b> OFFLINE</b></small></span>
                 </span>
                 <span class="newReq">
-                  <button class="btn">NEW REQUEST</button>
+                  <button class="btn" @click="onForm">NEW REQUEST</button>
                 </span>
               </div>
               <div class="reqHis"><p>Request History</p></div>
@@ -88,7 +88,12 @@ export default {
     return {
      
     }
-  }
+  },
+   methods:{
+    onForm() {
+      this.$router.push({name: 'PettyForm'}); 
+    }
+   }
 }
 </script>
 

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header col-md-12">
-                    <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span class="logout">Logout</span></div>
+                    <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span @click="logout" class="logout">Logout</span></div>
                 </div>
                 <div class="header2 col-md-12">
                     <img src="../assets/login.png" >
@@ -62,11 +62,11 @@
                     </table>
                 </div>
                 <div class="sidenav col-md-1">
-                    <p><img src="../assets/blueicons/inbox.png">INBOX</p>
-                    <p><img src="../assets/payment.png">PAYMENT</p>
-                    <p><img src="../assets/contact.png">CONTACTS</p>
-                    <p><img src="../assets/settings.png">SETTINGS</p>
-                    <p><img src="../assets/help.png">HELP</p>
+                    <p @click="inbox"><img src="../assets/blueicons/inbox.png">INBOX</p>
+                    <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
+                    <p @click="contact"><img src="../assets/contact.png">CONTACTS</p>
+                    <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
+                    <p @click="help"><img src="../assets/help.png">HELP</p>
                 </div>
             </div>
         </div>
@@ -84,6 +84,21 @@ export default {
     //   date: this.$faker().date.date(),
     }
 },
+methods:{
+    inbox(){
+    this.$router.push({name: 'AdminInbox'})
+},payment(){
+    this.$router.push({name: 'transactions'})
+},logout(){
+  this.$router.push({name: 'login'})
+},contact(){
+  this.$router.push({name: 'contact'})
+},settings(){
+  this.$router.push({name: 'contact'})
+},help(){
+  this.$router.push({name: 'help'})
+}
+}
 
     
 }
@@ -117,6 +132,9 @@ export default {
   font-weight:bold;
   float:right;
   padding-right:10px;
+  &:hover{
+      cursor pointer
+  }
 
 }
   
@@ -195,6 +213,7 @@ export default {
     }
     p{
         padding-bottom 40px
+        margin-top 10px
         &:hover{
             color #81CCEC
         }

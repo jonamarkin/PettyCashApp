@@ -2,16 +2,6 @@
 <body>
     <div class="container">
         <div class="row">
-<<<<<<< HEAD
-            <div class="PettyForm col-md-12 col-sm-12 col-xs-12">
-                <p class="petty">Petty<b>Cash</b></p>
-                <p><b>DETAILS</b></p><hr>
-               <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                        <label for="Date"><b>Date:</b></label>
-                        <input type="date" class="form-control" id="Date" placeholder="MM/DD/YYYY" >
-=======
             <div class="PettyForm col-md-10 col-sm-10 col-xs-10">
                 <p class="petty"><b>Petty</b>Cash</p>
                 <p><b>DETAILS</b></p>
@@ -19,7 +9,6 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <textarea class="form-control" id="Description" rows="16" placeholder="Description" ></textarea>
->>>>>>> 0f53598f5eec21592d217f40fba000c56d3159ec
                         </div>
                         <div class="form-group col-md-4 amount right">
                             <div class="form-group item">
@@ -108,16 +97,6 @@ methods:{
 
 
 .container{
-<<<<<<< HEAD
-    /* background:#f6f6f6; */
-    font-family:Gotham;
-    margin: auto;
-    margin-top:100px;
-    box-shadow: 2px 2px 2px 2px grey;
-    }
-.header{
-    background: #59B2D7
-=======
     background:#fcfcfc;
     font-family:Gotham;
     margin: auto;
@@ -125,7 +104,6 @@ methods:{
     border: 1px solid #f6f6f6;
     margin-bottom:30px;
 
->>>>>>> 0f53598f5eec21592d217f40fba000c56d3159ec
 }
 
 .right{
@@ -139,32 +117,6 @@ methods:{
 }
 
 .reset{
-<<<<<<< HEAD
-  background: white;
-    color: #59B2D7;
-    border:1px solid #59B2D7;
-    border-radius: 0;
-}
-
-.send{
-    background: #59B2D7;
-    color: white;
-    border-radius: 0;
-}
-input{
-    border-radius:0;
-    border-bottom: 1px solid black;
-    border-top: none;
-    border-right: none;
-    border-left: none;
- }
-p{
-    text-align: center;
-   
-}
-hr{
-    background-color: black;
-=======
     background:#ff0000;
     color:#ffc4c7;
 }
@@ -172,7 +124,6 @@ hr{
 .send{
     background: #00c174;
     color:#c4f3e0;
->>>>>>> 0f53598f5eec21592d217f40fba000c56d3159ec
 }
 
 #Description{
