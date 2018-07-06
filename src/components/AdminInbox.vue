@@ -3,13 +3,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header col-md-12">
-                    <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span class="logout">Logout <img src="../assets/logout.png"></span></div>
+                <div class="petty">
+                    <span ><b>Petty</b>Cash</span>
+                    <span id="logout" @click="logout" style="float:right;">Logout<img style=" margin-left:5px;" src="../assets/logout.png"></span>
+                </div>
                 </div>
                 <div class="header2 col-md-12">
-                    <img src="../assets/login.png" >
+                <div class="info col-md-12">
+                    <img style="width:50px;" src="../assets/login.png">
                     <span>Racheal Mensah</span>
-                    <span><small>Offline</small></span>
-                </div>           
+                    <span><img style="width:20px;" src="../assets/green.png"><small>Online</small></span>
+                </div>
+            </div>         
                 <div class="col-md-11 transaction-table">
                     <table class="table">
                         <thead class="thead">
@@ -71,7 +76,7 @@
                     </table>
                 </div>
                 <div class="sidenav col-md-1">
-                    <p @click="inbox"><img src="../assets/blueicons/inbox.png">INBOX</p>
+                    <p id="page"  @click="inbox"><img src="../assets/blueicons/inbox.png">INBOX</p>
                     <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
                     <p @click="contact"><img src="../assets/contact.png">CONTACTS</p>
                     <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
@@ -124,20 +129,7 @@ computed:{
     margin-top :15px; 
     font-family  :Gotham
     
-   
-.logo{
-  font-size:1.2em;
-  margin-left:40px;
-  padding-top:15px;
 
-
-  .petty{
-  color:#faf3f5;
-
-}
-.cash{
-  color:#daf0f9;
-}
 
 
 .logout{
@@ -151,66 +143,34 @@ computed:{
   }
 
 }
+span{
+        color: #C0E6F6;
+    }
+   span b{
+        color:white;
+    }
   
-}
+.petty{
+         padding-top 10px
+         #logout{
+              &:hover{
+                  cursor pointer
+         }
+         }
+     } 
 
 }
 .header2{
     margin-top:10px;
-    height :50px;
+    height :70px;
     background :#FCFCFC;
-    border:2px solid #F1F1F1; 
-
-    img{
-        width :40px;
-        border :2px solid #F5F5F5;
-        border-radius:100%;
-        margin-top:2px; 
-        margin-left :50px
-    }
-    span {
-        font-size :10px;
-        font-weight :bold
-    }
-   
-    .details{
-        height:30px;
-        width:40%
-        border :2px solid #F0F0F0;
-        float right
-        margin-top 10px
-        margin-right 50px
-
-        span{
-            font-size 8px
-            color #DADADA
-            font-weight normal
-            padding-left 30%
-        }
-    }
-    #dropdown{
-        border-radius 0
-        float right
-        margin-right 30px
-        outline 0
-        li{
-            font-weight bold
-            font-size 8px
-            color #8EC2EB
-        }
-        
-    }
-    button{
-        float right
-        width 80px
-        height 30px
-        margin-top 5px
-        border-radius 20px
-        color white 
-        font-size 10px  
-        background #67AEE6
-    }
+    border:2px solid #F1F1F1;
+  .info{
+     font-size 12px
+     font-weight bold
+    } 
 }
+
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
@@ -220,6 +180,7 @@ computed:{
     font-weight bold
     color #E1E1E1
     text-align center
+    margin-top 10px
 
     img{
         width 30px
@@ -235,7 +196,9 @@ computed:{
             color #81CCEC
         }
     }
-    
+    #page{
+     color:#81CCEC
+  }  
 }
 .transaction-table{
     float right 

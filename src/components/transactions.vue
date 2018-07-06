@@ -160,10 +160,11 @@ inbox(){
         &:hover{
             color #81CCEC
         }
-    }
-  #page{
+      #page{
      color:#81CCEC
   }  
+    }
+   
 }
 .transaction-table{
     float right 

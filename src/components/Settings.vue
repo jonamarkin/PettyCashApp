@@ -3,7 +3,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header col-md-12">
-                    <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span class="logout">Logout <img src="../assets/logout.png"></span></div>
+                    <div class="petty">
+                    <span ><b>Petty</b>Cash</span>
+                    <span id="logout" @click="logout" style="float:right;">Logout<img style=" margin-left:5px;" src="../assets/logout.png"></span>
+                </div>
                 </div>           
                 <div class="col-md-11 manage">
                     <div class="col-md-12">
@@ -37,15 +40,17 @@
                         </div>
                         <div class="col-md-10">
                             <h4>NEWSLETTER  <input type="checkbox"></h4>
-                            <span><p> A newsletter is printed bla bla bla </p></span>
+                            <span><p> A newsletter is a printed report containing news (information) of the activities of a business (legal name; subscription business
+model) or an organization (institutions, societies, associations) that is sent by mail regularly to all its members, customers,
+employees or people, who are interested in. Newsletters generally contain one main topic of interest to its recipients.</p></span>
                         </div>
                     </div>
                 </div>
                  <div class="sidenav col-md-1">
                 <p @click="inbox"><img src="../assets/inbox.png">INBOX</p>
                 <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
-                <p @click="contact"><img src="../assets/blueicons/contacts.png">CONTACTS</p>
-                <p id="page" @click="settings"><img src="../assets/blueicons/settings.png">SETTINGS</p>
+                <p @click="contact"><img src="../assets/contact.png">CONTACTS</p>
+                <p  @click="settings" style="color:#81CCEC;"><img src="../assets/blueicons/settings.png">SETTINGS</p>
                 <p @click="help"><img src="../assets/help.png">HELP</p>
             </div>
             </div>
@@ -95,19 +100,21 @@ computed:{
     font-family  :Gotham
     
    
-.logo{
-  font-size:1.2em;
-  margin-left:40px;
-  padding-top:15px;
-
-
-  .petty{
-  color:#faf3f5;
-
-}
-.cash{
-  color:#daf0f9;
-}
+span{
+        color: #C0E6F6;
+    }
+   span b{
+        color:white;
+    }
+  
+.petty{
+         padding-top 10px
+         #logout{
+              &:hover{
+                  cursor pointer
+         }
+         }
+     } 
 
 
 .logout{
@@ -119,7 +126,7 @@ computed:{
 
 }
   
-}
+
 
 }
 .header2{
@@ -191,16 +198,17 @@ computed:{
 
     img{
         width 30px
+        margin-top 10px
+        &:hover{
+            cursor pointer
+        }
         
     }
     p{
         padding-bottom 40px
         &:hover{
             color #81CCEC
-        }
-        #page{
-     color:#81CCEC
-  }
+        } 
     }
     
 }
@@ -208,7 +216,6 @@ computed:{
     float right 
     margin-right 35px
     margin-top 10px
-    border 2px solid #F1F1F1
     height:100px;
     background:#fafafa;
     font-family Gotham
@@ -222,7 +229,7 @@ computed:{
         color #111111
         font-family Gotham
         font-weight:bold;
-        font-size:1.4em
+        font-size:1em
     }
 }
 
@@ -238,7 +245,7 @@ computed:{
     h3{
         font-family Gotham
         font-weight:bold;
-        font-size:1.4em
+        font-size:1em
     }
 
     .compName{
@@ -273,7 +280,7 @@ computed:{
         font-family Gotham
         margin-top 10px
         font-weight:bold;
-        font-size:1.15em
+        font-size:0.8em
         margin-bottom:0;
     }
 }
@@ -282,7 +289,6 @@ computed:{
     float right 
     margin-right 35px
     margin-top 10px
-    border 2px solid #F1F1F1
     height:100px;
     background:#fafafa;
     font-family Gotham
@@ -291,7 +297,7 @@ computed:{
         font-family Gotham
         margin-top 10px
         font-weight:bold;
-        font-size:1.15em
+        font-size:0.8em
         margin-bottom:0; 
     }
 
