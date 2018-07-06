@@ -41,13 +41,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidenav col-md-1">
-                    <p><img src="../assets/inbox.png">INBOX</p>
-                    <p><img src="../assets/payment.png">PAYMENT</p>
-                    <p><img src="../assets/contact.png">CONTACTS</p>
-                    <p><img src="../assets/blueicons/settings.png">SETTINGS</p>
-                    <p><img src="../assets/help.png">HELP</p>
-                </div>
+                 <div class="sidenav col-md-1">
+                <p @click="inbox"><img src="../assets/inbox.png">INBOX</p>
+                <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
+                <p @click="contact"><img src="../assets/blueicons/contacts.png">CONTACTS</p>
+                <p id="page" @click="settings"><img src="../assets/blueicons/settings.png">SETTINGS</p>
+                <p @click="help"><img src="../assets/help.png">HELP</p>
+            </div>
             </div>
         </div>
             
@@ -64,7 +64,21 @@ export default {
     //   date: this.$faker().date.date(),
     }
 },
-
+methods:{
+inbox(){
+    this.$router.push({name: 'AdminInbox'})
+},payment(){
+    this.$router.push({name: 'transactions'})
+},logout(){
+  this.$router.push({name: 'login'})
+},contact(){
+  this.$router.push({name: 'contact'})
+},settings(){
+  this.$router.push({name: 'Settings'})
+},help(){
+  this.$router.push({name: 'help'})
+}
+},
 computed:{
     posts(){
         return this.$store.state.posts
@@ -184,6 +198,9 @@ computed:{
         &:hover{
             color #81CCEC
         }
+        #page{
+     color:#81CCEC
+  }
     }
     
 }
