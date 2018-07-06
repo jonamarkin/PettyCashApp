@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header col-md-12">
-                    <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span @click="logout" class="logout">Logout</span></div>
+                    <div class="logo"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span> <span class="logout">Logout <img src="../assets/logout.png"></span></div>
                 </div>
                 <div class="header2 col-md-12">
                     <img src="../assets/login.png" >
@@ -23,7 +23,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+
+                            <tr v-for="post in posts" :key="post.title" class="post-item">
+                                 <td><input type="checkbox">{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                                 <td>{{post.title}}</td>
+                              </tr>
+                            <!-- <tr>
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
@@ -48,7 +57,16 @@
                             <td>Thornton</td>
                             <td>@fat</td>
                             </tr>
-                           
+                            <tr>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            </tr>
+                            <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -89,8 +107,13 @@ methods:{
 },help(){
   this.$router.push({name: 'help'})
 }
-}
+},
 
+computed:{
+    posts(){
+        return this.$store.state.posts
+    }
+}
     
 }
 </script>
