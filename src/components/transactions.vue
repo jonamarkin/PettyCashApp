@@ -94,7 +94,7 @@ inbox(){
 },contact(){
   this.$router.push({name: 'contact'})
 },settings(){
-  this.$router.push({name: 'contact'})
+  this.$router.push({name: 'Settings'})
 },help(){
   this.$router.push({name: 'help'})
 }
@@ -160,10 +160,11 @@ inbox(){
         &:hover{
             color #81CCEC
         }
-    }
-  #page{
+      #page{
      color:#81CCEC
   }  
+    }
+   
 }
 .transaction-table{
     float right 

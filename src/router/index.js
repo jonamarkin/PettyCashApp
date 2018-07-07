@@ -8,6 +8,7 @@ import AdminInbox from '@/components/AdminInbox'
 import transactions from '@/components/transactions'
 import contact from '@/components/contact'
 import help from '@/components/help'
+import Settings from '@/components/Settings'
 Vue.use(Router)
 
 export default new Router({
@@ -23,7 +24,7 @@ export default new Router({
       name: 'PettyForm',
       component: PettyForm
     },
-        {
+    {
       path: '/Admin',
       name: 'Admin',
       component: Admin
@@ -32,12 +33,12 @@ export default new Router({
       path: '/UserPage',
       name: 'UserPage',
       component: UserPage
-    }, 
+    },
     {
       path: '/transactions',
       name: 'transactions',
       component: transactions
-    }, 
+    },
     {
       path: '/contact',
       name: 'contact',
@@ -49,10 +50,14 @@ export default new Router({
       component: AdminInbox
     },
     {
+      path: '/Settings',
+      name: 'Settings',
+      component: Settings
+    },
+    {
       path: '/help',
       name: 'help',
       component: help
     }
-    
   ]
 })
