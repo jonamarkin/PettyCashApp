@@ -188,7 +188,7 @@ span{
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 500px
+    height 550px
     width 70px;
     font-size 7px
     font-weight bold
@@ -216,7 +216,7 @@ span{
     float right 
     margin-right 35px
     margin-top 10px
-    height:100px;
+    height:150px;
     background:#fafafa;
     font-family Gotham
 

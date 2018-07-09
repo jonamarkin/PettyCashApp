@@ -30,7 +30,7 @@
                         <tbody>
 
                             <tr v-for="post in posts" :key="post.title" class="post-item">
-                                 <td><input type="checkbox">{{post.title}}</td>
+                                 <td><input class="checkbox" type="checkbox">{{post.title}}</td>
                                  <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
@@ -213,6 +213,10 @@ span{
     td{
         color #CECECE
         font-size 12px
+    }
+    .checkbox{
+      outline 0
+      margin-right 20px
     }
 }
 

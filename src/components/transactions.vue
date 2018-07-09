@@ -47,7 +47,7 @@
    </div>  
             <div class="sidenav col-md-1">
                 <p @click="inbox"><img src="../assets/inbox.png">INBOX</p>
-                <p @click="payment" id="page"><img src="../assets/blueicons/payments.png">PAYMENT</p>
+                <p @click="payment" style="color:#81CCEC;"><img src="../assets/blueicons/payments.png">PAYMENT</p>
                 <p @click="contact"><img src="../assets/contact.png">CONTACTS</p>
                 <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
                 <p @click="help"><img src="../assets/help.png">HELP</p>
@@ -160,9 +160,6 @@ inbox(){
         &:hover{
             color #81CCEC
         }
-      #page{
-     color:#81CCEC
-  }  
     }
    
 }
