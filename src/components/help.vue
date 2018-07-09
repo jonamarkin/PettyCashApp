@@ -77,10 +77,13 @@ inbox(){
 </script>
 <style lang="stylus" scoped>
 .header{
-    height:50px;
+    height:8%;
     background:#6CC5EB;
-    margin-top :15px; 
+    margin-top :1%; 
     font-family  :Gotham
+    width: 95%;
+    margin-right:2.5%;
+    margin-left:2.5%
     
     span{
         color: #C0E6F6;
@@ -98,14 +101,15 @@ inbox(){
      } 
 
 }
-.info{
-    margin-top 10px
+    
 .header2{
-    height :550px;
     background :#FCFCFC;
     border:2px solid #F1F1F1;
     float right
-
+    margin-bottom 0.5%
+    height: 98%;
+    width:89%
+    margin-right:2.3%;
     .title{
        margin-top 8%;
        text-align center;
@@ -164,12 +168,16 @@ inbox(){
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 550px
-    width 70px;
-    font-size 7px
+    height 98%
+    width 6%;
+    font-size 6.5px
     font-weight bold
     color #E1E1E1
     text-align center
+    margin-top 0.5%
+    margin-bottom 0.5%
+    margin-right 0
+    margin-left 2.5%;
 
     img{
         width 30px
@@ -187,7 +195,6 @@ inbox(){
   #page{
      color:#81CCEC
   }  
-}
 }
 
 
