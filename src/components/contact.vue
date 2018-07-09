@@ -46,7 +46,7 @@
                   </tbody>
               </table>
           </div>
-    </div>
+      </div>
    </div>  
             <div class="sidenav col-md-1">
                 <p @click="inbox"><img src="../assets/inbox.png">INBOX</p>
@@ -55,28 +55,35 @@
                 <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
                 <p @click="help"><img src="../assets/help.png">HELP</p>
             </div>
-            <div>
-                    <b-btn v-b-modal.modalPrevent>Add contact</b-btn>
-    <!-- Main UI -->
-    <div class="mt-3 mb-3">
-      Submitted Names:
-      <ul>
-        <li v-for="n in names">{{n}}</li>
-      </ul>
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Contact</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create New Contact</h4>
+        </div>
+        <div class="modal-body">
+            USER<input type="text" placeholder="Enter name">
+            PHONE NUMBER<input type="text" placeholder="Enter phone number">
+            EMAIL<input type="text" placeholder="george@nfortics.com">         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">ADD</button>
+        </div>
+      </div>
+      
     </div>
-    <!-- Modal Component -->
-    <b-modal id="modalPrevent"
-             ref="modal"
-             title="Submit your name"
-             @ok="handleOk"
-             @shown="clearName">
-      <form @submit.stop.prevent="handleSubmit">
-        <b-form-input type="text"
-                      placeholder="Enter your name"
-                      v-model="name"></b-form-input>
-      </form>
-    </b-modal>
-            </div>
+  </div>
+  
+</div>
+
         </div>
     </div>
   
@@ -111,46 +118,12 @@ inbox(){
     
 }
 </script>
-<script>
-export default {
-  data () {
-    return {
-      name: '',
-      names: []
-    }
-  },
-  methods: {
-    clearName () {
-      this.name = ''
-    },
-    handleOk (evt) {
-      // Prevent modal from closing
-      evt.preventDefault()
-      if (!this.name) {
-        alert('Please enter your name')
-      } else {
-        this.handleSubmit()
-      }
-    },
-    handleSubmit () {
-      this.names.push(this.name)
-      this.clearName()
-      this.$refs.modal.hide()
-    }
-  }
-}
-
-</script>
-
 <style lang="stylus" scoped>
 .header{
-    height:8%;
+    height:50px;
     background:#6CC5EB;
-    margin-top :1%; 
+    margin-top :15px; 
     font-family  :Gotham
-    width: 95%;
-    margin-right:2.5%;
-    margin-left:2.5%
     
     span{
         color: #C0E6F6;
@@ -169,20 +142,16 @@ export default {
 
 }
 .header2{
-    margin-top:0.5%;
-    height :10%;
+    margin-top:10px;
+    height :70px;
     background :#FCFCFC;
     border:2px solid #F1F1F1;
-    width:95%
-    margin-left:2.5%
-    margin-right:2.5%
-
   .info{
      font-size 12px
      font-weight bold
    
   .conatctinfo{
-    height 55px
+    height 60px
     border-right 3px solid #CCCCCC
     border-left 3px solid #CCCCCC 
     float right
@@ -191,7 +160,6 @@ export default {
     font-weight normal
     font-size 14px
     margin-top 2px
-    
     p{
         margin -10px
         font-size 10px
@@ -220,16 +188,13 @@ export default {
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 84%
-    width 6%;
-    font-size 6.5px
+    height 500px
+    width 70px;
+    font-size 7px
     font-weight bold
     color #E1E1E1
     text-align center
-    margin-top 0.5%
-    margin-bottom 0.5%
-    margin-right 0
-    margin-left 2.5%;
+    margin-top 10px
 
     img{
         width 30px
@@ -249,10 +214,8 @@ export default {
 }
 .transaction-table{
     float right 
-    margin-right:1.2%
-    margin-bottom 0.5%
-    margin-top:0.5%;
-    height: 84%;
+    margin-right 35px
+    margin-top 10px
     th{
         color #89CCE9
         font-size 12px
@@ -266,7 +229,7 @@ export default {
 }
 .scrollbar{
     overflow-y scroll 
-    height 100%
+    height 500px
 }
 
 </style>
