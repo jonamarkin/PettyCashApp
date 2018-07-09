@@ -3,7 +3,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header col-md-12">
-                    <div class="logo"><a href="#"><span class="petty"><b>Petty</b></span><span class="cash">Cash</span></a><span class="logout">Logout</span></div>
+                    <div class="petty">
+                    <span ><b>Petty</b>Cash</span>
+                    <span id="logout" @click="logout" style="float:right;">Logout<img style=" margin-left:5px;" src="../assets/logout.png"></span>
+                </div>
                 </div>
                 <div class="main-content">
                   <div class="header2 col-md-12">
@@ -80,19 +83,21 @@ computed:{
     font-family  :Gotham
     
    
-.logo{
-  font-size:1.2em;
-  margin-left:40px;
-  padding-top:15px;
-
-
-  .petty{
-  color:#faf3f5;
-
-}
-.cash{
-  color:#daf0f9;
-}
+span{
+        color: #C0E6F6;
+    }
+   span b{
+        color:white;
+    }
+  
+.petty{
+         padding-top 10px
+         #logout{
+              &:hover{
+                  cursor pointer
+         }
+         }
+     } 
 
 
 .logout{
@@ -104,7 +109,7 @@ computed:{
 
 }
   
-}
+
 
 }
 .header2{

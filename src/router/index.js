@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import PettyForm from '@/components/PettyForm'
 import login from '@/components/login'
-import Admin from '@/components/Admin'
 import UserPage from '@/components/UserPage'
 import AdminInbox from '@/components/AdminInbox'
 import transactions from '@/components/transactions'
@@ -23,11 +22,6 @@ export default new Router({
       path: '/PettyForm',
       name: 'PettyForm',
       component: PettyForm
-    },
-    {
-      path: '/Admin',
-      name: 'Admin',
-      component: Admin
     },
     {
       path: '/UserPage',

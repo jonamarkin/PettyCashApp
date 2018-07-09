@@ -51,7 +51,7 @@
             <div class="sidenav col-md-1">
                 <p @click="inbox"><img src="../assets/inbox.png">INBOX</p>
                 <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
-                <p id="page" @click="contact"><img src="../assets/blueicons/contacts.png">CONTACTS</p>
+                <p style="color:#81CCEC;" @click="contact"><img src="../assets/blueicons/contacts.png">CONTACTS</p>
                 <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
                 <p @click="help"><img src="../assets/help.png">HELP</p>
             </div>
@@ -193,9 +193,6 @@ inbox(){
             color #81CCEC
         }
     }
-  #page{
-     color:#81CCEC
-  }  
 }
 .transaction-table{
     float right 
