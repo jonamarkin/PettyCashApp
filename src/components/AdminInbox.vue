@@ -1,28 +1,26 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <div class="header col-md-12">
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="header col-md-12 col-lg-12 col-xl-12">
                 <div class="petty">
                     <span ><b>Petty</b>Cash</span>
                     <span id="logout" @click="logout" style="float:right;">Logout<img style=" margin-left:5px;" src="../assets/logout.png"></span>
                 </div>
                 </div>
-                <div class="header2 col-md-12">
-                <div class="info col-md-12">
+                <div class="header2 col-md-12 col-lg-12 col-xl-12">
+                <div class="info col-md-12 col-lg-12 col-xl-12">
                     <img style="width:50px;" src="../assets/login.png">
                     <span>Racheal Mensah</span>
                     <span><img style="width:20px;" src="../assets/green.png"><small>Online</small></span>
                 </div>
-            </div>         
-                <div class="col-md-11 transaction-table">
+                </div>         
+                <div class="col-md-11 col-lg-11 col-xl-11 transaction-table">
                     <table class="table">
                         <thead class="thead">
                             <tr>
-                            <th scope="col">PAYMENT MODE</th>
-                            <th scope="col">REQUESTED</th>
-                            <th scope="col">RECEIVED</th>
-                            <th scope="col">APPROVED/DECLINED</th>
+                            <th scope="col">FROM</th>
+                            <th scope="col">SUBJECT</th>
                             <th scope="col">DATE</th>
                             <th scope="col">TIME</th>
                             </tr>
@@ -31,8 +29,6 @@
 
                             <tr v-for="post in posts" :key="post.title" class="post-item">
                                  <td><input type="checkbox">{{post.title}}</td>
-                                 <td>{{post.title}}</td>
-                                 <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
@@ -75,8 +71,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="sidenav col-md-1">
-                    <p id="page"  @click="inbox"><img src="../assets/blueicons/inbox.png">INBOX</p>
+                <div class="sidenav col-md-1 col-lg-1 col-xl-1">
+                    <p id="page" @click="inbox"><img src="../assets/blueicons/inbox.png">INBOX</p>
                     <p @click="payment"><img src="../assets/payment.png">PAYMENT</p>
                     <p @click="contact"><img src="../assets/contact.png">CONTACTS</p>
                     <p @click="settings"><img src="../assets/settings.png">SETTINGS</p>
@@ -124,12 +120,13 @@ computed:{
 </script>
 <style lang="stylus" scoped>
 .header{
-    height:50px;
+    height:8%;
     background:#6CC5EB;
-    margin-top :15px; 
+    margin-top :1%; 
     font-family  :Gotham
-    
-
+    width: 95%;
+    margin-right:2.5%;
+    margin-left:2.5%
 
 
 .logout{
@@ -161,10 +158,13 @@ span{
 
 }
 .header2{
-    margin-top:10px;
-    height :70px;
+    margin-top:0.5%;
+    height :10%;
     background :#FCFCFC;
     border:2px solid #F1F1F1;
+    width:95%
+    margin-left:2.5%
+    margin-right:2.5%
   .info{
      font-size 12px
      font-weight bold
@@ -174,13 +174,16 @@ span{
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 500px
-    width 70px;
-    font-size 7px
+    height 85%
+    width 6%;
+    font-size 6.5px
     font-weight bold
     color #E1E1E1
     text-align center
-    margin-top 10px
+    margin-top 0.5%
+    margin-bottom 0.5%
+    margin-right 0
+    margin-left 2.5%;
 
     img{
         width 30px
@@ -202,8 +205,10 @@ span{
 }
 .transaction-table{
     float right 
-    margin-right 35px
-    margin-top 10px
+    margin-right:1.2%
+    margin-top 0.5%
+    margin-bottom 0.5%
+    height: 85%;
     th{
         color #89CCE9
         font-size 12px

@@ -104,10 +104,14 @@ inbox(){
 </script>
 <style lang="stylus" scoped>
 .header{
-    height:50px;
+    height:8%;
     background:#6CC5EB;
-    margin-top :15px; 
+    margin-top :1%; 
     font-family  :Gotham
+    width: 95%;
+    margin-right:2.5%;
+    margin-left:2.5%
+
     
     span{
         color: #C0E6F6;
@@ -126,10 +130,13 @@ inbox(){
     }
 }
 .header2{
-    margin-top:10px;
-    height :70px;
+    margin-top:0.5%;
+    height :10%;
     background :#FCFCFC;
     border:2px solid #F1F1F1;
+    width:95%
+    margin-left:2.5%
+    margin-right:2.5%
   .info{
      font-size 12px
      font-weight bold
@@ -138,13 +145,16 @@ inbox(){
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 500px
-    width 70px;
-    font-size 7px
+    height 85%
+    width 6%;
+    font-size 6.5px
     font-weight bold
     color #E1E1E1
     text-align center
-    margin-top 10px
+    margin-top 0.5%
+    margin-bottom 0.5%
+    margin-right 0
+    margin-left 2.5%;
 
     img{
         width 30px
@@ -168,8 +178,10 @@ inbox(){
 }
 .transaction-table{
     float right 
-    margin-right 35px
-    margin-top 10px
+    margin-right:1.2%
+    margin-top 0.5%
+    margin-bottom 0.5%
+    height: 85%;
     th{
         color #89CCE9
         font-size 12px
@@ -183,7 +195,7 @@ inbox(){
 }
 .scrollbar{
     overflow-y scroll 
-    height 500px 
+    height 100% 
 }
 
 </style>

@@ -94,11 +94,14 @@ computed:{
 </script>
 <style lang="stylus" scoped>
 .header{
-    height:50px;
+    height:8%;
     background:#6CC5EB;
-    margin-top :15px; 
+    margin-top :1%; 
     font-family  :Gotham
-   
+    width: 95%;
+    margin-right:2.5%;
+    margin-left:2.5%
+
 span{
         color: #C0E6F6;
     }
@@ -187,14 +190,16 @@ span{
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 500px
-    width 70px;
-    font-size 7px
+    height 99%
+    width 6%;
+    font-size 6.5px
     font-weight bold
     color #E1E1E1
     text-align center
-    margin-top:10px;
-
+    margin-top 0.5%
+    margin-bottom 0.5%
+    margin-right 0
+    margin-left 2.5%;
     img{
         width 30px
         margin-top 10px
@@ -213,11 +218,12 @@ span{
 }
 .manage{
     float right 
-    margin-right 35px
-    margin-top 10px
-    height:100px;
+    margin-top 0.5%
+    height:15%;
     background:#fafafa;
     font-family Gotham
+    width:89%
+    margin-right:2.2%;
 
     .more{
      color #CECECE
@@ -234,12 +240,13 @@ span{
 
 .compInfo{
     float right 
-    margin-right 35px
-    margin-top 10px
-    border 2px solid #F1F1F1
-    height:280px;
+    margin-top 0.5%
+    margin-bottom 0.5%
+    height:64%;
     background:#fcfcfc;
     font-family Gotham
+    width:89%
+    margin-right:2.2%;
 
     h3{
         font-family Gotham
@@ -286,11 +293,11 @@ span{
 
 .newsletter{
     float right 
-    margin-right 35px
-    margin-top 10px
-    height:100px;
+    height:17%;
     background:#fafafa;
     font-family Gotham
+    width:89%
+    margin-right:2.2%;
 
     h4{
         font-family Gotham
