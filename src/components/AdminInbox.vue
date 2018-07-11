@@ -28,7 +28,7 @@
                         <tbody>
 
                             <tr v-for="post in posts" :key="post.title" class="post-item">
-                                 <td><input class="checkbox" type="checkbox">{{post.title}}</td>
+                                 <td><input class="checkbox" type="checkbox" @click="clicked">{{post.title}}</td>
                                  <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
                                  <td>{{post.title}}</td>
@@ -108,15 +108,18 @@ methods:{
 },help(){
   this.$router.push({name: 'help'})
 }
+
 },
+
 
 computed:{
     posts(){
         return this.$store.state.posts
     }
+
 }
-    
 }
+
 </script>
 <style lang="stylus" scoped>
 .header{
@@ -224,5 +227,7 @@ span{
       margin-right 20px
     }
 }
+
+
 
 </style>

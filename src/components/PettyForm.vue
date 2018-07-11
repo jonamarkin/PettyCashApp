@@ -1,10 +1,13 @@
 <template>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="PettyForm col-md-10 col-sm-10 col-xs-10">
-                <p class="petty"><b>Petty</b>Cash</p>
-                <p><b>DETAILS</b></p>
+            <div class="header col-md-12 col-lg-12 col-xl-12">
+                <div class="petty">
+                    <span ><b>Petty</b>Cash</span>
+                </div>
+            </div>
+            <div class="PettyForm col-md-12 col-sm-12 col-xs-12">
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -35,30 +38,6 @@
                         </div>
                          
                     </div>
-                    <div class="form-row">
-
-                        <!-- <div class="form-group col-md-4 amount">
-                        <label for="Payment"><b>Select Payment Method:</b></label>
-                        <select class="form-control" id="Payment">
-                            <option>Cash</option>
-                            <option>MTN Mobile Money</option>
-                            <option>Airtel Money</option>
-                            <option>tiGO Cash</option>
-                            <option>Vodafone Cash</option>
-                        </select>
-                        <div class="buttons">
-                        <button type="reset" class="btn  reset" >RESET</button>
-                        <button type="submit" class="btn  send" @click="sendRequest">SEND</button>
-                        </div>
-                        </div> -->
-                        
-                        
-                    </div>
-                    <div class="form-row buttons">              
-                    
-                        
-                    </div>
-                    
                 </form>
             </div>
         </div>
@@ -84,27 +63,40 @@ methods:{
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.PettyForm{
-    margin: auto;
-}
+<style lang="stylus">
+
+.header{
+    height:10%;
+    background:#6CC5EB;
+    margin-top :1%; 
+    font-family  :Gotham
+    width: 90%;
+    margin-right:2.5%;
+    margin-left:2.5%
+
+span{
+        color: #C0E6F6;
+    }
+   span b{
+        color:white;
+    }
+  
 .petty{
-    font-size:2em;
-    color:#4dbded;
-    text-align:center;
-    margin: 0 auto;
-}
-
-
-.container{
-    background:#fcfcfc;
-    font-family:Gotham;
-    margin: auto;
-    margin-top:30px;
-    border: 1px solid #f6f6f6;
-    margin-bottom:30px;
+         padding-top 10px
+         #logout{
+              &:hover{
+                  cursor pointer
+         }
+         }
+     } 
 
 }
+
+.PettyForm{
+    width: 95%
+    margin-left:2.5%
+    margin-right 25%
+    margin-top: 0.5%;
 
 .right{
     margin-left:150px;
@@ -117,13 +109,17 @@ methods:{
 }
 
 .reset{
-    background:#ff0000;
-    color:#ffc4c7;
+    color:#6CC5EB;
+    border: 2px solid #6CC5EB;
+    background #ffffff;
+    font-weight bold
 }
 
 .send{
-    background: #00c174;
-    color:#c4f3e0;
+    background:#6CC5EB;
+    //color:#c4f3e0;
+    font-weight bold
+    color #f1f1f1;
 }
 
 #Description{
@@ -145,5 +141,5 @@ option{
 .form-group{
     border-radius: 0;
 }
-
+}
 </style>
