@@ -43,14 +43,21 @@
 								<td>Buy a new laptop</td>
 								<td>10-Jul-18 14:20</td>
 								<td>
-									<div class="ui dropdown">
+									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
 
 										<div class="menu">
 											<a href="" class="item">Approve</a>
 											<a href="" class="item">Decline</a>
 										</div>
-									</div>
+									</div> -->
+									<sui-dropdown icon="ellipsis vertical">
+										<sui-dropdown-menu class="left floated">
+										<sui-dropdown-item><a href="" class="item">Approve</a></sui-dropdown-item>
+										<sui-dropdown-item><a href="" class="item">Decline</a></sui-dropdown-item>
+			
+										</sui-dropdown-menu>
+									</sui-dropdown>
 								</td>
 							</tr>
 
@@ -67,14 +74,13 @@
 								<td>Gob3</td>
 								<td>10-Jul-18 14:20</td>
 								<td>
-									<div class="ui dropdown">
-										<i class="ellipsis vertical icon"></i>
-
-										<div class="menu">
-											<a href="" class="item">Approve</a>
-											<a href="" class="item">Decline</a>
-										</div>
-									</div>
+									<sui-dropdown icon="ellipsis vertical">
+										<sui-dropdown-menu class="left floated">
+										<sui-dropdown-item><a href="" class="item">Approve</a></sui-dropdown-item>
+										<sui-dropdown-item><a href="" class="item">Decline</a></sui-dropdown-item>
+			
+										</sui-dropdown-menu>
+									</sui-dropdown>
 								</td>
 							</tr>
 						</tbody>
@@ -90,10 +96,6 @@
 <script>
 
 import Header from './Header.vue';
-
-$(document).ready(function(){
-	$(".ui.dropdown").dropdown();
-})
 
 export default {
   name: 'AdminInbox',

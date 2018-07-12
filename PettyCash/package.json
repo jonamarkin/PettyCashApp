@@ -12,6 +12,8 @@
   "dependencies": {
     "save": "^2.3.2",
     "semantic-ui": "^2.3.3",
+    "semantic-ui-css": "^2.3.3",
+    "semantic-ui-vue": "^0.2.11",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

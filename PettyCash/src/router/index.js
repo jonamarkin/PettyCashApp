@@ -8,8 +8,11 @@ import UserSide from '@/components/UserSide'
 import UserTable from '@/components/UserTable'
 import Header from '@/components/Header'
 import Login from '@/components/Login'
+import '../assets/semantic/out/semantic.min.css'
+import SuiVue from 'semantic-ui-vue'
 
 Vue.use(Router)
+Vue.use(SuiVue);
 
 export default new Router({
   mode: 'history',
