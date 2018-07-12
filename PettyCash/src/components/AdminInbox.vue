@@ -1,0 +1,270 @@
+<template>
+    <div class="thirteen wide column no-padding" id="app">	
+			<Header></Header>
+			<!-- this is for all the main changes -->
+					<div class="ui relaxed grid no-margin">
+						<div class="column no-padding-bottom">
+							<div class="ui secondary menu">
+								<a href="" class="ui basic green button item">Approve all</a>
+								<a href="" class="ui basic red button item">Decline all</a>
+							</div>
+						</div>
+					</div>
+					
+					<table class="ui basic table">
+						<thead>
+							<tr>
+								<th>
+									<div class="ui checkbox">
+									  	<input type="checkbox" name="example">
+									  	<label></label>
+									</div>
+								</th>
+								<th>From</th>
+								<th>Subject</th>
+								<th>Amount</th>
+								<th>Reason</th>
+								<th>Datetime</th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr class="light-grey">
+								<td>
+									<div class="ui checkbox">
+									  	<input type="checkbox" name="example">
+									  	<label></label>
+									</div>
+								</td>
+								<td>Larry Dewan Buntus</td>
+								<td>Cash Request</td>
+								<td>1000</td>
+								<td>Buy a new laptop</td>
+								<td>10-Jul-18 14:20</td>
+								<td>
+									<div class="ui dropdown">
+										<i class="ellipsis vertical icon"></i>
+
+										<div class="menu">
+											<a href="" class="item">Approve</a>
+											<a href="" class="item">Decline</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<div class="ui checkbox">
+									  	<input type="checkbox" name="example">
+									  	<label></label>
+									</div>
+								</td>
+								<td>Andy Cooxy</td>
+								<td>Cash Request</td>
+								<td>10</td>
+								<td>Gob3</td>
+								<td>10-Jul-18 14:20</td>
+								<td>
+									<div class="ui dropdown">
+										<i class="ellipsis vertical icon"></i>
+
+										<div class="menu">
+											<a href="" class="item">Approve</a>
+											<a href="" class="item">Decline</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			<!-- end of main changes -->
+    </template>
+	
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/semantic.min.js"></script>
+<script>
+
+import Header from './Header.vue';
+
+$(document).ready(function(){
+	$(".ui.dropdown").dropdown();
+})
+
+export default {
+  name: 'AdminInbox',
+  data () {
+    return {
+
+    }
+  },
+  components:{
+	  'Header':Header
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+.table{
+    border-left: none!important;
+    border-right: none!important;
+    border-radius: 0px!important;
+}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+
+a,
+p,
+h1,h2,h3,h4,
+small,
+label{
+color: #777!important;
+font-family: 'Open Sans', sans-serif!important;
+}
+
+/*display*/
+.display-block{
+display: block!important;
+}
+
+.display-flex{
+display: flex!important
+}
+
+
+/*padding*/
+.no-padding{
+padding: 0px!important;
+}
+
+.no-padding-bottom{
+padding-bottom: 0px!important;
+}
+
+/*margin*/
+.no-margin{
+margin: 0px!important;
+}
+
+.no-margin-bottom {
+margin-bottom: 0px!important;
+}
+
+
+/*shadows*/
+.z-depth {
+box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.2) !important;
+}
+
+.z-depth-1{
+box-shadow: 1px 2px 5px rgba(0,0,0,0.15)!important;
+}
+
+/*colors*/
+.blue-text {
+color: #67AEE6!important;
+}
+
+.blue-background{
+background: #67AEE6!important;
+}
+
+.white-text{
+color: #fff!important;
+}
+.white{
+background: #fff!important;
+}
+.light-grey{
+background: #fafafa!important;
+}
+
+/*width*/
+.u-full-width{
+width: 100%!important;
+}
+
+/*height*/
+.u-full-height{
+height: 100%!important;
+}
+.min-height-100{
+min-height: 100vh;
+}
+
+/*typograph*/
+.center-align{
+text-align: center!important;
+}
+.left-align{
+text-align: left!important;
+}
+.right-align{
+text-align: right!important;
+}
+
+
+/*position*/
+.position-relative{
+position: relative!important;
+}
+
+.vertically-center{
+position: absolute !important;
+width: auto !important;
+top: 50% !important;
+left: 50% !important;
+transform: translate(-50%, -50%) !important;
+}
+
+.absolute-center {
+position: absolute !important;
+width: 100% !important;
+top: 50% !important;
+transform: translateY(-50%) !important;
+}
+
+/*media*/
+.center-block{
+display: block!important;
+margin: 0px auto;
+}
+
+
+/*form*/
+button.rounded,
+input.rounded,
+textarea.rounded{
+border-radius: 25px!important;
+}
+
+
+
+/*custom*/
+.profile{
+padding: 20px 10px;
+}
+.profile-image{
+width: 75px;
+height: 75px;
+overflow: hidden;
+border-radius: 50%;
+}
+.main-menu .item i{
+float: none!important;
+margin-left: 0px!important;
+margin-right: 10px!important;
+}
+
+#app {
+overflow-x: hidden;
+}
+
+.top-nav{
+height: 64px;
+}
+</style>
