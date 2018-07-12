@@ -107,7 +107,7 @@ inbox(){
     border:2px solid #F1F1F1;
     float right
     margin-bottom 0.5%
-    height: 98%;
+    height: 580px;
     width:89%
     margin-right:2.3%;
     .title{
@@ -168,7 +168,7 @@ inbox(){
 .sidenav{
     background #FCFCFC
     border 2px solid #F1F1F1
-    height 98%
+    height 580px
     width 6%;
     font-size 6.5px
     font-weight bold
