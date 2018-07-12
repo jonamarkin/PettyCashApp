@@ -1,18 +1,23 @@
 <template>
+  <sui-grid>
+    <sui-grid-row>
+      <sui-grid-column :width="8">
+        <docs-wireframe name="paragraph" />
+      </sui-grid-column>
+      <sui-grid-column :width="8">
+        <docs-wireframe name="paragraph" />
+      </sui-grid-column>
+    </sui-grid-row>
 
-    <div class="ui centered internally celled grid loginbox">
-    <div class="row login">
-        <div class="four wide column loginside center aligned ">
-        <img class="ui small centered circular image" src="../assets/img/users/usericon.png">
-        <button class="ui white button rounded z-depth but"><i class="red google icon"></i> Login With Google</button>
-        </div>
-        <div class="six wide column pettyside center aligned">
-            <h1>Welcome</h1>
-            <h3>Login to Access Your Account</h3>
-        </div>
-    </div>
-    </div>
-
+    <sui-grid-row>
+      <sui-grid-column :width="8">
+        <docs-wireframe name="paragraph" />
+      </sui-grid-column>
+      <sui-grid-column :width="8">
+        <docs-wireframe name="paragraph" />
+      </sui-grid-column>
+    </sui-grid-row>
+  </sui-grid>
 </template>
 
 
@@ -26,22 +31,29 @@ export default {
   }
 }
 </script>
+<style>
+
+</style>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .loginbox{
-    border: 1px sloid black;
-    height: 600px;;
-    box-shadow: 5px 10px #888888;
+    height:600px;
     padding-top:100px;
     padding-bottom:100px;
 }
 .loginside{
     background: #f4f4f4;
+    width:40%;
+    
+    
 }
 
 .pettyside{
-    background:#f1f1f1;
+    background:blue;
+    width:60%;
+    float: right;
 }
 
 login{
@@ -50,7 +62,7 @@ login{
 
 .but{
     background: white;
-    border-radius:15px;
+    border-radius:25px!important;
     border: 1px solid #888888;
 }
 </style>
