@@ -18,32 +18,32 @@
 			    	<sui-button @click.native="toggle">MAKE A NEW REQUEST</sui-button>
                         <sui-modal v-model="open">
                         <sui-modal-header>REQUEST FORM</sui-modal-header>
-                        <sui-modal-content image>
-                            <sui-form>
-                                <sui-form-field>
-                                <label>First Name</label>
-                                <input placeholder="First Name" >
-                                </sui-form-field>
-                                <sui-form-field>
-                                <label>Last Name</label>
-                                <input placeholder="Last Name" >
-                                </sui-form-field>
-                                <sui-form-field>
-                                <sui-checkbox label="I agree to the Terms and Conditions" />
-                                </sui-form-field>
-                                <sui-button type="submit">Submit</sui-button>
-                            </sui-form>
+                        <sui-modal-content>
+                            <sui-modal-description>
+                                <sui-form>
+                                    <sui-form-field>
+                                    <label>Date</label>
+                                    <input placeholder="Date Money is Needed" type="date" >
+                                    </sui-form-field>
+                                    <sui-form-field>
+                                    <label>Amount</label>
+                                    <input placeholder="Amount Needed"  type="number">
+                                    </sui-form-field>
+                                    <sui-form-field class="right floated">
+                                    <label>Description</label>
+                                    <textarea></textarea>
+                                    </sui-form-field>
+                                    <sui-button type="submit" positive content="Submit Request" />
+                                </sui-form>
+                            </sui-modal-description>
                         </sui-modal-content>
                         <sui-modal-actions>
-                            <sui-button floated="right" positive @click.native="toggle">
-                            OK
-                            </sui-button>
                         </sui-modal-actions>
                     </sui-modal>
 			  	</a>
 			</div>
 		</div>
-		
+		<usertable></usertable>
 
                 
 </div>
@@ -54,6 +54,7 @@
 
 
 <script>
+import UserTable from './UserTable.vue';
 import AdminInbox from './AdminInbox.vue';
 // import Header from './Header.vue';
 export default {
@@ -64,7 +65,8 @@ export default {
     return { open: false };
 },
   components:{
-	  'admininbox':AdminInbox,
+      'admininbox':AdminInbox,
+      'usertable':UserTable
 	//   'Header' :Header
   },
   methods: {
