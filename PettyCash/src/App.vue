@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <div class="ui grid no-margin min-height-100"> -->
-   
-      <router-view/>
+      <adminside></adminside>
+      <!-- <router-view/> -->
     <!-- </div> -->
   </div>
 </template>

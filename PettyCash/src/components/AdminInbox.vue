@@ -1,5 +1,7 @@
 <template>
     <div class="thirteen wide column no-padding" id="app">
+
+			<Header></Header>
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom">
@@ -84,12 +86,18 @@
 
 
 <script>
+
+import Header from './Header.vue';
+
 export default {
   name: 'AdminInbox',
   data () {
     return {
 
     }
+  },
+  components:{
+	  'Header':Header
   }
 }
 </script>

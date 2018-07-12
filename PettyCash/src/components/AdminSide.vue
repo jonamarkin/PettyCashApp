@@ -30,8 +30,8 @@
 			  	</a>
 			</div>
 		</div>
-
-       
+		
+       <admininbox></admininbox>
 
                 
 </div>
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import AdminInbox from './AdminInbox.vue';
+// import Header from './Header.vue';
 export default {
   name: 'AdminSide',
   data () {
@@ -48,9 +50,10 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-//   components:{
-//       'admininbox':AdminInbox
-//   }
+  components:{
+	  'admininbox':AdminInbox,
+	//   'Header' :Header
+  }
 }
 </script>
 

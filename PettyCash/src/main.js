@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import AdminSide from '@/components/AdminSide'
+
+Vue.component('adminside', AdminSide);
 
 Vue.config.productionTip = false
 
