@@ -11,6 +11,8 @@ import Login from '@/components/Login'
 import '../assets/semantic/out/semantic.min.css'
 import SuiVue from 'semantic-ui-vue'
 
+
+
 Vue.use(Router)
 Vue.use(SuiVue);
 
