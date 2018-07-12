@@ -10,7 +10,12 @@ import Header from '@/components/Header'
 import Login from '@/components/Login'
 import '../assets/semantic/out/semantic.min.css'
 import SuiVue from 'semantic-ui-vue'
+import AdminDashboard from '@/components/AdminDashboard'
+import UserDashboard from '@/components/UserDashboard'
+import FinanceDash from '@/components/FinanceDash'
+import vPikaday from 'vue-pikaday'
 
+Vue.use(vPikaday)
 Vue.use(Router)
 Vue.use(SuiVue);
 
@@ -56,6 +61,21 @@ export default new Router({
       path: '/Login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/AdminDashboard',
+      name: 'AdminDasboard',
+      component: AdminDashboard
+    },
+    {
+      path: '/UserDashboard',
+      name: 'UserDasboard',
+      component: UserDashboard
+    },
+    {
+      path: '/FinanceDash',
+      name: 'FinanceDash',
+      component: FinanceDash
     }
   ]
 })

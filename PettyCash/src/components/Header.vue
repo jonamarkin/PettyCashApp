@@ -1,10 +1,10 @@
 <template>
-<div class="ui secondary menu z-depth-1 top-nav">
-    
-    <div class="right menu">
-        <a class="ui item">Logout</a>
-    </div>
-</div>
+	<div class="ui secondary menu z-depth-1 top-nav">
+		
+		<div class="right menu">
+			<a class="ui item"><sui-button primary fluid>Logout</sui-button></a>
+		</div>
+	</div>
 </template>
 
 

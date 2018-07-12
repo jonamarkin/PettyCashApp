@@ -32,8 +32,12 @@
 								<td>1000</td>
 								<td>Buy a new laptop</td>
 								<td>10-Jul-18 14:20</td>
-							</tr>
-
+                                
+							<!-- </tr>
+                            
+                                <tr id="collapse">
+                                    <td colspan="6">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</td>
+                                </tr>-->
 							<tr>
 								<td>
 									<div class="ui checkbox">
@@ -59,6 +63,7 @@
 <script>
 
 import Header from './Header.vue';
+import UserSide from './UserSide.vue';
 
 export default {
   name: 'AdminInbox',
@@ -68,13 +73,19 @@ export default {
     }
   },
   components:{
-	  'Header':Header
+      'Header':Header,
+      'userside':UserSide
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
+tr.collapse.in {
+  display:table-row;
+}
+
 .table{
     border-left: none!important;
     border-right: none!important;

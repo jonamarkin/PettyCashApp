@@ -1,5 +1,4 @@
 <template>
-<div class="ui grid no-margin min-height-100">
 		<div class="three wide column no-padding light-grey" id="side-nav">
 			<div class="u-full-width profile">
 				<div class="profile-image center-block position-relative white">
@@ -31,19 +30,12 @@
 			</div>
 		</div>
 		
-       <admininbox></admininbox>
-
-                
-</div>
+       <!-- <admininbox></admininbox> -->              
 
 			<!-- end of main changes -->
 		
 </template>
 
-
-<script src="../assets/js/app.js"></script>
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/semantic.min.js"></script>
 
 <script>
 import AdminInbox from './AdminInbox.vue';

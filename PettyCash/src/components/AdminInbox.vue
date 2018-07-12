@@ -1,5 +1,8 @@
 <template>
+
+	<!-- <adminside></adminside> -->
     <div class="thirteen wide column no-padding" id="app">	
+			
 			<Header></Header>
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
@@ -90,12 +93,10 @@
     </template>
 	
 
-<script src="../assets/js/app.js"></script>
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/semantic.min.js"></script>
 <script>
 
 import Header from './Header.vue';
+import AdminSide from './AdminSide.vue';
 
 export default {
   name: 'AdminInbox',
@@ -105,7 +106,8 @@ export default {
     }
   },
   components:{
-	  'Header':Header
+	  'Header':Header,
+	  'adminside':AdminSide
   }
 }
 </script>

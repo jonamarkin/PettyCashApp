@@ -1,5 +1,4 @@
 <template>
-<div class="ui grid no-margin min-height-100">
 		<div class="three wide column no-padding light-grey" id="side-nav">
 			<div class="u-full-width profile">
 				<div class="profile-image center-block position-relative white">
@@ -11,19 +10,21 @@
 
 			<!-- menus -->
 			<div class="ui secondary vertical pointing menu u-full-width main-menu ">
-			  	<a class=" active icon item" >
+			  	<a class=" active icon item" href="">
 			    	<i class="home icon"></i> INBOX
 			  	</a>
 			  	<a class="item ">
-			    	<sui-button @click.native="toggle">MAKE A NEW REQUEST</sui-button>
-                        <sui-modal v-model="open">
-                        <sui-modal-header>REQUEST FORM</sui-modal-header>
+			    	<sui-button primary @click.native="toggle" class="z-depth-1">MAKE A NEW REQUEST</sui-button>
+                        <sui-modal v-model="open" >
+                        <sui-modal-header >REQUEST FORM</sui-modal-header>
                         <sui-modal-content>
                             <sui-modal-description>
                                 <sui-form>
                                     <sui-form-field>
                                     <label>Date</label>
-                                    <input placeholder="Date Money is Needed" type="date" >
+                                    <!-- <input type="text" v-date="date" placeholder="Date Money is Needed"  v-pikaday> -->
+                                    <!-- <datepicker :format="customFormatter"></datepicker> -->
+                                    <datepicker></datepicker>
                                     </sui-form-field>
                                     <sui-form-field>
                                     <label>Amount</label>
@@ -31,9 +32,9 @@
                                     </sui-form-field>
                                     <sui-form-field class="right floated">
                                     <label>Description</label>
-                                    <textarea></textarea>
+                                    <textarea rows="3"></textarea>
                                     </sui-form-field>
-                                    <sui-button type="submit" positive content="Submit Request" />
+                                    <sui-button primary type="submit" content="Submit Request" />
                                 </sui-form>
                             </sui-modal-description>
                         </sui-modal-content>
@@ -43,10 +44,7 @@
 			  	</a>
 			</div>
 		</div>
-		<usertable></usertable>
-
-                
-</div>
+		<!-- <usertable></usertable>                 -->
 
 			<!-- end of main changes -->
 		
@@ -56,23 +54,27 @@
 <script>
 import UserTable from './UserTable.vue';
 import AdminInbox from './AdminInbox.vue';
+import Datepicker from '../../node_modules/vuejs-datepicker';
 // import Header from './Header.vue';
 export default {
   name: 'AdminSide',
   data () {
-    isActive: true;
-    hasError: false;
-    return { open: false };
+    return { 
+         open: false };
 },
   components:{
       'admininbox':AdminInbox,
-      'usertable':UserTable
+      'usertable':UserTable,
+      Datepicker
 	//   'Header' :Header
   },
   methods: {
     toggle() {
       this.open = !this.open;
     },
+    customFormatter(date) {
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    }
   }
 }
 </script>
