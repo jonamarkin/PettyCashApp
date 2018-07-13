@@ -47,7 +47,7 @@ export default {
     background-size: cover;
 }
 .welcome{
-  padding-top:15%;
+  padding-top:20%;
   padding-bottom:20%;
 }
 button{
