@@ -1,49 +1,33 @@
 <template>
-<div class="ui grid no-margin min-height-100">
 		<div class="three wide column no-padding light-grey" id="side-nav">
 			<div class="u-full-width profile">
 				<div class="profile-image center-block position-relative white">
 					<img src="../assets/img/users/1.png" alt="" class="absolute-center">
 				</div>
-				<p class="center-align" style="color: #777">Esther Aburabura</p>
+				<p class="center-align" style="color: #777">Paapa Sam</p>
 			</div>
 
 
 			<!-- menus -->
 			<div class="ui secondary vertical pointing menu u-full-width main-menu">
-			  	<a class="active icon item">
+			  	<a class="active icon item" href="">
 			    	<i class="home icon"></i> INBOX
 			  	</a>
-			  	<a class="item">
-				    <i class="money bill alternate outline icon"></i> PAYMENTS
-				</a>
-			  	<a class="item">
+			  	<a class="item" href="">
 			    	<i class="address book outline icon"></i> CONTACTS
 			  	</a>
-
-			  	<a class="item">
+			  	<a class="item" href="">
 			    	<i class="cog icon"></i> SETTINGS
-			  	</a>
-
-			  	<a class="item">
-			    	<i class="address book outline icon"></i> CONTACTS
 			  	</a>
 			</div>
 		</div>
 		
-       <admininbox></admininbox>
-
-                
-</div>
+       <!-- <admininbox></admininbox> -->              
 
 			<!-- end of main changes -->
 		
 </template>
 
-
-<script src="../assets/js/app.js"></script>
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/semantic.min.js"></script>
 
 <script>
 import AdminInbox from './AdminInbox.vue';

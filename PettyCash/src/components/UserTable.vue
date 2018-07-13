@@ -5,12 +5,12 @@
 					<table class="ui basic table">
 						<thead>
 							<tr>
-								<th>
+								<!-- <th>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
-								</th>
+								</th> -->
 								<th>Subject</th>
 								<th>Payment Mode</th>
 								<th>Amount</th>
@@ -20,27 +20,31 @@
 						</thead>
 
 						<tbody>
-							<tr class="light-grey">
-								<td>
+							<tr @click="toggle" class="light-grey">
+								<!-- <td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
-								</td>
+								</td> -->
 								<td>Larry Dewan Buntus</td>
 								<td>Cash Request</td>
 								<td>1000</td>
 								<td>Buy a new laptop</td>
 								<td>10-Jul-18 14:20</td>
-							</tr>
-
-							<tr>
-								<td>
+                                
+							<!-- </tr>
+                            
+                                <tr id="collapse">
+                                    <td colspan="6">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</td>
+                                </tr>-->
+							<tr @click="toggle">
+								<!-- <td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
-								</td>
+								</td> -->
 								<td>Andy Cooxy</td>
 								<td>Cash Request</td>
 								<td>10</td>
@@ -50,7 +54,32 @@
 							</tr>
 						</tbody>
 					</table>
+					<sui-modal v-model="open" size="mini" closeIcon="true" animation="fly down">
+                        <sui-modal-header >REQUEST DETAILS</sui-modal-header>
+                        <sui-modal-content>
+                            <sui-modal-description>
+                                 <sui-card>
+									<sui-card-content>
+									<sui-image src="../assets/img/users/1.png" class="right floated"/>
+									<sui-card-header>Elliot Fu</sui-card-header>
+									<sui-card-meta>Friends of Veronika</sui-card-meta>
+									<sui-card-description>
+										Elliot requested permission to view your contact details
+									</sui-card-description>
+									</sui-card-content>
+									<sui-card-content extra>
+									<sui-container text-align="center">
+										 <sui-button type="submit" negative content="Cancel Request" />
+									</sui-container>
+									</sui-card-content>
+								</sui-card>
+                            </sui-modal-description>
+                        </sui-modal-content>
+                        <sui-modal-actions>
+                        </sui-modal-actions>
+                    </sui-modal>
 				</div>
+				
 			<!-- end of main changes -->
     </template>
 	
@@ -59,22 +88,33 @@
 <script>
 
 import Header from './Header.vue';
+import UserSide from './UserSide.vue';
 
 export default {
   name: 'AdminInbox',
   data () {
-    return {
-
-    }
-  },
+    return { 
+         open: false };
+},
   components:{
-	  'Header':Header
-  }
+      'Header':Header,
+      'userside':UserSide
+  },
+methods: {
+    toggle() {
+      this.open = !this.open;
+	}
+}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
+tr.collapse.in {
+  display:table-row;
+}
+
 .table{
     border-left: none!important;
     border-right: none!important;
@@ -231,5 +271,9 @@ overflow-x: hidden;
 
 .top-nav{
 height: 64px;
+}
+
+tr:hover{
+	cursor:pointer;
 }
 </style>

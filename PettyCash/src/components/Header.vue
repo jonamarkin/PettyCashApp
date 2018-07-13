@@ -1,16 +1,18 @@
 <template>
-<div class="ui secondary menu z-depth-1 top-nav">
+	<div class="ui secondary menu z-depth-1 top-nav">
+		<div class="left menu">
+      <!-- <a class="ui item" is="sui-image"
+      href=""
+      src="../assets/blacklogo.png"
+      ></a> -->
     
-    <div class="right menu">
-        <a class="ui item">Logout</a>
+      <a href=""><img src="../assets/blacklogo.png" width="90px" height="50" style="padding-left:10px; padding-top:10px;"></a>
     </div>
-</div>
+		<div class="right menu">
+			<a class="ui item"><sui-button positive fluid>Logout</sui-button></a>
+		</div>
+	</div>
 </template>
-
-
-<script src="../assets/js/app.js"></script>
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/semantic.min.js"></script>
 
 
 <script>
@@ -26,6 +28,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.logo{
+  width: 80px;
+}
 .table{
     border-left: none!important;
     border-right: none!important;
