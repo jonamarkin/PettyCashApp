@@ -1,15 +1,15 @@
 <template>
 <div class="ui grid no-margin min-height-100">
-    <adminside></adminside>
+    <financeside></financeside>
     <!-- <Header></Header> -->
-    <admininbox></admininbox>
+    <finance></finance>
 </div>
 </template>
 
 <script>
 import Header from './Header.vue';
-import AdminSide from './AdminSide.vue';
-import AdminInbox from './AdminInbox.vue';
+import FinanceSide from './FinanceSide.vue';
+import Finance from './Finance.vue';
 
 export default {
   name: 'AdminDashboard',
@@ -20,8 +20,8 @@ export default {
   },
   components:{
 	  'Header':Header,
-      'adminside':AdminSide,
-      'admininbox':AdminInbox
+      'financeside':FinanceSide,
+      'finance':Finance
   }
 }
 </script>

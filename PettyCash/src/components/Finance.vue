@@ -9,7 +9,7 @@
 						<div class="column no-padding-bottom">
 							<div class="ui secondary menu">
 								<a href="" class="ui basic green button item">Forward</a>
-								<a href="" class="ui basic red button item">Declin</a>
+                                <a href="" class="ui basic red button item">Reject</a>
 							</div>
 						</div>
 					</div>
@@ -56,8 +56,8 @@
 									</div> -->
 									<sui-dropdown icon="ellipsis vertical">
 										<sui-dropdown-menu class="left floated">
-										<sui-dropdown-item><a href="" class="item">Approve</a></sui-dropdown-item>
-										<sui-dropdown-item><a href="" class="item">Decline</a></sui-dropdown-item>
+										<sui-dropdown-item><a href="" class="item">Forward</a></sui-dropdown-item>
+										<sui-dropdown-item><a href="" class="item">Reject</a></sui-dropdown-item>
 			
 										</sui-dropdown-menu>
 									</sui-dropdown>
