@@ -14,8 +14,12 @@ import Vuex from 'vuex'
 import 'es6-promise/auto'
 import AdminDashboard from '@/components/AdminDashboard'
 import transaction from '@/components/transaction'
+import FinanceSide from '@/components/FinanceSide'
 import UserDashboard from '@/components/UserDashboard'
 import FinanceDash from '@/components/FinanceDash'
+import ContactTable from '@/components/ContactTable'
+import Contacts from '@/components/Contacts'
+import Finance from '@/components/Finance'
 import Modal from '@/components/Modal'
 import vPikaday from 'vue-pikaday'
 
@@ -91,6 +95,26 @@ export default new Router({
       path: '/transaction',
       name: 'transaction',
       component:transaction
+    },
+    {
+      path: '/FinanceSide',
+      name: 'FinanceSide',
+      component: FinanceSide
+    },
+    {
+      path: '/Finance',
+      name: 'Finance',
+      component: Finance
+    },
+    {
+      path: '/ContactTable',
+      name: 'ContactTable',
+      component: ContactTable
+    },
+    {
+      path: '/Contacts',
+      name: 'Contacts',
+      component: Contacts
     }
   ]
 })

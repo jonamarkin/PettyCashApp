@@ -1,118 +1,83 @@
 <template>
+
+	<!-- <adminside></adminside> -->
     <div class="thirteen wide column no-padding" id="app">	
+			
 			<Header></Header>
 			<!-- this is for all the main changes -->
+					<div class="ui relaxed grid no-margin">
+						<div class="column no-padding-bottom">
+							<div class="ui right action left icon input fluid">
+                                <i class="search icon"></i>
+                                <input type="text" placeholder="Search Contacts">
+                                <button class="ui positive button">Search</button>
+                            </div>
+						</div>
+					</div>
 					<table class="ui basic table">
 						<thead>
 							<tr>
-								<!-- <th>
-									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
-									  	<label></label>
-									</div>
-								</th> -->
-								<th>Subject</th>
-								<th>Payment Mode</th>
-								<th>Amount</th>
-								<th>Reason</th>
-								<th>Datetime</th>
+								<th>
+							
+								</th>
+								<th>Names</th>
+								<th>Contact</th>
+								<th>Location</th>
+								<th>Email</th>
 								<th></th>
 							</tr>
 						</thead>
 
 						<tbody>
 							<tr class="light-grey">
-								<!-- <td>
-									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
-									  	<label></label>
-									</div>
-								</td> -->
+								<td>
+									<i class="user icon"></i>
+								</td>
 								<td>Larry Dewan Buntus</td>
 								<td>Cash Request</td>
 								<td>1000</td>
 								<td>Buy a new laptop</td>
-								<td>10-Jul-18 14:20</td>
-								<td><i class="trash alternate icon" @click="toggle"></i></td>
-                                
-							<!-- </tr>
-                            
-                                <tr id="collapse">
-                                    <td colspan="6">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</td>
-                                </tr>-->
+								
+							</tr>
+
 							<tr>
-								<!-- <td>
-									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
-									  	<label></label>
-									</div>
-								</td> -->
+								<td>
+									<i class="user icon"></i>
+								</td>
 								<td>Andy Cooxy</td>
 								<td>Cash Request</td>
 								<td>10</td>
 								<td>Gob3</td>
-								<td>10-Jul-18 14:20</td>
-								<td><i class="trash alternate icon" @click="toggle"></i></td>
+			
 							</tr>
 						</tbody>
 					</table>
-					<sui-modal basic v-model="open" size="mini" closeIcon="true" animation="fly down">
-                        <!-- <sui-modal-header >REQUEST DETAILS</sui-modal-header> -->
-                        <div class="ui icon header">
-							<i class="archive icon"></i>
-							Delete Request
-						</div>
-						<div class="content">
-							<p>Are you sure you want to delete this request?</p>
-						</div>
-						<div class="actions">
-							<div class="ui red basic cancel inverted button">
-							<i class="remove icon"></i>
-							No
-							</div>
-							<div class="ui green ok inverted button">
-							<i class="checkmark icon"></i>
-							Yes
-							</div>
-						</div>
-                    </sui-modal>
 				</div>
-				
 			<!-- end of main changes -->
     </template>
 	
 
-
 <script>
 
 import Header from './Header.vue';
-import UserSide from './UserSide.vue';
+import AdminSide from './AdminSide.vue';
 
 export default {
   name: 'AdminInbox',
   data () {
-    return { 
-         open: false };
-},
-  components:{
-      'Header':Header,
-      'userside':UserSide
+    return {
+
+    }
   },
-methods: {
-    toggle() {
-      this.open = !this.open;
-	}
-}
+  components:{
+	  'Header':Header,
+	  'adminside':AdminSide
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
-tr.collapse.in {
-  display:table-row;
-}
-
 .table{
     border-left: none!important;
     border-right: none!important;
@@ -269,9 +234,5 @@ overflow-x: hidden;
 
 .top-nav{
 height: 64px;
-}
-
-tr:hover{
-	cursor:pointer;
 }
 </style>
