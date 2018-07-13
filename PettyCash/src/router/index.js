@@ -13,6 +13,7 @@ import SuiVue from 'semantic-ui-vue'
 import AdminDashboard from '@/components/AdminDashboard'
 import UserDashboard from '@/components/UserDashboard'
 import FinanceDash from '@/components/FinanceDash'
+import Modal from '@/components/Modal'
 import vPikaday from 'vue-pikaday'
 
 Vue.use(vPikaday)
@@ -76,6 +77,11 @@ export default new Router({
       path: '/FinanceDash',
       name: 'FinanceDash',
       component: FinanceDash
+    },
+    {
+      path: '/Modal',
+      name: 'Modal',
+      component: Modal
     }
   ]
 })

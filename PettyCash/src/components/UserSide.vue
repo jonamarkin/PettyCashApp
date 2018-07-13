@@ -2,7 +2,7 @@
 		<div class="three wide column no-padding light-grey" id="side-nav">
 			<div class="u-full-width profile">
 				<div class="profile-image center-block position-relative white">
-					<img src="../assets/img/users/1.png" alt="" class="absolute-center">
+					<img src="../assets/img/users/1.png" alt="" class="absolute-center" >
 				</div>
 				<p class="center-align" style="color: #777">Esther Aburabura</p>
 			</div>
@@ -14,7 +14,7 @@
 			    	<i class="home icon"></i> INBOX
 			  	</a>
 			  	<a class="item ">
-			    	<sui-button primary @click.native="toggle" class="z-depth-1">MAKE A NEW REQUEST</sui-button>
+			    	<sui-button positive @click.native="toggle" class="z-depth-1">MAKE A NEW REQUEST</sui-button>
                         <sui-modal v-model="open" >
                         <sui-modal-header >REQUEST FORM</sui-modal-header>
                         <sui-modal-content>
@@ -34,7 +34,7 @@
                                     <label>Description</label>
                                     <textarea rows="3"></textarea>
                                     </sui-form-field>
-                                    <sui-button primary type="submit" content="Submit Request" />
+                                    <sui-button positive type="submit" content="Submit Request" />
                                 </sui-form>
                             </sui-modal-description>
                         </sui-modal-content>
