@@ -7,9 +7,11 @@ import Settings from '@/components/Settings'
 import UserSide from '@/components/UserSide'
 import UserTable from '@/components/UserTable'
 import Header from '@/components/Header'
-import Login from '@/components/Login'
+import login from '@/components/login'
 import '../assets/semantic/out/semantic.min.css'
 import SuiVue from 'semantic-ui-vue'
+import Vuex from 'vuex'
+import 'es6-promise/auto'
 import AdminDashboard from '@/components/AdminDashboard'
 import UserDashboard from '@/components/UserDashboard'
 import FinanceDash from '@/components/FinanceDash'
@@ -19,6 +21,7 @@ import vPikaday from 'vue-pikaday'
 Vue.use(vPikaday)
 Vue.use(Router)
 Vue.use(SuiVue);
+Vue.use(Vuex)
 
 export default new Router({
   mode: 'history',
@@ -59,9 +62,9 @@ export default new Router({
       component: Header
     },
     {
-      path: '/Login',
-      name: 'Login',
-      component: Login
+      path: '/login',
+      name: 'login',
+      component:login
     },
     {
       path: '/AdminDashboard',

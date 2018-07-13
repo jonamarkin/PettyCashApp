@@ -12,6 +12,11 @@ export default {
 }
 </script>
 
+
+<style>
+@import '/assets/css/app.css';
+</style>
+
 <style>
 #app {
   /* font-family: 'Avenir', Helvetica, Arial, sans-serif;

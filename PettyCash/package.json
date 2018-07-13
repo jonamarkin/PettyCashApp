@@ -10,14 +10,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "es6-promise": "^4.2.4",
     "save": "^2.3.2",
     "semantic-ui": "^2.3.3",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-vue": "^0.2.11",
     "vue": "^2.5.2",
-    "vue-pikaday": "^0.1.1",
     "vue-router": "^3.0.1",
-    "vuejs-datepicker": "^1.5.2"
+    "vuejs-datepicker": "^1.5.2",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -44,6 +45,7 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "semantic-ui": "^2.3.3",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
