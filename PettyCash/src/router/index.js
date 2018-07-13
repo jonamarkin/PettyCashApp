@@ -7,12 +7,14 @@ import Settings from '@/components/Settings'
 import UserSide from '@/components/UserSide'
 import UserTable from '@/components/UserTable'
 import Header from '@/components/Header'
-import Login from '@/components/Login'
+import login from '@/components/login'
 import '../assets/semantic/out/semantic.min.css'
 import SuiVue from 'semantic-ui-vue'
+import Vuex from 'vuex'
+import 'es6-promise/auto'
 
 
-
+Vue.use(Vuex)
 Vue.use(Router)
 Vue.use(SuiVue);
 
@@ -55,9 +57,9 @@ export default new Router({
       component: Header
     },
     {
-      path: '/Login',
-      name: 'Login',
-      component: Login
+      path: '/login',
+      name: 'login',
+      component:login
     }
   ]
 })
