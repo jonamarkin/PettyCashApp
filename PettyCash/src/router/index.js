@@ -13,6 +13,7 @@ import SuiVue from 'semantic-ui-vue'
 import Vuex from 'vuex'
 import 'es6-promise/auto'
 import AdminDashboard from '@/components/AdminDashboard'
+import transaction from '@/components/transaction'
 import UserDashboard from '@/components/UserDashboard'
 import FinanceDash from '@/components/FinanceDash'
 import Modal from '@/components/Modal'
@@ -85,6 +86,11 @@ export default new Router({
       path: '/Modal',
       name: 'Modal',
       component: Modal
+    },
+    {
+      path: '/transaction',
+      name: 'transaction',
+      component:transaction
     }
   ]
 })

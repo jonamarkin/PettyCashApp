@@ -10,13 +10,11 @@
 
 import UserTable from './UserTable.vue';
 import UserSide from './UserSide.vue';
-import Header from './Header.vue';
 
 export default {
     components:{
       'userside':UserSide,
       'usertable':UserTable,
-	  'Header' :Header
   }
 }
 </script>

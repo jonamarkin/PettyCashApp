@@ -10,14 +10,24 @@
       <span class="font-login">Login to access your account</span></h1>
     </div>
     <div class="ui hidden divider"></div> 
-    <button class="ui huge inverted download button"><i class="red google icon"></i>LOGIN WITH GOOGLE</button>
+    <button @click="onLogin" class="ui huge inverted download button"><i class="red google icon"></i>LOGIN WITH GOOGLE</button>
   </div>
 
 </div>
 </template>
 <script>
 export default {
-    
+   name: 'login',
+  data () {
+    return {
+     
+    }
+  },
+  methods:{
+    onLogin() {
+      this.$router.push({name: 'UserTable'}); 
+}
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -39,7 +49,7 @@ export default {
 
 }
 .cover{
-    background: url("../assets/back2.jpeg") center;
+    background: url("../assets/b3.jpeg") center;
     height: 100%;
     width:100%;
     background-position: center;

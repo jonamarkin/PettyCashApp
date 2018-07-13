@@ -9,7 +9,7 @@
       <a href=""><img src="../assets/blacklogo.png" width="90px" height="50" style="padding-left:10px; padding-top:10px;"></a>
     </div>
 		<div class="right menu">
-			<a class="ui item"><sui-button positive fluid>Logout</sui-button></a>
+			<a class="ui item"><sui-button positive fluid @click="onLogin">Logout</sui-button></a>
 		</div>
 	</div>
 </template>
@@ -22,6 +22,11 @@ export default {
     return {
      
     }
+  },
+  methods:{
+    onLogin() {
+      this.$router.push({name: 'login'}); 
+}
   }
 }
 </script>
