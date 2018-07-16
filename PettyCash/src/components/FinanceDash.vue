@@ -2,7 +2,7 @@
 <div class="ui grid no-margin min-height-100">
     <financeside></financeside>
     <!-- <Header></Header> -->
-    <finance></finance>
+    <router-view></router-view>
 </div>
 </template>
 
@@ -12,7 +12,7 @@ import FinanceSide from './FinanceSide.vue';
 import Finance from './Finance.vue';
 
 export default {
-  name: 'AdminDashboard',
+  name: 'FinanceDash',
   data () {
     return {
 

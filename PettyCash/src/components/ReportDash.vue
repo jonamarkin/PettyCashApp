@@ -111,7 +111,7 @@ import AdminSide from './AdminSide.vue';
 import ReportForm from './ReportForm.vue';
 
 export default {
-  name: 'AdminInbox',
+  name: 'ReportDash',
   data () {
     return {
 

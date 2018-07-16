@@ -2,7 +2,7 @@
 <div class="ui grid no-margin min-height-100">
     <userside></userside>
     <!-- <Header></Header> -->
-    <usertable></usertable>
+   <router-view></router-view>
 </div>
 </template>
 

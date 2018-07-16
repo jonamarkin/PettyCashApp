@@ -10,12 +10,12 @@
 
 			<!-- menus -->
 			<div class="ui secondary vertical pointing menu u-full-width main-menu ">
-			  	<a class=" active icon item" href="">
+			  	<a class=" active icon item">
 			    	<i class="home icon"></i> INBOX
 			  	</a>
 			  	<a class="item ">
 			    	<sui-button positive @click.native="toggle" class="z-depth-1">MAKE A NEW REQUEST</sui-button>
-                        <sui-modal v-model="open" >
+                    <sui-modal v-model="open" >
                         <sui-modal-header >REQUEST FORM</sui-modal-header>
                         <sui-modal-content>
                             <sui-modal-description>

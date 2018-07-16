@@ -1,6 +1,6 @@
 <template>
 <div class="ui grid no-margin min-height-100">
-    <adminside></adminside>
+    <financeside></financeside>
     <!-- <Header></Header> -->
     <contacttable></contacttable>
 </div>
@@ -10,6 +10,7 @@
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
 import ContactTable from './ContactTable.vue';
+import FinanceSide from './FinanceSide.vue';
 
 export default {
   name: 'AdminDashboard',
@@ -21,6 +22,7 @@ export default {
   components:{
 	  'Header':Header,
       'adminside':AdminSide,
+      'financeside':FinanceSide,
       'contacttable':ContactTable
   }
 }

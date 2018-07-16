@@ -10,19 +10,16 @@
 
 			<!-- menus -->
 			<div class="ui secondary vertical pointing menu u-full-width main-menu">
-			  	<a class="active icon item" href="">
+			  	<a class="active icon item" @click="onHome">
 			    	<i class="home icon"></i> INBOX
 			  	</a>
-                  <a class="item" href="">
-			    	<i class="money bill alternate icon"></i> PAYMENTS
+                  <a class="item" @click="onPayment">
+			    	<i class="money bill alternate icon" ></i> PAYMENTS
 			  	</a>
-			  	<a class="item" href="">
+			  	<a class="item" @click="onContact">
 			    	<i class="address book outline icon"></i> CONTACTS
 			  	</a>
-			  	<a class="item" href="">
-			    	<i class="cog icon"></i> SETTINGS
-			  	</a>
-				<a class="item" href="">
+				<a class="item" @click="onReport">
 			    	<i class="book icon"></i> REPORTS
 			  	</a>
 			</div>
@@ -39,7 +36,7 @@
 import AdminInbox from './AdminInbox.vue';
 // import Header from './Header.vue';
 export default {
-  name: 'AdminSide',
+  name: 'FinanceSide',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -48,6 +45,20 @@ export default {
   components:{
 	  'admininbox':AdminInbox,
 	//   'Header' :Header
+  },
+   methods:{
+	  onHome() {
+		  this.$router.push({name: 'Finance'});
+	  },
+	  onContact() {
+		  this.$router.push({name: 'ContactTable'});
+	  },
+	  onReport() {
+		  this.$router.push({name: 'ReportDash'});
+	  },
+	  onPayment() {
+		  this.$router.push({name: 'Payments'});
+	  }
   }
 }
 </script>

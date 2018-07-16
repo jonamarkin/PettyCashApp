@@ -2,7 +2,7 @@
 <div class="ui grid no-margin min-height-100">
     <adminside></adminside>
     <!-- <Header></Header> -->
-    <admininbox></admininbox>
+    <router-view></router-view>
 </div>
 </template>
 

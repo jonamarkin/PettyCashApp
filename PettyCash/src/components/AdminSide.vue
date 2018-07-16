@@ -10,16 +10,10 @@
 
 			<!-- menus -->
 			<div class="ui secondary vertical pointing menu u-full-width main-menu">
-			  	<a class="active icon item" href="">
+			  	<a class="active icon item"  @click="onHome">
 			    	<i class="home icon"></i> INBOX
 			  	</a>
-			  	<a class="item" href="">
-			    	<i class="address book outline icon"></i> CONTACTS
-			  	</a>
-			  	<a class="item" href="">
-			    	<i class="cog icon"></i> SETTINGS
-			  	</a>
-				<a class="item" href="">
+				<a class="item"  @click="onReport">
 			    	<i class="book icon"></i> REPORTS
 			  	</a>
 			</div>
@@ -45,6 +39,14 @@ export default {
   components:{
 	  'admininbox':AdminInbox,
 	//   'Header' :Header
+  },
+  methods:{
+	  onHome() {
+		  this.$router.push({name: 'AdminInbox'});
+	  },
+	  onReport() {
+		  this.$router.push({name: 'AdminReport'});
+	  }
   }
 }
 </script>
