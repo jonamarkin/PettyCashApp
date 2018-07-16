@@ -25,7 +25,8 @@ export default {
   },
   methods:{
     onLogin() {
-      this.$router.push({name: 'UserTable'}); 
+      
+      this.$router.push({name: 'UserDashboard'}); 
 }
   }
 }

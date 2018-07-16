@@ -7,11 +7,11 @@
 </template>
 
 <script>
-
 import UserTable from './UserTable.vue';
 import UserSide from './UserSide.vue';
 
 export default {
+    name:'UserDashboard',
     components:{
       'userside':UserSide,
       'usertable':UserTable,

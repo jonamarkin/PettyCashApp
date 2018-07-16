@@ -22,6 +22,9 @@
 			  	<a class="item" href="">
 			    	<i class="cog icon"></i> SETTINGS
 			  	</a>
+				<a class="item" href="">
+			    	<i class="book icon"></i> REPORTS
+			  	</a>
 			</div>
 		</div>
 		

@@ -13,15 +13,20 @@ import SuiVue from 'semantic-ui-vue'
 import Vuex from 'vuex'
 import 'es6-promise/auto'
 import AdminDashboard from '@/components/AdminDashboard'
+import ReportPage from '@/components/ReportPage'
 import transaction from '@/components/transaction'
+import ReportForm from '@/components/ReportForm'
 import FinanceSide from '@/components/FinanceSide'
 import UserDashboard from '@/components/UserDashboard'
 import FinanceDash from '@/components/FinanceDash'
 import ContactTable from '@/components/ContactTable'
+import ReportDash from '@/components/ReportDash'
 import Contacts from '@/components/Contacts'
 import Finance from '@/components/Finance'
+import AdminReport from '@/components/AdminReport'
 import Modal from '@/components/Modal'
 import vPikaday from 'vue-pikaday'
+
 
 Vue.use(vPikaday)
 Vue.use(Router)
@@ -73,12 +78,12 @@ export default new Router({
     },
     {
       path: '/AdminDashboard',
-      name: 'AdminDasboard',
+      name: 'AdminDashboard',
       component: AdminDashboard
     },
     {
       path: '/UserDashboard',
-      name: 'UserDasboard',
+      name: 'UserDashboard',
       component: UserDashboard
     },
     {
@@ -115,6 +120,27 @@ export default new Router({
       path: '/Contacts',
       name: 'Contacts',
       component: Contacts
+    },
+    {
+      path: '/ReportDash',
+      name: 'ReportDash',
+      component: ReportDash
+    },
+    {
+      path: '/ReportForm',
+      name: 'ReportForm',
+      component: ReportForm
+    },
+    {
+      path: '/ReportPage',
+      name: 'ReportPage',
+      component: ReportPage
+    },
+    {
+      path: '/AdminReport',
+      name: 'AdminReport',
+      component: AdminReport
     }
+    
   ]
 })
