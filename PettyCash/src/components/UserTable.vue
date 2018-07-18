@@ -28,7 +28,7 @@
 									  	<label></label>
 									</div>
 								</td> -->
-								<td>Larry Dewan Buntus</td>
+								<td>{{name}}</td>
 								<td>Cash Request</td>
 								<td>1000</td>
 								<td>Buy a new laptop</td>
@@ -47,7 +47,7 @@
 									  	<label></label>
 									</div>
 								</td> -->
-								<td>Andy Cooxy</td>
+								<td>{{name}}</td>
 								<td>Cash Request</td>
 								<td>10</td>
 								<td>Gob3</td>
@@ -91,7 +91,15 @@ import UserSide from './UserSide.vue';
 export default {
   name: 'UserTable',
   data () {
+	//   let users = []
+	// 	for (var i = 0; i < 25; i++) {
+	// users.push( buildFakeUser() )
+	// 	}
     return { 
+		// users,
+		name: this.$faker().name.findName(),
+      email: this.$faker().internet.email(),
+      company: this.$faker().company.companyName(),
          open: false };
 },
   components:{

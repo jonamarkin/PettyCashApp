@@ -22,6 +22,7 @@ Vue.use(vPikaday)
 Vue.use(Router)
 Vue.use(SuiVue);
 Vue.use(Vuex)
+Vue.use(require('vue-faker'));
 
 export default new Router({
   mode: 'history',
@@ -116,11 +117,11 @@ export default new Router({
     //   name: 'Header',
     //   component: Header
     // },
-    // {
-    //   path: '/login',
-    //   name: 'login',
-    //   component:login
-    // },
+    {
+      path: '/login',
+      name: 'login',
+      component:login
+    },
     
     // {
       

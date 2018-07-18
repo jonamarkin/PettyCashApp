@@ -9,9 +9,9 @@
                 <datepicker></datepicker>
             </div>
             <div class="field">
-            <label>Category</label>
+            <label>Policy</label>
             <select class="ui fluid search dropdown" name="category">
-                <option value="">Category</option>
+                <option value=""></option>
                 <option value="1">Nfortics</option>
                 <option value="2">Onango</option>
             </select>
