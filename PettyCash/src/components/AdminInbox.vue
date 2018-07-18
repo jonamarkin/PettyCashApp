@@ -1,9 +1,9 @@
 <template>
 
 	<!-- <adminside></adminside> -->
-    <div class="thirteen wide column no-padding" id="app">	
+    <div>	
 			
-			<Header></Header>
+			
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom">
@@ -14,7 +14,7 @@
 						</div>
 					</div>
 					
-					<table class="ui basic table">
+					<table class="ui basic striped table">
 						<thead>
 							<tr>
 								<th>
@@ -33,18 +33,18 @@
 						</thead>
 
 						<tbody>
-							<tr class="light-grey">
+							<tr  v-for="post in posts" :key="post.title">
 								<td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
 								</td>
-								<td>Larry Dewan Buntus</td>
-								<td>Cash Request</td>
-								<td>1000</td>
-								<td>Buy a new laptop</td>
-								<td>10-Jul-18 14:20</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -64,7 +64,7 @@
 								</td>
 							</tr>
 
-							<tr>
+							<!-- <tr>
 								<td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
@@ -85,7 +85,7 @@
 										</sui-dropdown-menu>
 									</sui-dropdown>
 								</td>
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -108,7 +108,12 @@ export default {
   components:{
 	  'Header':Header,
 	  'adminside':AdminSide
-  }
+  },
+  computed:{
+	posts () {
+		return this.$store.state.posts
+	}
+}
 }
 </script>
 

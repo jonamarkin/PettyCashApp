@@ -14,6 +14,16 @@ const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
+
+  resolve: {
+    alias: {
+      'api-client': config.dev.apiClient === 'mock'
+        ? path.join(__dirname, '..', 'src/api/mock/index.js')
+        : path.join(__dirname, '..', 'src/api/server/index.js')
+    }
+  },
+    // ...
+
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },

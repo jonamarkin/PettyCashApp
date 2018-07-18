@@ -1,9 +1,8 @@
 <template>
 
 	<!-- <adminside></adminside> -->
-    <div class="thirteen wide column no-padding" id="app">	
+    <div>	
 			
-			<Header></Header>
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin z-depth-1" >
 						<div class="column no-padding-bottom">
@@ -22,7 +21,7 @@
 						</div>
 					</div>
 					
-					<table class="ui basic table">
+					<table class="ui basic striped table">
 						<thead>
 							<tr>
 								<th>
@@ -42,18 +41,18 @@
 						</thead>
 
 						<tbody>
-							<tr class="light-grey">
+							<tr v-for="post in posts" :key="post.title">
 								<td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
 								</td>
-								<td>Larry Dewan Buntus</td>
-								<td>Cash Request</td>
-								<td>1000</td>
-								<td>Buy a new laptop</td>
-								<td>10-Jul-18 14:20</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -74,7 +73,7 @@
                                 <td></td>
 							</tr>
 
-							<tr>
+							<!-- <tr>
 								<td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
@@ -86,7 +85,7 @@
 								<td>10</td>
 								<td>Gob3</td>
 								<td>10-Jul-18 14:20</td>
-								<td>
+								<td> -->
 									<!-- <sui-dropdown icon="ellipsis vertical">
 										<sui-dropdown-menu class="left floated">
 										<sui-dropdown-item><a href="" class="item">Approve</a></sui-dropdown-item>
@@ -94,9 +93,9 @@
 			
 										</sui-dropdown-menu>
 									</sui-dropdown> -->
-								</td>
+								<!-- </td>
                                 <td></td>
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -121,7 +120,12 @@ export default {
 	  'Header':Header,
       'adminside':AdminSide,
       'reportform':ReportForm
-  }
+  },
+  computed:{
+	posts () {
+		return this.$store.state.posts
+	}
+}
 }
 </script>
 

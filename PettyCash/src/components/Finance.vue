@@ -1,9 +1,10 @@
 <template>
 
 	<!-- <adminside></adminside> -->
-    <div class="thirteen wide column no-padding" id="app">	
+   	
 			
-			<Header></Header>
+			<div>
+				<pulse-loader :loading="loading" :color="blue" :size="small" v-show="show" v-bind="show"></pulse-loader>
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom">
@@ -14,7 +15,7 @@
 						</div>
 					</div>
 					
-					<table class="ui basic table">
+					<table class="ui basic striped table">
 						<thead>
 							<tr>
 								<th>
@@ -33,18 +34,18 @@
 						</thead>
 
 						<tbody>
-							<tr class="light-grey">
+							<tr v-for="post in posts" :key="post.title">
 								<td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
 								</td>
-								<td>Larry Dewan Buntus</td>
-								<td>Cash Request</td>
-								<td>1000</td>
-								<td>Buy a new laptop</td>
-								<td>10-Jul-18 14:20</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -64,7 +65,7 @@
 								</td>
 							</tr>
 
-							<tr>
+							<!-- <tr>
 								<td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
@@ -85,7 +86,7 @@
 										</sui-dropdown-menu>
 									</sui-dropdown>
 								</td>
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -97,18 +98,35 @@
 
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
+import PulseLoader from '../../node_modules/vue-spinner/src/PulseLoader.vue'
 
 export default {
   name: 'AdminInbox',
   data () {
     return {
-
+		show:false
     }
   },
   components:{
 	  'Header':Header,
-	  'adminside':AdminSide
+	  'adminside':AdminSide,
+	  PulseLoader
+  },
+  computed:{
+	posts () {
+		return this.$store.state.posts
+	}
+},
+created(){
+	this.$store.dispatch('fetchPosts')
+		.then(posts =>{
+
+		})
+},
+beforeMount() {
+    this.show=!show;
   }
+
 }
 </script>
 

@@ -7,6 +7,7 @@ const path = require('path')
 module.exports = {
   dev: {
 
+    apiClient: 'mock', // mock or server
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -37,6 +38,9 @@ module.exports = {
   },
 
   build: {
+
+    apiClient: 'server',
+
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

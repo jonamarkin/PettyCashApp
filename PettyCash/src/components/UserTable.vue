@@ -1,8 +1,8 @@
 <template>
-    <div class="thirteen wide column no-padding" id="app">	
-			<Header></Header>
+    <div>	
+			<!-- <Header></Header> -->
 			<!-- this is for all the main changes -->
-					<table class="ui basic table">
+					<table class="ui basic striped table">
 						<thead>
 							<tr>
 								<!-- <th>
@@ -21,39 +21,39 @@
 						</thead>
 
 						<tbody>
-							<tr class="light-grey">
+							<tr  v-for="post in posts" :key="post.title" >
 								<!-- <td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
 								</td> -->
-								<td>{{name}}</td>
-								<td>Cash Request</td>
-								<td>1000</td>
-								<td>Buy a new laptop</td>
-								<td>10-Jul-18 14:20</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
+								<td>{{post.title}}</td>
 								<td><i class="trash alternate icon" @click="toggle"></i></td>
                                 
-							<!-- </tr>
+							</tr>
                             
-                                <tr id="collapse">
+                                <!-- <tr id="collapse">
                                     <td colspan="6">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</td>
-                                </tr>-->
-							<tr>
-								<!-- <td>
+                                </tr> -->
+							<!-- <tr>
+								<! <td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
 									  	<label></label>
 									</div>
 								</td> -->
-								<td>{{name}}</td>
+								<!-- <td>{{name}}</td>
 								<td>Cash Request</td>
 								<td>10</td>
 								<td>Gob3</td>
 								<td>10-Jul-18 14:20</td>
 								<td><i class="trash alternate icon" @click="toggle"></i></td>
-							</tr>
+							</tr> --> 
 						</tbody>
 					</table>
 					<sui-modal basic v-model="open" size="mini" closeIcon="true" animation="fly down">
@@ -109,6 +109,11 @@ export default {
 methods: {
     toggle() {
       this.open = !this.open;
+	}
+},
+computed:{
+	posts () {
+		return this.$store.state.posts
 	}
 }
 }

@@ -13,6 +13,7 @@ import AdminDashboard from '@/components/AdminDashboard'
 import AdminReport from '@/components/AdminReport'
 import Modal from '@/components/Modal'
 import "@/assets/css/app.css"
+import store from './store'
 Vue.component('adminside', AdminSide);
 Vue.component('payments', Payments);
 Vue.component('userside', UserSide);
@@ -30,5 +31,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
