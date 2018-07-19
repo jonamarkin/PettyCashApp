@@ -43,7 +43,7 @@ export default {
 }
 
 .tent{
-  padding-top:80px;
+  /* padding-top:80px; */
 }
 
 </style>

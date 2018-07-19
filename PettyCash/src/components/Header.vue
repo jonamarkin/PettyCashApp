@@ -1,6 +1,6 @@
 <template>
 	<div class="ui menu z-depth-1 top-nav">
-		<div class="left menu">
+		<div class="left menu"> 
       <!-- <a class="ui item" is="sui-image"
       href=""
       src="../assets/blacklogo.png"
@@ -193,8 +193,7 @@ overflow-x: hidden;
 
 .top-nav{
 height: 64px;
-position:fixed;
-width:156vh;
+/* position:fixed; */
 z-index:2;
 /* margin-left:5px; */
 }

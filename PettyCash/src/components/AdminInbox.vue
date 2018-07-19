@@ -106,7 +106,8 @@ export default {
 		posts:[],
 		seen: false,
 		checked: false,
-		selected:[]
+		selected:[],
+		anySelected:[]
     }
   },
   components:{
