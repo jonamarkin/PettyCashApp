@@ -1,7 +1,7 @@
 <template>
 
 	<!-- <adminside></adminside> -->
-    <div class="thirteen wide column no-padding" id="app">	
+    <div >	
 		
 	<div class="form-body">
    		<sui-card class="u-full-width u-full-height green">

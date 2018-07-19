@@ -6,7 +6,7 @@
 			
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
-						<div class="column no-padding-bottom">
+						<div class="column no-padding-bottom" v-show="selectAll	">
 							<div class="ui secondary menu">
 								<a href="" class="ui basic green button item">Approve all</a>
 								<a href="" class="ui basic red button item">Decline all</a>
@@ -19,7 +19,7 @@
 							<tr>
 								<th>
 									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
+									  	<input type="checkbox" name="example" v-model="selectAll">
 									  	<label></label>
 									</div>
 								</th>
@@ -36,15 +36,15 @@
 							<tr  v-for="post in posts" :key="post.title">
 								<td>
 									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
+									  	<input type="checkbox" name="example" v-model="selected" :value="post.from">
 									  	<label></label>
 									</div>
 								</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
+								<td>{{post.from}}</td>
+								<td>{{post.subject}}</td>
+								<td>{{post.amount}}</td>
+								<td>{{post.reason}}</td>
+								<td>{{post.datetime}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -97,12 +97,16 @@
 
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
+import faker from 'faker'
 
 export default {
   name: 'AdminInbox',
   data () {
     return {
-
+		posts:[],
+		seen: false,
+		checked: false,
+		selected:[]
     }
   },
   components:{
@@ -112,6 +116,52 @@ export default {
   computed:{
 	posts () {
 		return this.$store.state.posts
+	},
+	 selectAll: {
+            get() {
+				return this.posts ? this.selected.length == this.posts.length : false;
+				
+            },
+            set(value) {
+                var selected = [];
+
+                if (value) {
+                    this.posts.forEach(function (post) {
+						selected.push(post.from);
+						// seen=true;
+					});
+					
+                }
+
+				this.selected = selected;
+				
+            }
+		},
+		
+},
+
+methods: {
+	showDiv(value){
+			if(this.selected.length>1){
+				seen=true;
+			}
+		}
+},
+created(){
+	// this.$store.dispatch('fetchPosts')
+	// 	.then(posts =>{
+
+	// 	})
+	for (let index = 0; index < 10; index++) {
+		var post = {
+			from: faker.name.findName(),
+			subject: faker.lorem.word(),
+			amount: faker.finance.amount(),
+			reason: faker.lorem.sentence(),
+			datetime: faker.date.recent()
+		}
+		console.log("fajsgdf",faker.random.number())
+		this.posts.push(post)
 	}
 }
 }
@@ -201,8 +251,8 @@ width: 100%!important;
 .u-full-height{
 height: 100%!important;
 }
-.min-height-100{
-min-height: 100vh;
+.max-height-100{
+max-height: 100vh;
 }
 
 /*typograph*/

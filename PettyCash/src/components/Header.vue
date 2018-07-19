@@ -1,5 +1,5 @@
 <template>
-	<div class="ui secondary menu z-depth-1 top-nav">
+	<div class="ui menu z-depth-1 top-nav">
 		<div class="left menu">
       <!-- <a class="ui item" is="sui-image"
       href=""
@@ -193,5 +193,10 @@ overflow-x: hidden;
 
 .top-nav{
 height: 64px;
+position:fixed;
+width:156vh;
+z-index:2;
+/* margin-left:5px; */
 }
+
 </style>

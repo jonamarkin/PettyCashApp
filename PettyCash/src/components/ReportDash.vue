@@ -1,7 +1,7 @@
 <template>
 
 	<!-- <adminside></adminside> -->
-    <div class="thirteen wide column no-padding" id="app">	
+    <div >	
 			
 		
 			<!-- this is for all the main changes -->
@@ -49,11 +49,13 @@
 									  	<label></label>
 									</div>
 								</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
+								<td>{{post.date}}</td>
+								<td>{{post.description}}</td>
+								<td>{{post.amount}}</td>
+								<td>{{post.category}}</td>
+								<td>{{post.from}}</td>
+								<td>{{post.to}}</td>
+								<td>{{post.status}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -109,12 +111,13 @@
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
 import ReportForm from './ReportForm.vue';
+import faker from 'faker'
 
 export default {
   name: 'ReportDash',
   data () {
     return {
-
+		posts:[]
     }
   },
   components:{
@@ -125,6 +128,25 @@ export default {
   computed:{
 	posts () {
 		return this.$store.state.posts
+	}
+},
+created(){
+	// this.$store.dispatch('fetchPosts')
+	// 	.then(posts =>{
+
+	// 	})
+	for (let index = 0; index < 20; index++) {
+		var post = {
+			date: faker.date.recent(),
+			description: faker.lorem.words(),
+			amount: faker.finance.amount(),
+			category: faker.company.companyName(),
+			from: faker.name.findName(),
+			to: faker.name.findName(),
+			status: faker.commerce.productAdjective()
+		}
+		//console.log("fajsgdf",faker.random.number())
+		this.posts.push(post)
 	}
 }
 }
@@ -214,8 +236,8 @@ width: 100%!important;
 .u-full-height{
 height: 100%!important;
 }
-.min-height-100{
-min-height: 100vh;
+.max-height-100{
+max-height: 100vh;
 }
 
 /*typograph*/

@@ -9,14 +9,25 @@
 
 
 			<!-- menus -->
-			<div class="ui secondary vertical pointing menu u-full-width main-menu">
-			  	<a class="active icon item"  @click="onHome">
-			    	<i class="home icon"></i> INBOX
-			  	</a>
-				<a class="item"  @click="onReport">
-			    	<i class="book icon"></i> REPORTS
-			  	</a>
-			</div>
+			<sui-menu pointing secondary vertical class="main-menu u-full-width">
+			<!-- <div class="ui secondary vertical menu u-full-width main-menu"> -->
+				<sui-menu-menu>
+			  		<router-link :to="{ name: 'AdminInbox'}"><a is="sui-menu-item"
+						:active="isActive('INBOX')"
+						content="INBOX"
+						@click="select('INBOX')" >
+			    		<i class="home icon"></i> INBOX
+			  		</a></router-link>
+				</sui-menu-menu>
+				<sui-menu-menu>
+					<router-link :to="{ name: 'AdminReport'}"><a is="sui-menu-item"
+					:active="isActive('REPORTS')"
+					content="REPORTS"
+					@click="select('REPORTS')" >
+						<i class="book icon"></i> REPORTS
+					</a></router-link>
+				</sui-menu-menu>
+			</sui-menu>
 		</div>
 		
        <!-- <admininbox></admininbox> -->              
@@ -33,7 +44,7 @@ export default {
   name: 'AdminSide',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      active: 'INBOX',
     }
   },
   components:{
@@ -41,12 +52,12 @@ export default {
 	//   'Header' :Header
   },
   methods:{
-	  onHome() {
-		  this.$router.push({name: 'AdminInbox'});
-	  },
-	  onReport() {
-		  this.$router.push({name: 'AdminReport'});
-	  }
+	  isActive(name) {
+      return this.active === name;
+    },
+    select(name) {
+      this.active = name;
+    }
   }
 }
 </script>
@@ -135,8 +146,8 @@ width: 100%!important;
 .u-full-height{
 height: 100%!important;
 }
-.min-height-100{
-min-height: 100vh;
+.max-height-100{
+max-height: 100vh;
 }
 
 /*typograph*/

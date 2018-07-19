@@ -1,4 +1,5 @@
 <template>
+<!-- <sui-sidebar visible="true"> -->
 		<div class="three wide column no-padding light-grey" id="side-nav">
 			<div class="u-full-width profile">
 				<div class="profile-image center-block position-relative white">
@@ -9,10 +10,17 @@
 
 
 			<!-- menus -->
-			<div class="ui secondary vertical pointing menu u-full-width main-menu ">
-			  	<a class=" active icon item">
-			    	<i class="home icon"></i> INBOX
-			  	</a>
+      
+			<sui-menu pointing secondary vertical class="main-menu u-full-width">
+			<!-- <div class="ui secondary vertical menu u-full-width main-menu"> -->
+				<sui-menu-menu>
+			  		<router-link :to="{ name: 'UserTable'}"><a is="sui-menu-item"
+              :active="isActive('INBOX')"
+              content="INBOX"
+              @click="select('INBOX')" >
+			    		<i class="home icon"></i> INBOX
+			  		</a></router-link>
+				</sui-menu-menu>
 			  	<a class="item ">
 			    	<sui-button positive @click.native="toggle" class="z-depth-1">MAKE A NEW REQUEST</sui-button>
                     <sui-modal v-model="open" >
@@ -42,8 +50,9 @@
                         </sui-modal-actions>
                     </sui-modal>
 			  	</a>
-			</div>
+        </sui-menu>
 		</div>
+  <!-- </sui-sidebar> -->
 		<!-- <usertable></usertable>                 -->
 
 			<!-- end of main changes -->
@@ -60,7 +69,10 @@ export default {
   name: 'AdminSide',
   data () {
     return { 
-         open: false };
+         open: false,
+         active: 'Home',
+      items: ['Home', 'Messages', 'Friends'] 
+      };
 },
   components:{
       'admininbox':AdminInbox,
@@ -74,6 +86,12 @@ export default {
     },
     customFormatter(date) {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    },
+    isActive(name) {
+      return this.active === name;
+    },
+    select(name) {
+      this.active = name;
     }
   }
 }

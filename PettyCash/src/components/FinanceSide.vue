@@ -9,20 +9,42 @@
 
 
 			<!-- menus -->
-			<div class="ui secondary vertical pointing menu u-full-width main-menu">
-			  	<a class="active icon item" @click="onHome">
-			    	<i class="home icon"></i> INBOX
-			  	</a>
-                  <a class="item" @click="onPayment">
-			    	<i class="money bill alternate icon" ></i> PAYMENTS
-			  	</a>
-			  	<a class="item" @click="onContact">
-			    	<i class="address book outline icon"></i> CONTACTS
-			  	</a>
-				<a class="item" @click="onReport">
-			    	<i class="book icon"></i> REPORTS
-			  	</a>
-			</div>
+			<sui-menu pointing secondary vertical class="main-menu u-full-width">
+			<!-- <div class="ui secondary vertical menu u-full-width main-menu"> -->
+				<sui-menu-menu>
+			  		<router-link :to="{ name: 'Finance'}"><a is="sui-menu-item"
+					:active="isActive('INBOX')"
+					content="INBOX"
+					@click="select('INBOX')" >
+			    		<i class="home icon"></i> INBOX
+			  		</a></router-link>
+				</sui-menu-menu>
+				<sui-menu-menu>
+                  	<router-link :to="{ name: 'Payments'}"><a is="sui-menu-item"
+					:active="isActive('PAYMENTS')"
+					content="PAYMENTS"
+					@click="select('PAYMENTS')" >
+			    		<i class="money bill alternate icon" ></i> PAYMENTS
+			  		</a></router-link>
+				</sui-menu-menu>
+				<sui-menu-menu>
+			  		<router-link :to="{ name: 'ContactTable'}"><a is="sui-menu-item"
+					:active="isActive('CONTACTS')"
+					content="CONTACTS"
+					@click="select('CONTACTS')" >
+			    		<i class="address book outline icon"></i> CONTACTS
+			  		</a></router-link>
+				</sui-menu-menu>
+				<sui-menu-menu>
+					<router-link :to="{ name: 'ReportDash'}"><a is="sui-menu-item"
+					:active="isActive('REPORTS')"
+					content="REPORTS"
+					@click="select('REPORTS')" >
+						<i class="book icon"></i> REPORTS
+					</a></router-link>
+				</sui-menu-menu>
+			<!-- </div> -->
+			</sui-menu>
 		</div>
 		
        <!-- <admininbox></admininbox> -->              
@@ -39,7 +61,8 @@ export default {
   name: 'FinanceSide',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      active: 'INBOX',
+    //   items: ['Home', 'Messages', 'Friends'] 
     }
   },
   components:{
@@ -47,18 +70,12 @@ export default {
 	//   'Header' :Header
   },
    methods:{
-	  onHome() {
-		  this.$router.push({name: 'Finance'});
-	  },
-	  onContact() {
-		  this.$router.push({name: 'ContactTable'});
-	  },
-	  onReport() {
-		  this.$router.push({name: 'ReportDash'});
-	  },
-	  onPayment() {
-		  this.$router.push({name: 'Payments'});
-	  }
+	  isActive(name) {
+      return this.active === name;
+    },
+    select(name) {
+      this.active = name;
+    }
   }
 }
 </script>

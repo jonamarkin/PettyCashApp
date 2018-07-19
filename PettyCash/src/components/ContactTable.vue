@@ -1,7 +1,7 @@
 <template>
 
 	<!-- <adminside></adminside> -->
-    <div class="thirteen wide column no-padding" id="app">	
+    <div>	
 			
 			
 			<!-- this is for all the main changes -->
@@ -14,7 +14,8 @@
                             </div>
 						</div>
 					</div>
-					<table class="ui basic table">
+					<table class="ui basic striped table max-height-100" style="overflow-y:scroll;" >
+						
 						<thead>
 							<tr>
 								<th>
@@ -29,18 +30,18 @@
 						</thead>
 
 						<tbody>
-							<tr class="light-grey">
+							<tr v-for="post in posts" :key="post.title">
 								<td>
 									<i class="user icon"></i>
 								</td>
-								<td>Larry Dewan Buntus</td>
-								<td>Cash Request</td>
-								<td>1000</td>
-								<td>Buy a new laptop</td>
+								<td>{{post.name}}</td>
+								<td>{{post.contact}}</td>
+								<td>{{post.location}}</td>
+								<td>{{post.email}}</td>
 								
 							</tr>
 
-							<tr>
+							<!-- <tr>
 								<td>
 									<i class="user icon"></i>
 								</td>
@@ -49,8 +50,9 @@
 								<td>10</td>
 								<td>Gob3</td>
 			
-							</tr>
+							</tr> -->
 						</tbody>
+						
 					</table>
 				</div>
 			<!-- end of main changes -->
@@ -61,18 +63,35 @@
 
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
+import faker from 'faker'
 
 export default {
   name: 'AdminInbox',
   data () {
     return {
-
+		posts:[]
     }
   },
   components:{
 	  'Header':Header,
 	  'adminside':AdminSide
-  }
+  },
+  created(){
+	// this.$store.dispatch('fetchPosts')
+	// 	.then(posts =>{
+
+	// 	})
+	for (let index = 0; index < 20; index++) {
+		var post = {
+			name: faker.name.findName(),
+			contact: faker.phone.phoneNumber(),
+			location: faker.address.city(),
+			email: faker.internet.email(),
+		}
+		//console.log("fajsgdf",faker.random.number())
+		this.posts.push(post)
+	}
+}
 }
 </script>
 
@@ -160,8 +179,8 @@ width: 100%!important;
 .u-full-height{
 height: 100%!important;
 }
-.min-height-100{
-min-height: 100vh;
+.max-height-100{
+max-height: 100vh;
 }
 
 /*typograph*/
@@ -230,6 +249,7 @@ margin-right: 10px!important;
 
 #app {
 overflow-x: hidden;
+/* padding-top:70px; */
 }
 
 .top-nav{

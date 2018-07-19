@@ -28,11 +28,11 @@
 									  	<label></label>
 									</div>
 								</td> -->
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
+								<td>{{post.subject}}</td>
+								<td>{{post.payment}}</td>
+								<td>{{post.amount}}</td>
+								<td>{{post.reason}}</td>
+								<td>{{post.datetime}}</td>
 								<td><i class="trash alternate icon" @click="toggle"></i></td>
                                 
 							</tr>
@@ -87,6 +87,7 @@
 
 import Header from './Header.vue';
 import UserSide from './UserSide.vue';
+import faker from 'faker'
 
 export default {
   name: 'UserTable',
@@ -97,9 +98,7 @@ export default {
 	// 	}
     return { 
 		// users,
-		name: this.$faker().name.findName(),
-      email: this.$faker().internet.email(),
-      company: this.$faker().company.companyName(),
+		posts:[],
          open: false };
 },
   components:{
@@ -112,8 +111,25 @@ methods: {
 	}
 },
 computed:{
-	posts () {
-		return this.$store.state.posts
+	// posts () {
+	// 	return this.$store.state.posts
+	// }
+},
+created(){
+	// this.$store.dispatch('fetchPosts')
+	// 	.then(posts =>{
+
+	// 	})
+	for (let index = 0; index < 20; index++) {
+		var post = {
+			subject: faker.lorem.word(),
+			payment: faker.finance.transactionType(),
+			amount: faker.finance.amount(),
+			reason: faker.lorem.sentence(),
+			datetime: faker.date.recent()
+		}
+		console.log("fajsgdf",faker.random.number())
+		this.posts.push(post)
 	}
 }
 }
@@ -208,8 +224,8 @@ width: 100%!important;
 .u-full-height{
 height: 100%!important;
 }
-.min-height-100{
-min-height: 100vh;
+.max-height-100{
+max-height: 100vh;
 }
 
 /*typograph*/

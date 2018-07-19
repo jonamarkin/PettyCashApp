@@ -14,6 +14,7 @@ import AdminReport from '@/components/AdminReport'
 import Modal from '@/components/Modal'
 import "@/assets/css/app.css"
 import store from './store'
+Vue.use(require('vue-faker'));
 Vue.component('adminside', AdminSide);
 Vue.component('payments', Payments);
 Vue.component('userside', UserSide);

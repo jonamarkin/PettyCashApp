@@ -22,6 +22,7 @@
 					</div>
 					
 					<table class="ui basic striped table">
+						<vue-scrolling-table>
 						<thead>
 							<tr>
 								<th>
@@ -48,11 +49,13 @@
 									  	<label></label>
 									</div>
 								</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
-								<td>{{post.title}}</td>
+								<td>{{post.date}}</td>
+								<td>{{post.description}}</td>
+								<td>{{post.amount}}</td>
+								<td>{{post.category}}</td>
+								<td>{{post.from}}</td>
+								<td>{{post.to}}</td>
+								<td>{{post.status}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -97,7 +100,9 @@
                                 <td></td>
 							</tr> -->
 						</tbody>
+						</vue-scrolling-table>
 					</table>
+					
 				</div>
 			<!-- end of main changes -->
     </template>
@@ -108,12 +113,13 @@
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
 import ReportForm from './ReportForm.vue';
+import faker from 'faker'
 
 export default {
   name: 'ReportDash',
   data () {
     return {
-
+		posts:[]
     }
   },
   components:{
@@ -124,6 +130,25 @@ export default {
   computed:{
 	posts () {
 		return this.$store.state.posts
+	}
+},
+created(){
+	// this.$store.dispatch('fetchPosts')
+	// 	.then(posts =>{
+
+	// 	})
+	for (let index = 0; index < 10; index++) {
+		var post = {
+			date: faker.date.recent(),
+			description: faker.lorem.words(),
+			amount: faker.finance.amount(),
+			category: faker.company.companyName(),
+			from: faker.name.findName(),
+			to: faker.name.findName(),
+			status: faker.commerce.productAdjective()
+		}
+		//console.log("fajsgdf",faker.random.number())
+		this.posts.push(post)
 	}
 }
 }
