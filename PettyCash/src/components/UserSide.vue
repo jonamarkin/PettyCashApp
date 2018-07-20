@@ -27,22 +27,22 @@
                         <sui-modal-header >REQUEST FORM</sui-modal-header>
                         <sui-modal-content>
                             <sui-modal-description>
-                                <sui-form>
+                                <sui-form @submit.prevent="sendData">
                                     <sui-form-field>
                                     <label>Date</label>
                                     <!-- <input type="text" v-date="date" placeholder="Date Money is Needed"  v-pikaday> -->
                                     <!-- <datepicker :format="customFormatter"></datepicker> -->
-                                    <datepicker></datepicker>
+                                    <datepicker v-model="dateNeeded"></datepicker>
                                     </sui-form-field>
                                     <sui-form-field>
                                     <label>Amount</label>
-                                    <input placeholder="Amount Needed"  type="number">
+                                    <input placeholder="Amount Needed"  type="number" v-model="amount">
                                     </sui-form-field>
                                     <sui-form-field class="right floated">
                                     <label>Description</label>
-                                    <textarea rows="3"></textarea>
+                                    <textarea rows="3" v-model="description"></textarea>
                                     </sui-form-field>
-                                    <sui-button positive type="submit" content="Submit Request" />
+                                    <sui-button positive type="submit" content="Submit Request"/>
                                 </sui-form>
                             </sui-modal-description>
                         </sui-modal-content>
@@ -64,13 +64,18 @@
 import UserTable from './UserTable.vue';
 import AdminInbox from './AdminInbox.vue';
 import Datepicker from '../../node_modules/vuejs-datepicker';
+import axios from "axios";
 // import Header from './Header.vue';
 export default {
   name: 'AdminSide',
   data () {
-    return { 
+    return {
+          dateNeeded: '',
+          amount: '',
+          description:'',
          open: false,
-         active: 'Home',
+         active: 'INBOX',
+         posts:[],
       items: ['Home', 'Messages', 'Friends'] 
       };
 },
@@ -92,6 +97,38 @@ export default {
     },
     select(name) {
       this.active = name;
+    },
+    // sendData() {
+    //             axios({ method: "POST", "url": "https://pettycash.nfortics.com/api/cashrequest", "data": this.input,  "headers": { "content-type": "application/json" } }).then(result => {
+    //                 this.response = result.data;
+    //             }, error => {
+    //                 console.error(error);
+    //             });
+    //         }
+
+    // sendData(){
+    //   axios.post('https://pettycash.nfortics.com/api/cashrequest', 
+    //   this.date,
+    //   this.amount,
+    //   this.description, // the data to post
+    //   { headers: {
+    //     'Content-type': 'application/json',
+    //     }
+    //   }).then(response =>this.posts = response.data);
+    //   }
+    sendData(){
+      console.log('Kwame')
+      axios.post('https://pettycash.nfortics.com/api/cashrequest', {
+      dateNeeded: this.dateNeeded,
+      amount: this.amount,
+      description: this.description
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     }
   }
 }
@@ -112,7 +149,7 @@ h1,h2,h3,h4,
 small,
 label{
 color: #777!important;
-font-family: 'Open Sans', sans-serif!important;
+font-family: Gotham!important;
 }
 
 /*display*/

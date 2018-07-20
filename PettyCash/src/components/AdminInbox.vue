@@ -255,6 +255,9 @@ height: 100%!important;
 .max-height-100{
 max-height: 100vh;
 }
+.min-height-100{
+min-height: 100vh;
+}
 
 /*typograph*/
 .center-align{

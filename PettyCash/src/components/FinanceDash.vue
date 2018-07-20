@@ -1,5 +1,5 @@
 <template>
-<div class="ui grid no-margin max-height-100">
+<div class="ui grid no-margin min-height-100">
     <financeside></financeside>
     <!-- <Header></Header> -->
      <div class="thirteen wide column no-padding" id="app">
@@ -76,7 +76,9 @@ export default {
 }
 
 .tent{
-  padding-top:80px;
+  /* padding-top:80px; */
+   overflow-y: scroll;
+    max-height: 88vh;
 }
 </style>
 

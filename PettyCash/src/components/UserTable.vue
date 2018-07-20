@@ -155,7 +155,7 @@ h1,h2,h3,h4,
 small,
 label{
 color: #777!important;
-font-family: 'Open Sans', sans-serif!important;
+font-family: Gotham !important;
 }
 
 /*display*/
@@ -226,6 +226,9 @@ height: 100%!important;
 }
 .max-height-100{
 max-height: 100vh;
+}
+.min-height-100{
+min-height: 100vh;
 }
 
 /*typograph*/

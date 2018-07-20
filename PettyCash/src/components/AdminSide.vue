@@ -77,7 +77,7 @@ h1,h2,h3,h4,
 small,
 label{
 color: #777!important;
-font-family: 'Open Sans', sans-serif!important;
+font-family: Gotham rounded!important;
 }
 
 /*display*/
