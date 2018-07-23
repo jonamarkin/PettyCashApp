@@ -27,6 +27,17 @@ Vue.component('adminreport', AdminReport);
 
 Vue.config.productionTip = false
 
+
+// var config = {
+//   apiKey: "AIzaSyDCyy6nEpMQtfI10RxqtUC57M5ZhFrH9oM",
+//   authDomain: "pettycashapp.firebaseapp.com",
+//   databaseURL: "https://pettycashapp.firebaseio.com",
+//   projectId: "pettycashapp",
+//   storageBucket: "pettycashapp.appspot.com",
+//   messagingSenderId: "426531209581"
+// };
+// firebase.initializeApp(config);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

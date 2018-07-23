@@ -27,6 +27,11 @@ Vue.use(require('vue-faker'));
 export default new Router({
   mode: 'history',
   routes: [
+    {path: '/',
+    redirect:{
+      name: "login"
+    }
+    },
     {
       path: '/FinanceDash',
       name: 'FinanceDash',
@@ -55,7 +60,10 @@ export default new Router({
           name: 'ReportDash',
           component: ReportDash
         }
-      ]
+      ],
+      meta: {
+        requireAuth:true,
+      }
     },
     {
       path: '/AdminDashboard',
@@ -75,7 +83,10 @@ export default new Router({
           name: 'AdminReport',
           component: AdminReport
         }
-      ]
+      ],
+      meta: {
+        requireAuth:true,
+      }
     },
     {
       path: '/UserDashboard',
@@ -90,69 +101,21 @@ export default new Router({
           name: 'UserTable',
           component: UserTable
         }
-      ]
+      ],
+      meta: {
+        requireAuth:true,
+      }
     },
 
     
-    // {
-    //   path: '/AdminSide',
-    //   name: 'AdminSide',
-    //   component: AdminSide
-    // },
-    
-    // {
-    //   path: '/Settings',
-    //   name: 'Settings',
-    //   component: Settings
-    // },
-    // {
-    //   path: '/UserSide',
-    //   name: 'UserSide',
-    //   component: UserSide
-    // },
-    
-    // 
-    // {
-    //   path: '/Header',
-    //   name: 'Header',
-    //   component: Header
-    // },
+  
     {
       path: '/login',
       name: 'login',
       component:login
     },
     
-    // {
-      
-    // },
-    // {
-    //   path: '/Modal',
-    //   name: 'Modal',
-    //   component: Modal
-    // },
-    
-    // {
-  
-    // },
-    
-    
-    // {
-    //   path: '/Contacts',
-    //   name: 'Contacts',
-    //   component: Contacts
-    // },
-    
-    // {
-    //   path: '/ReportForm',
-    //   name: 'ReportForm',
-    //   component: ReportForm
-    // },
-    // {
-    //   path: '/ReportPage',
-    //   name: 'ReportPage',
-    //   component: ReportPage
-    // },
+   
     
   ]
 })
