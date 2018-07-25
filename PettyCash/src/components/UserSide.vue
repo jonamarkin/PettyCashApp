@@ -23,7 +23,7 @@
 				</sui-menu-menu>
 			  	<a class="item ">
 			    	<sui-button positive @click.native="toggle" class="z-depth-1">MAKE A NEW REQUEST</sui-button>
-                    <sui-modal v-model="open" >
+                    <sui-modal v-model="open"  >
                         <sui-modal-header >REQUEST FORM</sui-modal-header>
                         <sui-modal-content>
                             <sui-modal-description>
@@ -106,30 +106,30 @@ export default {
     //             });
     //         }
 
-    sendData(){
-      axios.post('https://pettycash.nfortics.com/api/cashrequest', 
-      this.dateNeeded,
-      this.amount,
-      this.description, // the data to post
-      { headers: {
-        'Content-type': 'application/json',
-        }
-      }).then(response =>this.posts = response.data);
-      }
     // sendData(){
-    //   console.log('Kwame')
-    //   axios.post('https://pettycash.nfortics.com/api/cashrequest', {
-    //   dateNeeded: this.dateNeeded,
-    //   amount: this.amount,
-    //   description: this.description
-    // })
-    // .then(function (response) {
-    //   console.log(response);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
-    // }
+    //   axios.post('https://pettycash.nfortics.com/api/cashrequest', 
+    //   this.dateNeeded,
+    //   this.amount,
+    //   this.description, // the data to post
+    //   { //headers: {
+    //   //   'Content-type': 'application/json',
+    //   //   }
+    //   }).then(response =>this.posts = response.data);
+    //   }
+    sendData(){
+      console.log('Kwame')
+      axios.post('https://pettycash.nfortics.com/api/cashrequest', {
+      dateNeeded: this.dateNeeded,
+      amount: this.amount,
+      description: this.description
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    }
   }
 }
 </script>

@@ -11,7 +11,7 @@
 									  	<label></label>
 									</div>
 								</th> -->
-								<th>Subject</th>
+								
 								<th>Payment Mode</th>
 								<th>Amount</th>
 								<th>Reason</th>
@@ -28,7 +28,7 @@
 									  	<label></label>
 									</div>
 								</td> -->
-								<td>{{post.subject}}</td>
+								
 								<td>{{post.payment}}</td>
 								<td>{{post.amount}}</td>
 								<td>{{post.reason}}</td>
@@ -122,7 +122,7 @@ created(){
 	// 	})
 	for (let index = 0; index < 20; index++) {
 		var post = {
-			subject: faker.lorem.word(),
+			
 			payment: faker.finance.transactionType(),
 			amount: faker.finance.amount(),
 			reason: faker.lorem.sentence(),

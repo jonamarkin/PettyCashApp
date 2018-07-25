@@ -9,7 +9,7 @@
 						<div class="column no-padding-bottom">
 							<div class="ui right action left icon input fluid">
                                 <i class="search icon"></i>
-                                <input type="text" placeholder="Search Contacts">
+                                <input type="text" placeholder="Search Contacts" v-model="search">
                                 <button class="ui positive button">Search</button>
                             </div>
 						</div>
@@ -18,7 +18,7 @@
 						
 						<thead>
 							<tr>
-								<th>
+								<th >
 							
 								</th>
 								<th>Names</th>
@@ -30,7 +30,7 @@
 						</thead>
 
 						<tbody>
-							<tr v-for="post in posts" :key="post.title">
+							<tr v-for="post in filteredPosts " :key="post.title">
 								<td>
 									<i class="user icon"></i>
 								</td>
@@ -69,7 +69,8 @@ export default {
   name: 'AdminInbox',
   data () {
     return {
-		posts:[]
+		posts:[],
+		search:''
     }
   },
   components:{
@@ -91,6 +92,27 @@ export default {
 		//console.log("fajsgdf",faker.random.number())
 		this.posts.push(post)
 	}
+},
+methods:{
+	// Search: function(post) {
+    //       return post.name.indexOf(this.search) != -1
+    //       || post.contact.indexOf(this.search) != -1
+	// 	  || post.location.indexOf(this.search) != -1
+	// 	  || post.email.indexOf(this.search) != -1
+    //       ;
+    //   }
+
+	
+},
+computed: {
+	filteredPosts: function () {
+    return this.posts.filter((post)=> {
+		return post.name.match(this.search)
+		|| post.contact.match(this.search)
+		|| post.email.match(this.search)
+		|| post.location.match(this.search)
+    })
+  }
 }
 }
 </script>
