@@ -116,19 +116,38 @@ export default {
     //   //   }
     //   }).then(response =>this.posts = response.data);
     //   }
+    // sendData(){
+    //   console.log('Kwame')
+    //   let axiosConfig = {
+    //   headers: {
+    //       'Content-Type': 'application/json;charset=UTF-8',
+    //       "Access-Control-Allow-Origin": "*",
+    //   }
+    // };
+    //   axios.post('https://pettycash.nfortics.com/api/cashrequest', {
+    //   dateNeeded: this.dateNeeded,
+    //   amount: this.amount,
+    //   description: this.description
+    // },
+    // axiosConfig)
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+    // }
+
     sendData(){
-      console.log('Kwame')
-      axios.post('https://pettycash.nfortics.com/api/cashrequest', {
+      axios({
+    method: 'post',
+    url: 'https://pettycash.nfortics.com/api/cashrequest',
+    data: {
       dateNeeded: this.dateNeeded,
       amount: this.amount,
       description: this.description
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  }
+});
     }
   }
 }
