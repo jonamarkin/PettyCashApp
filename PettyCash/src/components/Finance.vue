@@ -20,7 +20,7 @@
 							<tr>
 								<th>
 									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
+									  	<input type="checkbox" name="example" v-model="selectAll">
 									  	<label></label>
 									</div>
 								</th>
@@ -29,6 +29,7 @@
 								<th>Amount</th>
 								<th>Reason</th>
 								<th>Datetime</th>
+								<th>Status</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -36,8 +37,8 @@
 						<tbody>
 							<tr v-for="post in posts" :key="post.title">
 								<td>
-									<div class="ui checkbox">
-									  	<input type="checkbox" name="example">
+									<div class="ui checkbox" >
+									  	<input type="checkbox" name="example" v-model="selected" :value="post.from">
 									  	<label></label>
 									</div>
 								</td>
@@ -46,6 +47,7 @@
 								<td>{{post.amount}}</td>
 								<td>{{post.reason}}</td>
 								<td>{{post.datetime}}</td>
+								<td>{{post.status}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -106,7 +108,8 @@ export default {
   data () {
     return {
 		show:false,
-		posts:[]
+		posts:[],
+		selected:[],
     }
   },
   components:{
@@ -118,6 +121,27 @@ export default {
 	// posts () {
 	// 	return this.$store.state.posts
 	// }
+	selectAll: {
+            get() {
+				return this.posts ? this.selected.length == this.posts.length : false;
+				
+            },
+            set(value) {
+                var selected = [];
+
+                if (value) {
+                    this.posts.forEach(function (post) {
+						selected.push(post.from);
+						// seen=true;
+					});
+					
+                }
+
+				this.selected = selected;
+				
+            }
+		},
+		
 },
 created(){
 	// this.$store.dispatch('fetchPosts')
@@ -130,7 +154,8 @@ created(){
 			// subject: faker.lorem.word(),
 			amount: faker.finance.amount(),
 			reason: faker.lorem.sentence(),
-			datetime: faker.date.recent()
+			datetime: faker.date.recent(),
+			status: 'Approved'
 		}
 		console.log("fajsgdf",faker.random.number())
 		this.posts.push(post)

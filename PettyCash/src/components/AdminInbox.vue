@@ -6,10 +6,10 @@
 			
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
-						<div class="column no-padding-bottom" v-show="selectAll	">
+						<div class="column no-padding-bottom" >
 							<div class="ui secondary menu">
-								<a href="" class="ui basic green button item">Approve all</a>
-								<a href="" class="ui basic red button item">Decline all</a>
+								<a href="" class="ui basic green button item">Approve</a>
+								<a href="" class="ui basic red button item">Decline</a>
 							</div>
 						</div>
 					</div>
@@ -24,7 +24,7 @@
 									</div>
 								</th>
 								<th>From</th>
-								<th>Subject</th>
+								<!-- <th>Subject</th> -->
 								<th>Amount</th>
 								<th>Reason</th>
 								<th>Datetime</th>
@@ -41,7 +41,7 @@
 									</div>
 								</td>
 								<td>{{post.from}}</td>
-								<td>{{post.subject}}</td>
+								<!-- <td>{{post.subject}}</td> -->
 								<td>{{post.amount}}</td>
 								<td>{{post.reason}}</td>
 								<td>{{post.datetime}}</td>
@@ -156,7 +156,7 @@ created(){
 	for (let index = 0; index < 10; index++) {
 		var post = {
 			from: faker.name.findName(),
-			subject: faker.lorem.word(),
+			// subject: faker.lorem.word(),
 			amount: faker.finance.amount(),
 			reason: faker.lorem.sentence(),
 			datetime: faker.date.recent()

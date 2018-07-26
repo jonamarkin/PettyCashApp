@@ -12,10 +12,11 @@
 									</div>
 								</th> -->
 								
-								<th>Payment Mode</th>
+								<!-- <th>Payment Mode</th> -->
 								<th>Amount</th>
 								<th>Reason</th>
 								<th>Datetime</th>
+								<th>Status</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -29,10 +30,11 @@
 									</div>
 								</td> -->
 								
-								<td>{{post.payment}}</td>
+								<!-- <td>{{post.payment}}</td> -->
 								<td>{{post.amount}}</td>
 								<td>{{post.reason}}</td>
 								<td>{{post.datetime}}</td>
+								<td>{{post.status}}</td>
 								<td><i class="trash alternate icon" @click="toggle"></i></td>
                                 
 							</tr>
@@ -123,10 +125,11 @@ created(){
 	for (let index = 0; index < 20; index++) {
 		var post = {
 			
-			payment: faker.finance.transactionType(),
+			// payment: faker.finance.transactionType(),
 			amount: faker.finance.amount(),
 			reason: faker.lorem.sentence(),
-			datetime: faker.date.recent()
+			datetime: faker.date.recent(),
+			status: 'approved'
 		}
 		console.log("fajsgdf",faker.random.number())
 		this.posts.push(post)
