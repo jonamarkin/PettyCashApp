@@ -36,7 +36,7 @@
             </div>
         </div>
     </sui-form-field>
-    <sui-button positive type="submit" content="Submit Report" />
+    <sui-button style="background:#67AEE6!important; color:white;" type="submit" content="Submit Report" />
     <!-- <div class="ui form">
   
 </div> -->

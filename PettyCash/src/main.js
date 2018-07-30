@@ -11,7 +11,6 @@ import ReportForm from '@/components/ReportForm'
 import FinanceSide from '@/components/FinanceSide'
 import AdminDashboard from '@/components/AdminDashboard'
 import AdminReport from '@/components/AdminReport'
-import Modal from '@/components/Modal'
 import "@/assets/css/app.css"
 import store from './store'
 Vue.use(require('vue-faker'));
@@ -21,9 +20,12 @@ Vue.component('userside', UserSide);
 Vue.component('financeside', FinanceSide );
 Vue.component('reportform', ReportForm);
 Vue.component('Header', Header);
-Vue.component('Modal', Modal);
 Vue.component('admindashboard', AdminDashboard);
 Vue.component('adminreport', AdminReport);
+
+
+
+export const serverBus = new Vue();
 
 Vue.config.productionTip = false
 

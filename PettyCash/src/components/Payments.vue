@@ -6,7 +6,7 @@
 	<div class="form-body">
    		<sui-card class="u-full-width u-full-height green">
       	<sui-card-content>
-	   		<sui-card-header>PAYMENT DETAILS</sui-card-header>
+	   		<sui-card-header style="color:#67AEE6!important;">PAYMENT DETAILS</sui-card-header>
         		<sui-card-description>
 					<form class="ui form" >
 						<div class="two fields">
@@ -68,7 +68,7 @@
 							<div class="ui buttons">
 								<button class="ui button">Cancel</button>
 								<div class="or"></div>
-								<button class="ui positive button">Send</button>
+								<button class="ui primary button">Send</button>
 							</div>
 						</div>
 					</form>
