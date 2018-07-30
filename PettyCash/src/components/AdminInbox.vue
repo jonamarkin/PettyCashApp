@@ -8,8 +8,8 @@
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom" >
 							<div class="ui secondary menu">
-								<a href="" class="ui basic green button item">APPROVE</a>
-								<a href="" class="ui basic red button item">DECLINE</a>
+								<a href="" class="ui button item googlelog">APPROVE</a>
+								<a href="" class="ui reject button item">DECLINE</a>
 							</div>
 						</div>
 					</div>
@@ -43,8 +43,8 @@
 								<td>{{post.from}}</td>
 								<!-- <td>{{post.subject}}</td> -->
 								<td>{{post.amount}}</td>
-								<td>{{post.reason}}</td>
-								<td>{{post.datetime}}</td>
+								<td>{{post.description}}</td>
+								<td>{{post.dateNeeded}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -98,6 +98,7 @@
 import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
 import faker from 'faker'
+import axios from "axios";
 
 export default {
   name: 'AdminInbox',
@@ -153,17 +154,29 @@ created(){
 	// 	.then(posts =>{
 
 	// 	})
-	for (let index = 0; index < 10; index++) {
-		var post = {
-			from: faker.name.findName(),
-			// subject: faker.lorem.word(),
-			amount: faker.finance.amount(),
-			reason: faker.lorem.sentence(),
-			datetime: faker.date.recent()
-		}
-		console.log("fajsgdf",faker.random.number())
-		this.posts.push(post)
-	}
+	// for (let index = 0; index < 10; index++) {
+	// 	var post = {
+	// 		from: faker.name.findName(),
+	// 		// subject: faker.lorem.word(),
+	// 		amount: faker.finance.amount(),
+	// 		reason: faker.lorem.sentence(),
+	// 		datetime: faker.date.recent()
+	// 	}
+	// 	console.log("fajsgdf",faker.random.number())
+	// 	this.posts.push(post)
+	// }
+},
+mounted(){
+	axios
+      .get('https://pettycash.nfortics.com/api/cashrequest')
+      .then(response => {
+		this.posts = response.data
+		
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
 }
 }
 </script>

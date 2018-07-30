@@ -22,7 +22,7 @@
 						</thead>
 
 						<tbody>
-							<tr  v-for="post in posts" :key="post.title" >
+							<tr  v-for="post in posts">
 								<!-- <td>
 									<div class="ui checkbox">
 									  	<input type="checkbox" name="example">
@@ -32,8 +32,8 @@
 								
 								<!-- <td>{{post.payment}}</td> -->
 								<td>{{post.amount}}</td>
-								<td>{{post.reason}}</td>
-								<td>{{post.datetime}}</td>
+								<td>{{post.description}}</td>
+								<td>{{post.dateNeeded}}</td>
 								<td>{{post.status}}</td>
 								<td><i class="trash alternate icon" @click="toggle"></i></td>
                                 
@@ -90,6 +90,7 @@
 import Header from './Header.vue';
 import UserSide from './UserSide.vue';
 import faker from 'faker'
+import axios from "axios";
 
 export default {
   name: 'UserTable',
@@ -101,7 +102,9 @@ export default {
     return { 
 		// users,
 		posts:[],
-         open: false };
+         open: false,
+		 info:null 
+		 };
 },
   components:{
       'Header':Header,
@@ -122,20 +125,52 @@ created(){
 	// 	.then(posts =>{
 
 	// 	})
-	for (let index = 0; index < 20; index++) {
-		var post = {
+	// for (let index = 0; index < 20; index++) {
+	// 	var post = {
 			
-			// payment: faker.finance.transactionType(),
-			amount: faker.finance.amount(),
-			reason: faker.lorem.sentence(),
-			datetime: faker.date.recent(),
-			status: 'approved'
-		}
-		console.log("fajsgdf",faker.random.number())
-		this.posts.push(post)
-	}
+	// 		// payment: faker.finance.transactionType(),
+	// 		amount: faker.finance.amount(),
+	// 		reason: faker.lorem.sentence(),
+	// 		datetime: faker.date.recent(),
+	// 		status: 'approved'
+	// 	}
+	// 	console.log("fajsgdf",faker.random.number())
+	// 	this.posts.push(post)
+	// }
+	axios
+      .get('https://pettycash.nfortics.com/api/cashrequest')
+      .then(response => {
+		this.posts = response.data
+		
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
+},
+
+mounted () {
+    // axios
+    //   .get('https://pettycash.nfortics.com/api/cashrequest')
+    //   .then(response => {
+	// 	for (let index = 0; index < 20; index++) {
+	// 	var post = {
+    //     amount: response.amount,
+	// 	description: response.description,
+	// 	status: response.status,
+	// 	datetime: response.datetime
+	// 	}
+	// 	this.posts.push(post)
+	// 	}
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //     this.errored = true
+    //   })
+      
+  }
 }
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

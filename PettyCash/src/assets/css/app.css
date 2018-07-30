@@ -15,6 +15,11 @@
 		font-family: GothamBook;
 		src: url(fonts/Gotham-Font/GothamBook.ttf)
 	}
+	/* @font-face{
+		font-family: Gotham;
+		src: url(fonts/Gotham-Font/)
+	} */
+	
 		
 
 a,
@@ -190,9 +195,88 @@ textarea.rounded{
 }
 
 .left-log{
-	/* background: url('../b3.jpeg')!important;
-	background-position: center;
-    background-repeat: no-repeat;
-	background-size: cover; */
+	/* background: url('../coins.jpeg')!important;
+	background-position: center!important;
+    background-repeat: no-repeat!important;
+	background-size: cover;  */
+	background:white;
+	/* border: 0.5px solid #67AEE6!important; */
+	border-radius:5px;
+	
+}
+
+/* .left-content */
+	/* color:white;
+	font-family:GothamLight;
+	padding-top: 15vh;
+	font-weight:bold; */
+	/* background:#67AEE6!important; */
+
+
+/* .petty{
+	font-family:GothamBold!important;
+	font-size:4em;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	padding-bottom: 2vh;
+	/* text-align: center; */
+
+
+/* .can-do{
+	font-family:GothamBook!important;
+	
+}
+
+.platform{
+} */ 
+
+.right-content{
+	color:#67AEE6!important;
+	font-family:GothamBook;
+	padding-top: 15vh;
+	font-weight:bold;
+}
+
+.welcome{
+	font-family:GothamBold!important;
+	font-size:4em;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	padding-bottom: 3vh;
+}
+
+.login{
+	font-family:GothamBook!important;
+	font-size:1.1em;
+}
+
+.googlelog{
+	color:#67AEE6!important;
+	font-family:GothamBold!important;
+	border: 2px solid #67AEE6!important;
+	background:white!important;
+}
+
+.googlelog:hover{
+	color:white!important;
+	font-family:GothamBold!important;
 	background:#67AEE6!important;
+}
+
+.add{
+	background: #67AEE6!important;
+	color:white!important;
+	font-family:GothamBold!important;
+	margin-left:5vw!important;
+}
+
+.reject{
+	color:#ff0000!important;
+	font-family:GothamBold!important;
+	border: 2px solid #ff0000!important;
+	background:white!important;
+}
+
+.reject:hover{
+	color:white!important;
+	font-family:GothamBold!important;
+	background:#ff0000!important;
 }

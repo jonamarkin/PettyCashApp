@@ -9,8 +9,8 @@
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom">
 							<div class="ui secondary menu">
-								<a href="" class="ui basic primary button item">FORWARD</a>
-                                <a href="" class="ui basic red button item">REJECT</a>
+								<a href="" class="ui  button item googlelog">FORWARD</a>
+                                <a href="" class="ui  button item reject">REJECT</a>
 							</div>
 						</div>
 					</div>
@@ -45,8 +45,8 @@
 								<td>{{post.from}}</td>
 								
 								<td>{{post.amount}}</td>
-								<td>{{post.reason}}</td>
-								<td>{{post.datetime}}</td>
+								<td>{{post.description}}</td>
+								<td>{{post.dateNeeded}}</td>
 								<td>{{post.status}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
@@ -91,7 +91,10 @@
 							</tr> -->
 						</tbody>
 					</table>
+
+					
 				</div>
+
 			<!-- end of main changes -->
     </template>
 	
@@ -102,6 +105,7 @@ import Header from './Header.vue';
 import AdminSide from './AdminSide.vue';
 import PulseLoader from '../../node_modules/vue-spinner/src/PulseLoader.vue'
 import faker from 'faker'
+import axios from "axios";
 
 export default {
   name: 'AdminInbox',
@@ -148,18 +152,28 @@ created(){
 	// 	.then(posts =>{
 
 	// 	})
-	for (let index = 0; index < 20; index++) {
-		var post = {
-			from: faker.name.findName(),
-			// subject: faker.lorem.word(),
-			amount: faker.finance.amount(),
-			reason: faker.lorem.sentence(),
-			datetime: faker.date.recent(),
-			status: 'Approved'
-		}
-		console.log("fajsgdf",faker.random.number())
-		this.posts.push(post)
-	}
+	// for (let index = 0; index < 20; index++) {
+	// 	var post = {
+	// 		from: faker.name.findName(),
+	// 		// subject: faker.lorem.word(),
+	// 		amount: faker.finance.amount(),
+	// 		reason: faker.lorem.sentence(),
+	// 		datetime: faker.date.recent(),
+	// 		status: 'Approved'
+	// 	}
+	// 	console.log("fajsgdf",faker.random.number())
+	// 	this.posts.push(post)
+	// }
+	axios
+      .get('https://pettycash.nfortics.com/api/cashrequest')
+      .then(response => {
+		this.posts = response.data
+		
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
 },
 beforeMount() {
     this.show=!show;

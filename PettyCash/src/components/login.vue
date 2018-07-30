@@ -1,14 +1,31 @@
 <template>
 <div class="light-grey center aligned page">
   <div class="ui container min-height-100 " style="padding-top:14vh;">
-    <div class="ui grid no-margin min-height-70 z-depth-1 ">
-      <div class="six wide column no-padding light-grey left-log">
-
-      </div>
-      <div class="ten wide column no-padding" style="background:white;">
-
-      </div>
-
+    <div class="ui grid no-margin center aligned  min-height-70">
+        <div class="ten wide column z-depth-1 no-padding left-log ">
+          <!-- <div class="left-content"> -->
+            <!-- <div class="petty"><b>PettyCash</b></div>
+            <div class="platform"><i class="lightbulb icon"></i> A platform for petty cash management</div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui list can-do">
+              <div class="item"><i class="arrow alternate circle up icon"></i> Make Cash Requests</div>
+              <div class="item"><i class="chart pie icon"></i> Manage Cash Requests</div>
+              <div class="item"><i class="reply all icon"></i> Make Cash Payments</div>
+            </div> -->
+          <!-- </div> -->
+        <!-- <div class="ten wide column no-padding center aligned" style="background:white;"> -->
+          <div class="right-content">
+            <div class="welcome">WELCOME</div>
+            <div class="login">Login to access your account</div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div class="ui horizontal divider"></div>
+            <div>
+              <button class="ui button googlelog" @click="onLogin">LOGIN WITH GOOGLE</button>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
@@ -35,6 +52,7 @@ export default {
   },
   methods:{
     onLogin() {
+      this.$router.push({name:'UserDashboard'})
       // if (this.role=="admin") {
       //   this.$router.push({name: 'AdminDashboard'})
       // }
@@ -44,13 +62,13 @@ export default {
       // else{
       //   this.$router.push({name: 'UserDashboard'}); 
       // }
-      var provider = new firebase.auth.GoogleAuthProvider();
+      // var provider = new firebase.auth.GoogleAuthProvider();
 
-      firebase.auth().signInWithPopup(provider).then(function(result) {
+      // firebase.auth().signInWithPopup(provider).then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
+      // var token = result.credential.accessToken;
+      // // The signed-in user info.
+      // var user = result.user;
 
     //     function print_user(user) {
     //     user.providerData.forEach(function (profile) {
@@ -62,12 +80,12 @@ export default {
     //     });
     // }
 
-    firebase.auth().onAuthStateChanged(user => {
-      if(user) {
-        window.location = 'UserDashboard'; //After successful login, user will be redirected to home.html
+    // firebase.auth().onAuthStateChanged(user => {
+    //   if(user) {
+    //     window.location = 'UserDashboard'; //After successful login, user will be redirected to home.html
         
-      }
-    });
+    //   }
+    // });
 
       // console.log(result.user);
       // if(user){
@@ -75,16 +93,16 @@ export default {
       // }
       
       // ...
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
+    // }).catch(function(error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
     
       
 },
