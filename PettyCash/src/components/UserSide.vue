@@ -42,7 +42,7 @@
                                     <label>Description</label>
                                     <textarea rows="3" v-model="description"></textarea>
                                     </sui-form-field>
-                                    
+                                    <sui-button style="background:#67AEE6!important; color:white;" type="submit" content="Submit Request" @click.native="sendData" @click="toggle"/>
                                 </sui-form>
                             </sui-modal-description>
                         </sui-modal-content>

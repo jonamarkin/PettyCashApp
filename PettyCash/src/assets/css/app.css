@@ -46,6 +46,14 @@ tr.collapse.in {
 tr:hover{
 	cursor:pointer;
 }
+
+/* td:nth-of-type(1) {
+
+	display: none;
+	
+	} */
+	
+	
 /*display*/
 .display-block{
 	display: block!important;

@@ -4,7 +4,6 @@
    	
 			
 			<div>
-				<pulse-loader :loading="loading" :color="blue" :size="small" v-show="show" v-bind="show"></pulse-loader>
 			<!-- this is for all the main changes -->
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom">
@@ -35,20 +34,21 @@
 						</thead>
 
 						<tbody>
-							<tr v-for="post in posts" :key="post.title">
+							<tr v-for="post in posts" :key="post.id">
 								<td>
 									<div class="ui checkbox" >
 									  	<input type="checkbox" name="example" v-model="selected" :value="post.from">
 									  	<label></label>
 									</div>
 								</td>
+								<td class="id">{{post.Id}}</td>
 								<td>{{post.from}}</td>
 								
 								<td>{{post.amount}}</td>
 								<td>{{post.description}}</td>
 								<td>{{post.dateNeeded}}</td>
 								<td>{{post.status}}</td>
-								<td>
+								<td @click="getID">
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
 
@@ -59,8 +59,8 @@
 									</div> -->
 									<sui-dropdown icon="ellipsis vertical">
 										<sui-dropdown-menu class="left floated">
-										<sui-dropdown-item><a href="" class="item">Forward</a></sui-dropdown-item>
-										<sui-dropdown-item><a href="" class="item">Reject</a></sui-dropdown-item>
+										<sui-dropdown-item  ><a class="item" @click="approveRequest">Forward</a></sui-dropdown-item>
+										<sui-dropdown-item ><a class="item" @click="declineRequest">Reject</a></sui-dropdown-item>
 			
 										</sui-dropdown-menu>
 									</sui-dropdown>
@@ -111,9 +111,12 @@ export default {
   name: 'AdminInbox',
   data () {
     return {
-		show:false,
+		// show:false,
 		posts:[],
 		selected:[],
+		// id: ''
+		// id:''
+		idNum:''
     }
   },
   components:{
@@ -175,14 +178,94 @@ created(){
         this.errored = true
       })
 },
-beforeMount() {
-    this.show=!show;
+// beforeMount() {
+//     this.show=!show;
+//   },
+
+  methods:{				     
+	//   approveRequest(){
+		
+	// 	  axios.put('https://pettycash.nfortics.com/api/cashrequest/1', {
+	// 		status:'Approved'
+	// 	})
+	// 	.then(response => {
+	// 		console.log(response);
+	// 	})
+	// 	.catch(error => {
+	// 		console.log(err);
+	// 	});
+	// 		},
+	// pickID(){
+	// 	console.log('Ama')
+	// 	if(event.target.nodeName.toLowerCase() === 'td') {
+    //   	let id= event.target.parentNode.children[0].innerHTML;
+    //   }
+	//   console.log(id)
+	// },
+	getID(){
+		var txt;
+	e.preventDefault();
+	txt = $(this).parent().prev().prev().prev().text();
+	},
+
+	approveRequest(e){
+    			// var $id = $(this).closest("tr")   // Finds the closest row <tr> 
+                //        .find(".id")     
+                //        .text();         // Retrieves the text within <td>
+				
+				// Outputs the answer
+	// $('body').on('click', 'input.theButton', function(e) {
+	// var txt;
+	// e.preventDefault();
+	// txt = $(this).parent().prev().prev().prev().text();
+	// alert(txt);
+// })
+	// console.log(this.idNum)
+      axios({
+    method: 'put',
+    url: 'https://pettycash.nfortics.com/api/cashrequest/'+idNum,
+    data: {
+      status:'Approved',
+	  description:'Ama Maame'
+	}
+		});
+    },
+
+		declineRequest(id){
+			axios.put('https://pettycash.nfortics.com/api/cashrequest/'+idNum, {
+			status:'Declined',
+			description:'something'
+		})
+		.then(response => {
+			console.log(response);
+		})
+		.catch(error => {
+			console.log(err);
+		});
+		},
+
+			// getID(){
+			// 	$(".getID").click(function() {
+    		// 	var $item = $(this).closest("tr")   // Finds the closest row <tr> 
+            //            .find(".id")     
+            //            .text();         // Retrieves the text within <td>
+
+    		// 		this.id=$item;       // Outputs the answer
+			// 		});
+			// }
   }
+
 
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
+ td:nth-of-type(2) {
+
+	display: none;
+	
+	}
 
 </style>
