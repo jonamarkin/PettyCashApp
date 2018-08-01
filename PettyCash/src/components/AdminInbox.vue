@@ -33,10 +33,10 @@
 						</thead>
 
 						<tbody>
-							<tr  v-for="post in posts" :key="post.title">
+							<tr  v-for="post in posts" :key="post.id">
 								<td>
 									<div class="ui checkbox">
-									  	<input type="checkbox" name="example" v-model="selected" :value="post.from">
+									  	<input type="checkbox" name="example" v-model="selected" :value="post.id">
 									  	<label></label>
 									</div>
 								</td>
@@ -129,7 +129,7 @@ export default {
 
                 if (value) {
                     this.posts.forEach(function (post) {
-						selected.push(post.from);
+						selected.push(post.id);
 						// seen=true;
 					});
 					

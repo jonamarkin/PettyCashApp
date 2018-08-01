@@ -37,18 +37,18 @@
 							<tr v-for="post in posts" :key="post.id">
 								<td>
 									<div class="ui checkbox" >
-									  	<input type="checkbox" name="example" v-model="selected" :value="post.from">
+									  	<input type="checkbox" name="example" v-model="selected" :value="post.id">
 									  	<label></label>
 									</div>
 								</td>
-								<td class="id">{{post.Id}}</td>
+								<td class="id">{{post.id}}</td>
 								<td>{{post.from}}</td>
 								
 								<td>{{post.amount}}</td>
 								<td>{{post.description}}</td>
 								<td>{{post.dateNeeded}}</td>
 								<td>{{post.status}}</td>
-								<td @click="getID">
+								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
 
@@ -59,8 +59,8 @@
 									</div> -->
 									<sui-dropdown icon="ellipsis vertical">
 										<sui-dropdown-menu class="left floated">
-										<sui-dropdown-item  ><a class="item" @click="approveRequest">Forward</a></sui-dropdown-item>
-										<sui-dropdown-item ><a class="item" @click="declineRequest">Reject</a></sui-dropdown-item>
+										<sui-dropdown-item  ><a class="item" @click="approveRequest(post)">Forward</a></sui-dropdown-item>
+										<sui-dropdown-item ><a class="item" @click="declineRequest(post)">Reject</a></sui-dropdown-item>
 			
 										</sui-dropdown-menu>
 									</sui-dropdown>
@@ -114,9 +114,6 @@ export default {
 		// show:false,
 		posts:[],
 		selected:[],
-		// id: ''
-		// id:''
-		idNum:''
     }
   },
   components:{
@@ -138,7 +135,7 @@ export default {
 
                 if (value) {
                     this.posts.forEach(function (post) {
-						selected.push(post.from);
+						selected.push(post.id);
 						// seen=true;
 					});
 					
@@ -202,13 +199,13 @@ created(){
     //   }
 	//   console.log(id)
 	// },
-	getID(){
-		var txt;
-	e.preventDefault();
-	txt = $(this).parent().prev().prev().prev().text();
-	},
+	// getID(){
+	// 	var txt;
+	// e.preventDefault();
+	// txt = $(this).parent().prev().prev().prev().text();
+	// },
 
-	approveRequest(e){
+	approveRequest(post){
     			// var $id = $(this).closest("tr")   // Finds the closest row <tr> 
                 //        .find(".id")     
                 //        .text();         // Retrieves the text within <td>
@@ -220,10 +217,10 @@ created(){
 	// txt = $(this).parent().prev().prev().prev().text();
 	// alert(txt);
 // })
-	// console.log(this.idNum)
+	// console.log('called', post.I)
       axios({
     method: 'put',
-    url: 'https://pettycash.nfortics.com/api/cashrequest/'+idNum,
+    url: 'https://pettycash.nfortics.com/api/cashrequest/' +post.id,
     data: {
       status:'Approved',
 	  description:'Ama Maame'
@@ -231,8 +228,8 @@ created(){
 		});
     },
 
-		declineRequest(id){
-			axios.put('https://pettycash.nfortics.com/api/cashrequest/'+idNum, {
+		declineRequest(post){
+			axios.put('https://pettycash.nfortics.com/api/cashrequest/' +post.id, {
 			status:'Declined',
 			description:'something'
 		})
@@ -242,17 +239,9 @@ created(){
 		.catch(error => {
 			console.log(err);
 		});
-		},
+		}
 
-			// getID(){
-			// 	$(".getID").click(function() {
-    		// 	var $item = $(this).closest("tr")   // Finds the closest row <tr> 
-            //            .find(".id")     
-            //            .text();         // Retrieves the text within <td>
-
-    		// 		this.id=$item;       // Outputs the answer
-			// 		});
-			// }
+			
   }
 
 

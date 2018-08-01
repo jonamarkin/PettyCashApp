@@ -175,9 +175,9 @@ computed: {
 		|| response.email.match(this.search)
     })
   },
-  orderedPosts: function () {
-    return _.orderBy(this.posts, this.sortColumn)
-  }
+//   orderedPosts: function () {
+//     return _.orderBy(this.posts, this.sortColumn)
+//   }
 }
 }
 </script>
