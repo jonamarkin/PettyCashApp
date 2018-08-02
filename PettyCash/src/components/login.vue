@@ -22,9 +22,42 @@
             <div class="ui horizontal divider"></div>
             <div class="ui horizontal divider"></div>
             <div>
-              <button class="ui button googlelog" @click="onLogin">LOGIN WITH GOOGLE</button>
+              <g-signin-button class="ui button googlelog"
+                :params="googleSignInParams"
+                @success="onSignInSuccess"
+                @error="onSignInError">
+                SIGN IN WITH GOOGLE
+              </g-signin-button>
             </div>
+              
+              <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+              <!-- <a href="#" @click="signOut">Sign out</a> -->
+
+              <!-- // <button class="ui button googlelog" @click="onLogin">LOGIN WITH GOOGLE</button> -->
+            
           </div>
+
+          <div class="inline fields">
+                <label>Select Role</label>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input name="frequency" type="radio" v-model="role" value="Admin">
+                    <label>Admin</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input name="frequency" type="radio" v-model="role" value="Finance">
+                    <label>Finance</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input name="frequency" type="radio" v-model="role" value="User">
+                    <label>User</label>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
   </div>
@@ -32,27 +65,35 @@
 </template>
 
 <script>
-var config = {
-    apiKey: "AIzaSyDCyy6nEpMQtfI10RxqtUC57M5ZhFrH9oM",
-    authDomain: "pettycashapp.firebaseapp.com",
-    databaseURL: "https://pettycashapp.firebaseio.com",
-    projectId: "pettycashapp",
-    storageBucket: "pettycashapp.appspot.com",
-    messagingSenderId: "426531209581"
-  };
-  firebase.initializeApp(config);
-import firebase from 'firebase'
+// var config = {
+//     apiKey: "AIzaSyDCyy6nEpMQtfI10RxqtUC57M5ZhFrH9oM",
+//     authDomain: "pettycashapp.firebaseapp.com",
+//     databaseURL: "https://pettycashapp.firebaseio.com",
+//     projectId: "pettycashapp",
+//     storageBucket: "pettycashapp.appspot.com",
+//     messagingSenderId: "426531209581"
+//   };
+//   firebase.initializeApp(config);
+// import firebase from 'firebase'
 
 export default {
    name: 'login',
   data () {
     return {
-        role: "finance"
+        role:"",
+        googleSignInParams: {
+        client_id: '1080232845509-ak73dtp4lnia9lu778039uvh7el8pn1o.apps.googleusercontent.com'
+      }
     }
   },
   methods:{
     onLogin() {
       this.$router.push({name:'UserDashboard'})
+
+      
+
+      
+
       // if (this.role=="admin") {
       //   this.$router.push({name: 'AdminDashboard'})
       // }
@@ -62,56 +103,72 @@ export default {
       // else{
       //   this.$router.push({name: 'UserDashboard'}); 
       // }
-      // var provider = new firebase.auth.GoogleAuthProvider();
-
-      // firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      // var token = result.credential.accessToken;
-      // // The signed-in user info.
-      // var user = result.user;
-
-    //     function print_user(user) {
-    //     user.providerData.forEach(function (profile) {
-    //         console.log("Sign-in provider: "+profile.providerId);
-    //         console.log("  Provider-specific UID: "+profile.uid);
-    //         console.log("  Name: "+profile.displayName);
-    //         console.log("  Email: "+profile.email);
-    //         console.log("  Photo URL: "+profile.photoURL);
-    //     });
-    // }
-
-    // firebase.auth().onAuthStateChanged(user => {
-    //   if(user) {
-    //     window.location = 'UserDashboard'; //After successful login, user will be redirected to home.html
-        
-    //   }
-    // });
-
-      // console.log(result.user);
-      // if(user){
-      //   this.$router.push({name: 'FinanceDash'})
-      // }
-      
-      // ...
-    // }).catch(function(error) {
-    //   // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   // The email of the user's account used.
-    //   var email = error.email;
-    //   // The firebase.auth.AuthCredential type that was used.
-    //   var credential = error.credential;
-    //   // ...
-    // });
-    
+      // var provider = new firebase.auth.GoogleAuthProvider()
       
 },
 
+// signOut() {
+//     window.signOut()
+//   }
+    onSignInSuccess (googleUser) {
+      // `googleUser` is the GoogleUser object that represents the just-signed-in user.
+      // See https://developers.google.com/identity/sign-in/web/reference#users
+      const profile = googleUser.getBasicProfile() // etc etc
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail());
+      
+      if(this.role=="Admin"){
+      this.$router.push({name: 'AdminDashboard'})
+      }
+      else if(this.role=="Finance"){
+        this.$router.push({name: 'FinanceDash'})
+      }
+      else if(this.role=="User"){
+        this.$router.push({name: 'UserDashboard'})
+      }
+      else{
+        alert('You must select a role');
+      }
+    },
+    onSignInError (error) {
+      // `error` contains any error occurred.
+      console.log('OH NOES', error)
+    }
 
+
+
+
+  },
+
+  mounted(){
+    // function onSignIn(googleUser) {
+       
+    //   var profile = googleUser.getBasicProfile();
+    //   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    //   console.log('Name: ' + profile.getName());
+    //   console.log('Image URL: ' + profile.getImageUrl());
+    //   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    // }
   }
 }
 </script>
 <style lang="stylus" scoped>
+
+// .g-signin-button {
+//   /* This is where you control how the button looks. Be creative! */
+//   color:#67AEE6!important;
+// 	font-family:GothamBold!important;
+// 	border: 2px solid #67AEE6!important;
+// 	background:white!important;
+// }
+
+// .g-signin-button:hover{
+//   color:white!important;
+// 	font-family:GothamBold!important;
+// 	background:#67AEE6!important;
+// }
 // .font-login{
 //   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 //   font-size:40px;

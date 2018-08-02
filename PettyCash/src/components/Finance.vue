@@ -8,8 +8,8 @@
 					<div class="ui relaxed grid no-margin">
 						<div class="column no-padding-bottom">
 							<div class="ui secondary menu">
-								<a href="" class="ui  button item googlelog">FORWARD</a>
-                                <a href="" class="ui  button item reject">REJECT</a>
+								<a @click="forwardAll" class="ui  button item googlelog">FORWARD</a>
+                                <a @click="rejectAll" class="ui  button item reject">REJECT</a>
 							</div>
 						</div>
 					</div>
@@ -163,6 +163,7 @@ created(){
 	// 	}
 	// 	console.log("fajsgdf",faker.random.number())
 	// 	this.posts.push(post)
+	
 	// }
 	axios
       .get('https://pettycash.nfortics.com/api/cashrequest')
@@ -180,44 +181,10 @@ created(){
 //   },
 
   methods:{				     
-	//   approveRequest(){
-		
-	// 	  axios.put('https://pettycash.nfortics.com/api/cashrequest/1', {
-	// 		status:'Approved'
-	// 	})
-	// 	.then(response => {
-	// 		console.log(response);
-	// 	})
-	// 	.catch(error => {
-	// 		console.log(err);
-	// 	});
-	// 		},
-	// pickID(){
-	// 	console.log('Ama')
-	// 	if(event.target.nodeName.toLowerCase() === 'td') {
-    //   	let id= event.target.parentNode.children[0].innerHTML;
-    //   }
-	//   console.log(id)
-	// },
-	// getID(){
-	// 	var txt;
-	// e.preventDefault();
-	// txt = $(this).parent().prev().prev().prev().text();
-	// },
+	
 
 	approveRequest(post){
-    			// var $id = $(this).closest("tr")   // Finds the closest row <tr> 
-                //        .find(".id")     
-                //        .text();         // Retrieves the text within <td>
-				
-				// Outputs the answer
-	// $('body').on('click', 'input.theButton', function(e) {
-	// var txt;
-	// e.preventDefault();
-	// txt = $(this).parent().prev().prev().prev().text();
-	// alert(txt);
-// })
-	// console.log('called', post.I)
+    			
       axios({
     method: 'put',
     url: 'https://pettycash.nfortics.com/api/cashrequest/' +post.id,
@@ -239,6 +206,14 @@ created(){
 		.catch(error => {
 			console.log(err);
 		});
+		},
+
+		forwardAll(){
+			console.log(this.selected)
+		},
+
+		rejectAll(){
+			console.log(this.selected)
 		}
 
 			

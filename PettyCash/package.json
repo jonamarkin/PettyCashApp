@@ -25,6 +25,7 @@
     "vue-axios": "^2.1.2",
     "vue-faker": "^1.0.1",
     "vue-full-loading": "^1.2.1",
+    "vue-google-signin-button": "^1.0.2",
     "vue-pikaday": "^0.1.1",
     "vue-router": "^3.0.1",
     "vue-socket.io": "^2.1.1-b",

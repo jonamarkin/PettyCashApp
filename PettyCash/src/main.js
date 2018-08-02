@@ -13,6 +13,8 @@ import AdminDashboard from '@/components/AdminDashboard'
 import AdminReport from '@/components/AdminReport'
 import "@/assets/css/app.css"
 import store from './store'
+import GSignInButton from 'vue-google-signin-button'
+Vue.use(GSignInButton)
 Vue.use(require('vue-faker'));
 Vue.component('adminside', AdminSide);
 Vue.component('payments', Payments);

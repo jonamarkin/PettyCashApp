@@ -28,7 +28,7 @@
 								<th>Amount</th>
 								<th>Reason</th>
 								<th>Datetime</th>
-								<th></th>
+								<th>Status</th>
 							</tr>
 						</thead>
 
@@ -40,11 +40,13 @@
 									  	<label></label>
 									</div>
 								</td>
+								<td class="id">{{post.id}}</td>
 								<td>{{post.from}}</td>
 								<!-- <td>{{post.subject}}</td> -->
 								<td>{{post.amount}}</td>
 								<td>{{post.description}}</td>
 								<td>{{post.dateNeeded}}</td>
+								<td>{{post.status}}</td>
 								<td>
 									<!-- <div class="ui dropdown">
 										<i class="ellipsis vertical icon"></i>
@@ -56,8 +58,8 @@
 									</div> -->
 									<sui-dropdown icon="ellipsis vertical">
 										<sui-dropdown-menu class="left floated">
-										<sui-dropdown-item><a href="" class="item">Approve</a></sui-dropdown-item>
-										<sui-dropdown-item><a href="" class="item">Decline</a></sui-dropdown-item>
+										<sui-dropdown-item><a class="item" @click="approveRequest(post)">Approve</a></sui-dropdown-item>
+										<sui-dropdown-item><a class="item" @click="declineRequest(post)">Decline</a></sui-dropdown-item>
 			
 										</sui-dropdown-menu>
 									</sui-dropdown>
@@ -143,11 +145,35 @@ export default {
 },
 
 methods: {
-	showDiv(value){
-			if(this.selected.length>1){
-				seen=true;
-			}
+	// showDiv(value){
+	// 		if(this.selected.length>1){
+	// 			seen=true;
+	// 		}
+	// 	}
+
+	approveRequest(post){			
+      axios({
+		method: 'put',
+		url: 'https://pettycash.nfortics.com/api/cashrequest/' +post.id,
+		data: {
+		status:'Approved',
+		description:'Ama Maame'
 		}
+			});
+    },
+
+	declineRequest(post){
+		axios.put('https://pettycash.nfortics.com/api/cashrequest/' +post.id, {
+		status:'Declined',
+		description:'something'
+	})
+	.then(response => {
+		console.log(response);
+	})
+	.catch(error => {
+		console.log(err);
+	});
+	}
 },
 created(){
 	// this.$store.dispatch('fetchPosts')
@@ -183,5 +209,9 @@ mounted(){
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+ td:nth-of-type(2) {
 
+	display: none;
+	
+	}
 </style>
