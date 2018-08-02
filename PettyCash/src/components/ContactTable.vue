@@ -68,7 +68,11 @@
                                     </sui-form-field>
                                     <sui-form-field>
                                     <label>Contact</label>
-                                    <input placeholder="Amount Needed" type="number" v-model="phoneNumber">
+                                    <input placeholder="Phone Number" type="number" v-model="phoneNumber">
+                                    </sui-form-field>
+									<sui-form-field>
+                                    <label>Role</label>
+                                    <input placeholder="Role" type="number" v-model="phoneNumber">
                                     </sui-form-field>
                                     <sui-form-field>
                                     <label>Email</label>

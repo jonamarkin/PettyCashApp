@@ -65,16 +65,7 @@
 </template>
 
 <script>
-// var config = {
-//     apiKey: "AIzaSyDCyy6nEpMQtfI10RxqtUC57M5ZhFrH9oM",
-//     authDomain: "pettycashapp.firebaseapp.com",
-//     databaseURL: "https://pettycashapp.firebaseio.com",
-//     projectId: "pettycashapp",
-//     storageBucket: "pettycashapp.appspot.com",
-//     messagingSenderId: "426531209581"
-//   };
-//   firebase.initializeApp(config);
-// import firebase from 'firebase'
+import axios from "axios";
 
 export default {
    name: 'login',
@@ -118,6 +109,26 @@ export default {
       console.log('Name: ' + profile.getName());
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail());
+
+     var  token = googleUser.getAuthResponse().id_token;
+      var email = profile.getEmail();
+      
+      axios.post('https://pettycash.nfortics.com/api/Login',{
+
+    
+      token:token,
+      emai: email
+  
+});
+
+      // var xhr = new XMLHttpRequest();
+      // xhr.open('POST', 'https://pettycash.nfortics.com/api/Login');
+      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      // xhr.onload = function() {
+      //   console.log('Signed in as: ' + xhr.responseText);
+      // };
+      // xhr.send('idtoken=' + id_token);
+      // xhr.send('email=' + emailAddress);
       
       if(this.role=="Admin"){
       this.$router.push({name: 'AdminDashboard'})
