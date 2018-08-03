@@ -16,6 +16,9 @@
           <!-- </div> -->
         <!-- <div class="ten wide column no-padding center aligned" style="background:white;"> -->
           <div class="right-content">
+            <!-- <div class="ui small image logo2">
+              <img src="../assets/blacklogo.png">
+            </div> -->
             <div class="welcome">WELCOME</div>
             <div class="login">Login to access your account</div>
             <div class="ui horizontal divider"></div>
@@ -99,8 +102,8 @@ export default {
 },
 
 // signOut() {
-//     window.signOut()
-//   }
+//     Window.signOut()
+//   },
     onSignInSuccess (googleUser) {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
@@ -166,70 +169,8 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.logo2{
+  padding-bottom 5vh;
+}
 
-// .g-signin-button {
-//   /* This is where you control how the button looks. Be creative! */
-//   color:#67AEE6!important;
-// 	font-family:GothamBold!important;
-// 	border: 2px solid #67AEE6!important;
-// 	background:white!important;
-// }
-
-// .g-signin-button:hover{
-//   color:white!important;
-// 	font-family:GothamBold!important;
-// 	background:#67AEE6!important;
-// }
-// .font-login{
-//   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-//   font-size:40px;
-//   color: rgba(255, 255, 255, 1);
-//   line-height: 1.2;
-//   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-//   font-weight:normal!important;
-
-// }
-// .font-welcome{
-//  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-//  font-size:80px; 
-//  color: rgba(255, 255, 255, 1);
-//  line-height: 1.2;
-//  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-// }
-// .cover{
-//     background: url("../assets/b3.jpeg") center;
-//     height: 100%;
-//     width:100%;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
-// .welcome{
-//   padding-top:14%;
-//   padding-bottom:20%;
-// }
-// button{
-//   img{
-//     width:20px!important;
-//     border-radius:100%;
-//   }
-// }
-// .logo{
-// position: fixed;
-// top: 0px;
-// z-index: 900;
-// left: 0%;
-// padding: 2em 0em;
-// width: 100%;
-// box-shadow: 0px 0px 0px 0px transparent;
-// // border-bottom: 1px solid wheat;
-// img{
-//   width:120px!important;
-//   margin-left:50px;
-// }
-// }
-// .vertical footer{
-//   border 2px solid wheat
-// }
 </style>

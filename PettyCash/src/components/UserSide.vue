@@ -23,7 +23,7 @@
 				</sui-menu-menu>
 			  	<a class="item ">
 			    	<sui-button  @click.native="toggle" class="z-depth-1" style="background:#67AEE6!important; color:white;">MAKE A NEW REQUEST</sui-button>
-                    <sui-modal v-model="open"  >
+                    <sui-modal v-model="open" >
                         <sui-modal-header >REQUEST FORM</sui-modal-header>
                         <sui-modal-content>
                             <sui-modal-description>
