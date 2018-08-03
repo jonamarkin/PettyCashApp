@@ -166,7 +166,7 @@ created(){
 	
 	// }
 	axios
-      .get('https://pettycash.nfortics.com/api/cashrequest')
+      .get('https://c343cda7.ngrok.io/api/cashrequest')
       .then(response => {
 		this.posts = response.data
 		
@@ -187,7 +187,7 @@ created(){
     			
       axios({
     method: 'put',
-    url: 'https://pettycash.nfortics.com/api/cashrequest/' +post.id,
+    url: 'https://c343cda7.ngrok.io/api/cashrequest/' +post.id,
     data: {
       status:'Approved',
 	  description:'Ama Maame'
@@ -196,7 +196,7 @@ created(){
     },
 
 		declineRequest(post){
-			axios.put('https://pettycash.nfortics.com/api/cashrequest/' +post.id, {
+			axios.put('https://c343cda7.ngrok.io/api/cashrequest/' +post.id, {
 			status:'Declined',
 			description:'something'
 		})

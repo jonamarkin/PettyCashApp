@@ -138,7 +138,7 @@ created(){
 	// 	this.posts.push(post)
 	// }
 	axios
-      .get('https://pettycash.nfortics.com/api/cashrequest')
+      .get('https://c343cda7.ngrok.io/api/cashrequest')
       .then(response => {
 		this.posts = response.data
 		
@@ -151,7 +151,7 @@ created(){
 
 mounted () {
     // axios
-    //   .get('https://pettycash.nfortics.com/api/cashrequest')
+    //   .get('https://c343cda7.ngrok.io/api/cashrequest')
     //   .then(response => {
 	// 	for (let index = 0; index < 20; index++) {
 	// 	var post = {

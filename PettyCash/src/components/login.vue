@@ -40,7 +40,7 @@
             
           </div>
 
-          <div class="inline fields">
+          <!-- <div class="inline fields">
                 <label>Select Role</label>
                 <div class="field">
                   <div class="ui radio checkbox">
@@ -60,7 +60,7 @@
                     <label>User</label>
                   </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ export default {
      var  token = googleUser.getAuthResponse().id_token;
       var email = profile.getEmail();
       
-      axios.post('https://pettycash.nfortics.com/api/Login',{
+      axios.post('https://c343cda7.ngrok.io/api/Login',{
 
     
       token:token,
@@ -125,7 +125,7 @@ export default {
 });
 
       // var xhr = new XMLHttpRequest();
-      // xhr.open('POST', 'https://pettycash.nfortics.com/api/Login');
+      // xhr.open('POST', 'https://c343cda7.ngrok.io/api/Login');
       // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       // xhr.onload = function() {
       //   console.log('Signed in as: ' + xhr.responseText);
@@ -143,7 +143,8 @@ export default {
         this.$router.push({name: 'UserDashboard'})
       }
       else{
-        alert('You must select a role');
+        // alert('You must select a role');
+        this.$router.push({name: 'UserDashboard'})
       }
     },
     onSignInError (error) {

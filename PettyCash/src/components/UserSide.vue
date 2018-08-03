@@ -99,7 +99,7 @@ export default {
       this.active = name;
     },
     // sendData() {
-    //             axios({ method: "POST", "url": "https://pettycash.nfortics.com/api/cashrequest", "data": this.input,  "headers": { "content-type": "application/json" } }).then(result => {
+    //             axios({ method: "POST", "url": "https://c343cda7.ngrok.io/api/cashrequest", "data": this.input,  "headers": { "content-type": "application/json" } }).then(result => {
     //                 this.response = result.data;
     //             }, error => {
     //                 console.error(error);
@@ -107,7 +107,7 @@ export default {
     //         }
 
     // sendData(){
-    //   axios.post('https://pettycash.nfortics.com/api/cashrequest', 
+    //   axios.post('https://c343cda7.ngrok.io/api/cashrequest', 
     //   this.dateNeeded,
     //   this.amount,
     //   this.description, // the data to post
@@ -124,7 +124,7 @@ export default {
     //       "Access-Control-Allow-Origin": "*",
     //   }
     // };
-    //   axios.post('https://pettycash.nfortics.com/api/cashrequest', {
+    //   axios.post('https://c343cda7.ngrok.io/api/cashrequest', {
     //   dateNeeded: this.dateNeeded,
     //   amount: this.amount,
     //   description: this.description
@@ -141,7 +141,7 @@ export default {
     sendData(){
       axios({
     method: 'post',
-    url: 'https://pettycash.nfortics.com/api/cashrequest',
+    url: 'https://c343cda7.ngrok.io/api/cashrequest',
     data: {
       dateNeeded: this.dateNeeded,
       amount: this.amount,

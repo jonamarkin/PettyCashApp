@@ -39,6 +39,7 @@
 								<td>{{post.phoneNumber}}</td>
 								<!-- <td>{{post.location}}</td> -->
 								<td>{{post.email}}</td>
+								<td>{{post.role}}</td>
 								
 							</tr>
 
@@ -70,10 +71,10 @@
                                     <label>Contact</label>
                                     <input placeholder="Phone Number" type="number" v-model="phoneNumber">
                                     </sui-form-field>
-									<sui-form-field>
+									<!-- <sui-form-field>
                                     <label>Role</label>
-                                    <input placeholder="Role" type="number" v-model="phoneNumber">
-                                    </sui-form-field>
+                                    <input placeholder="Role" type="text" v-model="role">
+                                    </sui-form-field> -->
                                     <sui-form-field>
                                     <label>Email</label>
                                     <input placeholder="Email Address" type="email" v-model="email">
@@ -105,11 +106,12 @@ export default {
 		name:'',
 		phoneNumber:'',
 		email:'',
+		// role:'',
 		sortColumn: null,
 		posts:[],
 		 open: false,
 		search:'',
-		columns: ['Names', 'Contact', 'Email'],
+		columns: ['Names', 'Contact', 'Email', 'Role'],
     }
   },
   components:{
@@ -133,7 +135,7 @@ export default {
 	// }
 
 	axios
-      .get('https://pettycash.nfortics.com/api/user')
+      .get('https://c343cda7.ngrok.io/api/user')
       .then(response => {
 		this.posts = response.data
 		
@@ -161,11 +163,12 @@ methods:{
 	addNewContact(){
       axios({
     method: 'post',
-    url: 'https://pettycash.nfortics.com/api/user',
+    url: 'https://c343cda7.ngrok.io/api/user',
     data: {
       name: this.name,
       phoneNumber: this.phoneNumber,
-      email: this.email
+      email: this.email,
+	//   role: this.role
   }
 });
     }
