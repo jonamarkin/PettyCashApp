@@ -7,7 +7,7 @@ stages:
 build site:
   stage: build
   script:
-    - npm install --progress=false
+    - cd PettyCash && npm install --progress=false
     - npm run build
   artifacts:
     expire_in: 1h
@@ -23,6 +23,6 @@ deploy:
     - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - rsync -rav --delete dist/ $USER@$SERVER_IP:/var/www/pettycash.nfortics.com
+    - rsync -rav --delete dist/ $USER@$SERVER_IP:/var/www/pettycash-app.nfortics.com
   only:
     - master
